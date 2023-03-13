@@ -1,1 +1,1 @@
-hell
+Thông tin này ai thấu
