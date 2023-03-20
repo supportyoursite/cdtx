@@ -1,0 +1,530 @@
+{
+    "exportFormatVersion": 2,
+    "exportTime": "2023-03-20 06:52:30",
+    "containerVersion": {
+        "path": "accounts/6057864509/containers/104965102/versions/0",
+        "accountId": "6057864509",
+        "containerId": "104965102",
+        "containerVersionId": "0",
+        "container": {
+            "path": "accounts/6057864509/containers/104965102",
+            "accountId": "6057864509",
+            "containerId": "104965102",
+            "name": "03-20 noithathoaiphong.vn",
+            "publicId": "GTM-MTB8VZQ",
+            "usageContext": [
+                "WEB"
+            ],
+            "fingerprint": "1679295140614",
+            "tagManagerUrl": "https://tagmanager.google.com/#/container/accounts/6057864509/containers/104965102/workspaces?apiLink=container",
+            "features": {
+                "supportUserPermissions": true,
+                "supportEnvironments": true,
+                "supportWorkspaces": true,
+                "supportGtagConfigs": false,
+                "supportBuiltInVariables": true,
+                "supportClients": false,
+                "supportFolders": true,
+                "supportTags": true,
+                "supportTemplates": true,
+                "supportTriggers": true,
+                "supportVariables": true,
+                "supportVersions": true,
+                "supportZones": true
+            },
+            "tagIds": [
+                "GTM-MTB8VZQ"
+            ]
+        },
+        "tag": [
+            {
+                "accountId": "6057864509",
+                "containerId": "104965102",
+                "tagId": "6",
+                "name": "Ads Purchase - noithathoaiphong.vn",
+                "type": "awct",
+                "parameter": [
+                    {
+                        "type": "BOOLEAN",
+                        "key": "enableNewCustomerReporting",
+                        "value": "false"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "enableConversionLinker",
+                        "value": "true"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "orderId",
+                        "value": "{{transaction_id}}"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "enableProductReporting",
+                        "value": "false"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "enableEnhancedConversion",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "conversionValue",
+                        "value": "{{value}}"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "conversionCookiePrefix",
+                        "value": "_gcl"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "enableShippingData",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "conversionId",
+                        "value": "1111"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "currencyCode",
+                        "value": "{{currency}}"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "conversionLabel",
+                        "value": "1111"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "rdp",
+                        "value": "false"
+                    }
+                ],
+                "fingerprint": "1679282545839",
+                "firingTriggerId": [
+                    "5"
+                ],
+                "tagFiringOption": "ONCE_PER_EVENT",
+                "monitoringMetadata": {
+                    "type": "MAP"
+                },
+                "consentSettings": {
+                    "consentStatus": "NOT_SET"
+                }
+            },
+            {
+                "accountId": "6057864509",
+                "containerId": "104965102",
+                "tagId": "7",
+                "name": "HTML tùy chỉnh",
+                "type": "html",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "html",
+                        "value": "<script>\nif(document.body.classList.contains('gtm_purchasedone') === false) {\n    // transaction_id\n    var _idorder = function () {\n        var _date_key = [\n            new Date().getFullYear(),\n            (\"0\" + new Date().getMonth()).slice(-2),\n            (\"0\" + new Date().getDate()).slice(-2),\n            (\"0\" + new Date().getHours()).slice(-2),\n            (\"0\" + new Date().getMinutes()).slice(-2),\n        ];\n\n        return _date_key.join(\"\") + Math.floor(Math.random() * 99999);\n    };\n\n    var _currency = \"VND\";\n\n    var _price = +document.querySelector('.giohang_tongcong .label_cot_tongcong').innerText.replace(/[^\\d-]+/g, \"\");\n\n    dataLayer.push({\n        event: \"purchase_conv\",\n        transaction_id: _idorder(),\n        value: _price,\n        currency: _currency,\n    });\n\n    document.body.classList.add(\"gtm_purchasedone\");\n}\n\n</script>"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "supportDocumentWrite",
+                        "value": "false"
+                    }
+                ],
+                "fingerprint": "1679282423142",
+                "firingTriggerId": [
+                    "4"
+                ],
+                "tagFiringOption": "ONCE_PER_EVENT",
+                "monitoringMetadata": {
+                    "type": "MAP"
+                },
+                "consentSettings": {
+                    "consentStatus": "NOT_SET"
+                }
+            },
+            {
+                "accountId": "6057864509",
+                "containerId": "104965102",
+                "tagId": "9",
+                "name": "Ads Zalo",
+                "type": "awct",
+                "parameter": [
+                    {
+                        "type": "BOOLEAN",
+                        "key": "enableNewCustomerReporting",
+                        "value": "false"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "enableConversionLinker",
+                        "value": "true"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "enableProductReporting",
+                        "value": "false"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "enableEnhancedConversion",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "conversionCookiePrefix",
+                        "value": "_gcl"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "enableShippingData",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "conversionId",
+                        "value": "111"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "conversionLabel",
+                        "value": "111"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "rdp",
+                        "value": "false"
+                    }
+                ],
+                "fingerprint": "1679282326911",
+                "firingTriggerId": [
+                    "8"
+                ],
+                "tagFiringOption": "ONCE_PER_EVENT",
+                "monitoringMetadata": {
+                    "type": "MAP"
+                },
+                "consentSettings": {
+                    "consentStatus": "NOT_SET"
+                }
+            },
+            {
+                "accountId": "6057864509",
+                "containerId": "104965102",
+                "tagId": "11",
+                "name": "Ads Hotline",
+                "type": "awct",
+                "parameter": [
+                    {
+                        "type": "BOOLEAN",
+                        "key": "enableNewCustomerReporting",
+                        "value": "false"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "enableConversionLinker",
+                        "value": "true"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "enableProductReporting",
+                        "value": "false"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "enableEnhancedConversion",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "conversionCookiePrefix",
+                        "value": "_gcl"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "enableShippingData",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "conversionId",
+                        "value": "111"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "conversionLabel",
+                        "value": "111"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "rdp",
+                        "value": "false"
+                    }
+                ],
+                "fingerprint": "1679282326912",
+                "firingTriggerId": [
+                    "10"
+                ],
+                "tagFiringOption": "ONCE_PER_EVENT",
+                "monitoringMetadata": {
+                    "type": "MAP"
+                },
+                "consentSettings": {
+                    "consentStatus": "NOT_SET"
+                }
+            },
+            {
+                "accountId": "6057864509",
+                "containerId": "104965102",
+                "tagId": "12",
+                "name": "Trình liên kết chuyển đổi",
+                "type": "gclidw",
+                "parameter": [
+                    {
+                        "type": "BOOLEAN",
+                        "key": "enableCrossDomain",
+                        "value": "false"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "enableUrlPassthrough",
+                        "value": "false"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "enableCookieOverrides",
+                        "value": "false"
+                    }
+                ],
+                "fingerprint": "1679282339360",
+                "firingTriggerId": [
+                    "2147479553"
+                ],
+                "tagFiringOption": "ONCE_PER_EVENT",
+                "monitoringMetadata": {
+                    "type": "MAP"
+                },
+                "consentSettings": {
+                    "consentStatus": "NOT_SET"
+                }
+            }
+        ],
+        "trigger": [
+            {
+                "accountId": "6057864509",
+                "containerId": "104965102",
+                "triggerId": "4",
+                "name": "Click - #nut_guidonhang",
+                "type": "CLICK",
+                "filter": [
+                    {
+                        "type": "CSS_SELECTOR",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{Click Element}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": "#nut_guidonhang, #nut_guidonhang, *"
+                            }
+                        ]
+                    },
+                    {
+                        "type": "CONTAINS",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{Page URL}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": "/giohang.html?xacnhan=1"
+                            }
+                        ]
+                    }
+                ],
+                "fingerprint": "1679290793523"
+            },
+            {
+                "accountId": "6057864509",
+                "containerId": "104965102",
+                "triggerId": "5",
+                "name": "Sự kiện tùy chỉnh - purchase_conv",
+                "type": "CUSTOM_EVENT",
+                "customEventFilter": [
+                    {
+                        "type": "EQUALS",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{_event}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": "purchase_conv"
+                            }
+                        ]
+                    }
+                ],
+                "fingerprint": "1679282215649"
+            },
+            {
+                "accountId": "6057864509",
+                "containerId": "104965102",
+                "triggerId": "8",
+                "name": "Click Zalo",
+                "type": "CLICK",
+                "filter": [
+                    {
+                        "type": "CSS_SELECTOR",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{Click Element}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": "[href*=\"zalo.me\"], [href*=\"zalo.me\"] *"
+                            }
+                        ]
+                    }
+                ],
+                "fingerprint": "1679282326911"
+            },
+            {
+                "accountId": "6057864509",
+                "containerId": "104965102",
+                "triggerId": "10",
+                "name": "Click Hotline",
+                "type": "CLICK",
+                "filter": [
+                    {
+                        "type": "CSS_SELECTOR",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{Click Element}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": "[href*=\"tel:\"], [href*=\"tel:\"] *"
+                            }
+                        ]
+                    }
+                ],
+                "fingerprint": "1679282326912"
+            }
+        ],
+        "variable": [
+            {
+                "accountId": "6057864509",
+                "containerId": "104965102",
+                "variableId": "13",
+                "name": "transaction_id",
+                "type": "v",
+                "parameter": [
+                    {
+                        "type": "INTEGER",
+                        "key": "dataLayerVersion",
+                        "value": "2"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "transaction_id"
+                    }
+                ],
+                "fingerprint": "1679282467285",
+                "formatValue": {}
+            },
+            {
+                "accountId": "6057864509",
+                "containerId": "104965102",
+                "variableId": "14",
+                "name": "value",
+                "type": "v",
+                "parameter": [
+                    {
+                        "type": "INTEGER",
+                        "key": "dataLayerVersion",
+                        "value": "2"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "value"
+                    }
+                ],
+                "fingerprint": "1679282497441",
+                "formatValue": {}
+            },
+            {
+                "accountId": "6057864509",
+                "containerId": "104965102",
+                "variableId": "15",
+                "name": "currency",
+                "type": "v",
+                "parameter": [
+                    {
+                        "type": "INTEGER",
+                        "key": "dataLayerVersion",
+                        "value": "2"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "currency"
+                    }
+                ],
+                "fingerprint": "1679282512653",
+                "formatValue": {}
+            }
+        ],
+        "builtInVariable": [
+            {
+                "accountId": "6057864509",
+                "containerId": "104965102",
+                "type": "PAGE_URL",
+                "name": "Page URL"
+            },
+            {
+                "accountId": "6057864509",
+                "containerId": "104965102",
+                "type": "CLICK_ELEMENT",
+                "name": "Click Element"
+            }
+        ],
+        "fingerprint": "1679295150337",
+        "tagManagerUrl": "https://tagmanager.google.com/#/versions/accounts/6057864509/containers/104965102/versions/0?apiLink=version"
+    }
+}
