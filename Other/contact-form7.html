@@ -1,0 +1,10 @@
+<script>
+    document.addEventListener( 'wpcf7mailsent', function( event ) {
+        window.dataLayer = window.dataLayer || []; 
+
+        // dang-ky-lai-thu-xe
+        if ( '408' == event.detail.contactFormId ) {
+            window.dataLayer.push({'event': 'dangkylaithuxe'});
+        }
+    }, false );
+</script>
