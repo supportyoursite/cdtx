@@ -1,22 +1,22 @@
 {
     "exportFormatVersion": 2,
-    "exportTime": "2023-03-22 03:17:48",
+    "exportTime": "2023-03-22 08:02:20",
     "containerVersion": {
-        "path": "accounts/6057864509/containers/105181105/versions/0",
+        "path": "accounts/6057864509/containers/105237906/versions/0",
         "accountId": "6057864509",
-        "containerId": "105181105",
+        "containerId": "105237906",
         "containerVersionId": "0",
         "container": {
-            "path": "accounts/6057864509/containers/105181105",
+            "path": "accounts/6057864509/containers/105237906",
             "accountId": "6057864509",
-            "containerId": "105181105",
-            "name": "vinfastchevrolet3s.com",
-            "publicId": "GTM-NZZQSBQ",
+            "containerId": "105237906",
+            "name": "0322 - banthoanphat.vn",
+            "publicId": "GTM-MDTNRVG",
             "usageContext": [
                 "WEB"
             ],
-            "fingerprint": "1679453134651",
-            "tagManagerUrl": "https://tagmanager.google.com/#/container/accounts/6057864509/containers/105181105/workspaces?apiLink=container",
+            "fingerprint": "1679466613575",
+            "tagManagerUrl": "https://tagmanager.google.com/#/container/accounts/6057864509/containers/105237906/workspaces?apiLink=container",
             "features": {
                 "supportUserPermissions": true,
                 "supportEnvironments": true,
@@ -33,34 +33,34 @@
                 "supportZones": true
             },
             "tagIds": [
-                "GTM-NZZQSBQ"
+                "GTM-MDTNRVG"
             ]
         },
         "tag": [
             {
                 "accountId": "6057864509",
-                "containerId": "105181105",
+                "containerId": "105237906",
                 "tagId": "3",
-                "name": "G-11111",
-                "type": "gaawc",
+                "name": "Trình liên kết chuyển đổi",
+                "type": "gclidw",
                 "parameter": [
                     {
                         "type": "BOOLEAN",
-                        "key": "sendPageView",
-                        "value": "true"
-                    },
-                    {
-                        "type": "BOOLEAN",
-                        "key": "enableSendToServerContainer",
+                        "key": "enableCrossDomain",
                         "value": "false"
                     },
                     {
-                        "type": "TEMPLATE",
-                        "key": "measurementId",
-                        "value": "G-11111"
+                        "type": "BOOLEAN",
+                        "key": "enableUrlPassthrough",
+                        "value": "false"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "enableCookieOverrides",
+                        "value": "false"
                     }
                 ],
-                "fingerprint": "1679453169432",
+                "fingerprint": "1679466631744",
                 "firingTriggerId": [
                     "2147479553"
                 ],
@@ -74,24 +74,70 @@
             },
             {
                 "accountId": "6057864509",
-                "containerId": "105181105",
+                "containerId": "105237906",
                 "tagId": "5",
-                "name": "HTML tùy chỉnh - Form Gửi Yêu cầu - Click",
-                "type": "html",
+                "name": "Ads Form Dang Ky",
+                "type": "awct",
                 "parameter": [
                     {
-                        "type": "TEMPLATE",
-                        "key": "html",
-                        "value": "<script>\nvar _tempStorage = sessionStorage || localStorage;\n_tempStorage.setItem('act_guiform', '1');\n</script>"
+                        "type": "BOOLEAN",
+                        "key": "enableNewCustomerReporting",
+                        "value": "false"
                     },
                     {
                         "type": "BOOLEAN",
-                        "key": "supportDocumentWrite",
+                        "key": "enableConversionLinker",
+                        "value": "true"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "enableProductReporting",
+                        "value": "false"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "enableEnhancedConversion",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "conversionValue",
+                        "value": "5555"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "conversionCookiePrefix",
+                        "value": "_gcl"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "enableShippingData",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "conversionId",
+                        "value": "1111"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "currencyCode",
+                        "value": "VND"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "conversionLabel",
+                        "value": "1111"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "rdp",
                         "value": "false"
                     }
                 ],
-                "fingerprint": "1679453280598",
+                "fingerprint": "1679471205233",
                 "firingTriggerId": [
+                    "11",
                     "4"
                 ],
                 "tagFiringOption": "ONCE_PER_EVENT",
@@ -104,15 +150,15 @@
             },
             {
                 "accountId": "6057864509",
-                "containerId": "105181105",
-                "tagId": "7",
-                "name": "HTML tùy chỉnh - Form Gửi Yêu cầu - /gui-bao-gia-thanh-cong.html",
+                "containerId": "105237906",
+                "tagId": "8",
+                "name": "HTML tùy chỉnh - Ajax Form",
                 "type": "html",
                 "parameter": [
                     {
                         "type": "TEMPLATE",
                         "key": "html",
-                        "value": "<script>\nvar _tempStorage = sessionStorage || localStorage;\nif(_tempStorage.getItem('act_guiform')) {\n    dataLayer.push({\"event\": \"guiformyeucau\"});\n    _tempStorage.removeItem('act_guiform');\n}\n</script>"
+                        "value": "<script id=\"gtm-jq-ajax-listen\" type=\"text/javascript\">\n(function () {\n\n'use strict';\nvar $;\nvar n = 0;\ninit();\n\nfunction init(n) {\n\n    // Ensure jQuery is available before anything\n    if (typeof jQuery !== 'undefined') {\n\n        // Define our $ shortcut locally\n        $ = jQuery;\n        bindToAjax();\n\n        // Check for up to 10 seconds\n    } else if (n < 20) {\n\n        n++;\n        setTimeout(init, 500);\n\n    }\n\n}\n\nfunction bindToAjax() {\n\n    $(document).bind('ajaxComplete', function (evt, jqXhr, opts) {\n\n        // Create a fake a element for magically simple URL parsing\n        var fullUrl = document.createElement('a');\n        fullUrl.href = opts.url;\n\n        // IE9+ strips the leading slash from a.pathname because who wants to get home on time Friday anyways\n        var pathname = fullUrl.pathname[0] === '/' ? fullUrl.pathname : '/' + fullUrl.pathname;\n        // Manually remove the leading question mark, if there is one\n        var queryString = fullUrl.search[0] === '?' ? fullUrl.search.slice(1) : fullUrl.search;\n        // Turn our params and headers into objects for easier reference\n        var queryParameters = objMap(queryString, '&', '=', true);\n        var headers = objMap(jqXhr.getAllResponseHeaders(), '\\n', ':');\n\n        // Blindly push to the dataLayer because this fires within GTM\n        dataLayer.push({\n            'event': 'ajaxComplete',\n            'attributes': {\n                // Return empty strings to prevent accidental inheritance of old data\n                'type': opts.type || '',\n                'url': fullUrl.href || '',\n                'queryParameters': queryParameters,\n                'pathname': pathname || '',\n                'hostname': fullUrl.hostname || '',\n                'protocol': fullUrl.protocol || '',\n                'fragment': fullUrl.hash || '',\n                'statusCode': jqXhr.status || '',\n                'statusText': jqXhr.statusText || '',\n                'headers': headers,\n                'timestamp': evt.timeStamp || '',\n                'contentType': opts.contentType || '',\n                // Defer to jQuery's handling of the response\n                'response': (jqXhr.responseJSON || jqXhr.responseXML || jqXhr.responseText || '')\n            }\n        });\n\n    });\n\n}\n\nfunction objMap(data, delim, spl, decode) {\n\n    var obj = {};\n\n    // If one of our parameters is missing, return an empty object\n    if (!data || !delim || !spl) {\n\n        return {};\n\n    }\n\n    var arr = data.split(delim);\n    var i;\n\n    if (arr) {\n\n        for (i = 0; i < arr.length; i++) {\n\n            // If the decode flag is present, URL decode the set\n            var item = decode ? decodeURIComponent(arr[i]) : arr[i];\n            var pair = item.split(spl);\n\n            var key = trim_(pair[0]);\n            var value = trim_(pair[1]);\n\n            if (key && value) {\n\n                obj[key] = value;\n\n            }\n\n        }\n\n    }\n\n    return obj;\n\n}\n\n// Basic .trim() polyfill\nfunction trim_(str) {\n\n    if (str) {\n\n        return str.replace(/^[\\s\\uFEFF\\xA0]+|[\\s\\uFEFF\\xA0]+$/g, '');\n\n    }\n\n}\n\n\n})();\n</script>"
                     },
                     {
                         "type": "BOOLEAN",
@@ -120,9 +166,9 @@
                         "value": "false"
                     }
                 ],
-                "fingerprint": "1679454989670",
+                "fingerprint": "1679466843600",
                 "firingTriggerId": [
-                    "6"
+                    "7"
                 ],
                 "tagFiringOption": "ONCE_PER_EVENT",
                 "monitoringMetadata": {
@@ -134,30 +180,71 @@
             },
             {
                 "accountId": "6057864509",
-                "containerId": "105181105",
-                "tagId": "10",
-                "name": "GA4 - Click Hotline",
-                "type": "gaawe",
+                "containerId": "105237906",
+                "tagId": "14",
+                "name": "Ads Click Mua Hang",
+                "type": "awct",
                 "parameter": [
                     {
                         "type": "BOOLEAN",
-                        "key": "sendEcommerceData",
+                        "key": "enableNewCustomerReporting",
+                        "value": "false"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "enableConversionLinker",
+                        "value": "true"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "enableProductReporting",
                         "value": "false"
                     },
                     {
                         "type": "TEMPLATE",
-                        "key": "eventName",
-                        "value": "click_hotline"
+                        "key": "conversionValue",
+                        "value": "5555"
                     },
                     {
-                        "type": "TAG_REFERENCE",
-                        "key": "measurementId",
-                        "value": "G-11111"
+                        "type": "BOOLEAN",
+                        "key": "enableEnhancedConversion",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "conversionCookiePrefix",
+                        "value": "_gcl"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "enableShippingData",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "conversionId",
+                        "value": "111"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "currencyCode",
+                        "value": "VND"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "conversionLabel",
+                        "value": "111"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "rdp",
+                        "value": "false"
                     }
                 ],
-                "fingerprint": "1679454092282",
+                "fingerprint": "1679471413358",
                 "firingTriggerId": [
-                    "9"
+                    "12",
+                    "13"
                 ],
                 "tagFiringOption": "ONCE_PER_EVENT",
                 "monitoringMetadata": {
@@ -169,8 +256,78 @@
             },
             {
                 "accountId": "6057864509",
-                "containerId": "105181105",
-                "tagId": "11",
+                "containerId": "105237906",
+                "tagId": "16",
+                "name": "Ads Zalo",
+                "type": "awct",
+                "parameter": [
+                    {
+                        "type": "BOOLEAN",
+                        "key": "enableNewCustomerReporting",
+                        "value": "false"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "enableConversionLinker",
+                        "value": "true"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "enableProductReporting",
+                        "value": "false"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "enableEnhancedConversion",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "conversionCookiePrefix",
+                        "value": "_gcl"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "enableShippingData",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "conversionId",
+                        "value": "111"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "currencyCode",
+                        "value": "VND"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "conversionLabel",
+                        "value": "111"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "rdp",
+                        "value": "false"
+                    }
+                ],
+                "fingerprint": "1679471477647",
+                "firingTriggerId": [
+                    "15"
+                ],
+                "tagFiringOption": "ONCE_PER_EVENT",
+                "monitoringMetadata": {
+                    "type": "MAP"
+                },
+                "consentSettings": {
+                    "consentStatus": "NOT_SET"
+                }
+            },
+            {
+                "accountId": "6057864509",
+                "containerId": "105237906",
+                "tagId": "18",
                 "name": "GA4 - Click Zalo",
                 "type": "gaawe",
                 "parameter": [
@@ -185,14 +342,19 @@
                         "value": "click_zalo"
                     },
                     {
-                        "type": "TAG_REFERENCE",
+                        "type": "TEMPLATE",
                         "key": "measurementId",
-                        "value": "G-11111"
+                        "value": "none"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "measurementIdOverride",
+                        "value": "G-111"
                     }
                 ],
-                "fingerprint": "1679454840633",
+                "fingerprint": "1679472006638",
                 "firingTriggerId": [
-                    "8"
+                    "15"
                 ],
                 "tagFiringOption": "ONCE_PER_EVENT",
                 "monitoringMetadata": {
@@ -204,9 +366,9 @@
             },
             {
                 "accountId": "6057864509",
-                "containerId": "105181105",
-                "tagId": "13",
-                "name": "GA4 - Form Gui Yeu Cau",
+                "containerId": "105237906",
+                "tagId": "19",
+                "name": "GA4 - Click Mua Hang",
                 "type": "gaawe",
                 "parameter": [
                     {
@@ -217,17 +379,104 @@
                     {
                         "type": "TEMPLATE",
                         "key": "eventName",
-                        "value": "form_guiyeucau"
+                        "value": "click_muahang"
                     },
                     {
-                        "type": "TAG_REFERENCE",
+                        "type": "TEMPLATE",
                         "key": "measurementId",
-                        "value": "G-11111"
+                        "value": "none"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "measurementIdOverride",
+                        "value": "G-111"
                     }
                 ],
-                "fingerprint": "1679454962342",
+                "fingerprint": "1679472068373",
                 "firingTriggerId": [
+                    "13",
                     "12"
+                ],
+                "tagFiringOption": "ONCE_PER_EVENT",
+                "monitoringMetadata": {
+                    "type": "MAP"
+                },
+                "consentSettings": {
+                    "consentStatus": "NOT_SET"
+                }
+            },
+            {
+                "accountId": "6057864509",
+                "containerId": "105237906",
+                "tagId": "20",
+                "name": "GA4 - Form Dang Ky",
+                "type": "gaawe",
+                "parameter": [
+                    {
+                        "type": "BOOLEAN",
+                        "key": "sendEcommerceData",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "eventName",
+                        "value": "form_dangky"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "measurementId",
+                        "value": "none"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "measurementIdOverride",
+                        "value": "G-111"
+                    }
+                ],
+                "fingerprint": "1679472102405",
+                "firingTriggerId": [
+                    "11",
+                    "4"
+                ],
+                "tagFiringOption": "ONCE_PER_EVENT",
+                "monitoringMetadata": {
+                    "type": "MAP"
+                },
+                "consentSettings": {
+                    "consentStatus": "NOT_SET"
+                }
+            },
+            {
+                "accountId": "6057864509",
+                "containerId": "105237906",
+                "tagId": "21",
+                "name": "GA4 - Click Hotline",
+                "type": "gaawe",
+                "parameter": [
+                    {
+                        "type": "BOOLEAN",
+                        "key": "sendEcommerceData",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "eventName",
+                        "value": "click_hotline"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "measurementId",
+                        "value": "none"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "measurementIdOverride",
+                        "value": "G-111"
+                    }
+                ],
+                "fingerprint": "1679472129238",
+                "firingTriggerId": [
+                    "2147479553"
                 ],
                 "tagFiringOption": "ONCE_PER_EVENT",
                 "monitoringMetadata": {
@@ -241,9 +490,116 @@
         "trigger": [
             {
                 "accountId": "6057864509",
-                "containerId": "105181105",
+                "containerId": "105237906",
                 "triggerId": "4",
-                "name": "Form Button Gửi",
+                "name": "Gửi biểu mẫu - Form to google",
+                "type": "CUSTOM_EVENT",
+                "customEventFilter": [
+                    {
+                        "type": "EQUALS",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{_event}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": "gtm.formSubmit"
+                            }
+                        ]
+                    }
+                ],
+                "filter": [
+                    {
+                        "type": "CONTAINS",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{gtm.elementUrl}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": "https://docs.google.com/forms/"
+                            }
+                        ]
+                    }
+                ],
+                "fingerprint": "1679471774167"
+            },
+            {
+                "accountId": "6057864509",
+                "containerId": "105237906",
+                "triggerId": "7",
+                "name": "DOM sẵn sàng",
+                "type": "DOM_READY",
+                "fingerprint": "1679466816085"
+            },
+            {
+                "accountId": "6057864509",
+                "containerId": "105237906",
+                "triggerId": "11",
+                "name": "Form dang ky event",
+                "type": "CUSTOM_EVENT",
+                "customEventFilter": [
+                    {
+                        "type": "EQUALS",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{_event}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": "ajaxComplete"
+                            }
+                        ]
+                    }
+                ],
+                "filter": [
+                    {
+                        "type": "CONTAINS",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{attributes.response.status}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": "OK"
+                            }
+                        ]
+                    },
+                    {
+                        "type": "CONTAINS",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{attributes.pathname}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": "/ajax/dangkyngay"
+                            }
+                        ]
+                    }
+                ],
+                "fingerprint": "1679467364422"
+            },
+            {
+                "accountId": "6057864509",
+                "containerId": "105237906",
+                "triggerId": "12",
+                "name": "Click Mua Ngay",
                 "type": "CLICK",
                 "filter": [
                     {
@@ -257,42 +613,42 @@
                             {
                                 "type": "TEMPLATE",
                                 "key": "arg1",
-                                "value": "div#popupBaoGia #btnModel, div#popupBaoGia #btnModel *"
+                                "value": "[href*=\"javascript:OrderCart\"], [href*=\"javascript:OrderCart\"] *"
                             }
                         ]
                     }
                 ],
-                "fingerprint": "1679453237616"
+                "fingerprint": "1679471324018"
             },
             {
                 "accountId": "6057864509",
-                "containerId": "105181105",
-                "triggerId": "6",
-                "name": "Lượt xem trang - /gui-bao-gia-thanh-cong.html",
-                "type": "PAGEVIEW",
+                "containerId": "105237906",
+                "triggerId": "13",
+                "name": "Click Add to cart",
+                "type": "CLICK",
                 "filter": [
                     {
-                        "type": "CONTAINS",
+                        "type": "CSS_SELECTOR",
                         "parameter": [
                             {
                                 "type": "TEMPLATE",
                                 "key": "arg0",
-                                "value": "{{Page URL}}"
+                                "value": "{{Click Element}}"
                             },
                             {
                                 "type": "TEMPLATE",
                                 "key": "arg1",
-                                "value": "gui-bao-gia-thanh-cong.html"
+                                "value": "[href*=\"javascript:addToCart\"], [href*=\"javascript:addToCart\"] *"
                             }
                         ]
                     }
                 ],
-                "fingerprint": "1679453952121"
+                "fingerprint": "1679471393140"
             },
             {
                 "accountId": "6057864509",
-                "containerId": "105181105",
-                "triggerId": "8",
+                "containerId": "105237906",
+                "triggerId": "15",
                 "name": "Click Zalo",
                 "type": "CLICK",
                 "filter": [
@@ -312,98 +668,140 @@
                         ]
                     }
                 ],
-                "fingerprint": "1679454047783"
+                "fingerprint": "1679471470140"
+            }
+        ],
+        "variable": [
+            {
+                "accountId": "6057864509",
+                "containerId": "105237906",
+                "variableId": "9",
+                "name": "attributes.response.status",
+                "type": "v",
+                "parameter": [
+                    {
+                        "type": "INTEGER",
+                        "key": "dataLayerVersion",
+                        "value": "2"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "attributes.response.status"
+                    }
+                ],
+                "fingerprint": "1679467300162",
+                "formatValue": {}
             },
             {
                 "accountId": "6057864509",
-                "containerId": "105181105",
-                "triggerId": "9",
-                "name": "Click Hotline",
-                "type": "CLICK",
-                "filter": [
+                "containerId": "105237906",
+                "variableId": "10",
+                "name": "attributes.pathname",
+                "type": "v",
+                "parameter": [
                     {
-                        "type": "CSS_SELECTOR",
-                        "parameter": [
-                            {
-                                "type": "TEMPLATE",
-                                "key": "arg0",
-                                "value": "{{Click Element}}"
-                            },
-                            {
-                                "type": "TEMPLATE",
-                                "key": "arg1",
-                                "value": "[href*=\"tel:\"], [href*=\"tel:\"] *"
-                            }
-                        ]
+                        "type": "INTEGER",
+                        "key": "dataLayerVersion",
+                        "value": "2"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "attributes.pathname"
                     }
                 ],
-                "fingerprint": "1679454079351"
+                "fingerprint": "1679467327026",
+                "formatValue": {}
             },
             {
                 "accountId": "6057864509",
-                "containerId": "105181105",
-                "triggerId": "12",
-                "name": "Sự kiện tùy chỉnh - guiformyeucau",
-                "type": "CUSTOM_EVENT",
-                "customEventFilter": [
+                "containerId": "105237906",
+                "variableId": "17",
+                "name": "gtm.elementUrl",
+                "type": "v",
+                "parameter": [
                     {
-                        "type": "EQUALS",
-                        "parameter": [
-                            {
-                                "type": "TEMPLATE",
-                                "key": "arg0",
-                                "value": "{{_event}}"
-                            },
-                            {
-                                "type": "TEMPLATE",
-                                "key": "arg1",
-                                "value": "guiformyeucau"
-                            }
-                        ]
+                        "type": "INTEGER",
+                        "key": "dataLayerVersion",
+                        "value": "2"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "gtm.elementUrl"
                     }
                 ],
-                "fingerprint": "1679454950208"
+                "fingerprint": "1679471676242",
+                "formatValue": {}
             }
         ],
         "builtInVariable": [
             {
                 "accountId": "6057864509",
-                "containerId": "105181105",
+                "containerId": "105237906",
                 "type": "PAGE_URL",
                 "name": "Page URL"
             },
             {
                 "accountId": "6057864509",
-                "containerId": "105181105",
+                "containerId": "105237906",
                 "type": "PAGE_HOSTNAME",
                 "name": "Page Hostname"
             },
             {
                 "accountId": "6057864509",
-                "containerId": "105181105",
+                "containerId": "105237906",
                 "type": "PAGE_PATH",
                 "name": "Page Path"
             },
             {
                 "accountId": "6057864509",
-                "containerId": "105181105",
+                "containerId": "105237906",
                 "type": "REFERRER",
                 "name": "Referrer"
             },
             {
                 "accountId": "6057864509",
-                "containerId": "105181105",
+                "containerId": "105237906",
                 "type": "EVENT",
                 "name": "Event"
             },
             {
                 "accountId": "6057864509",
-                "containerId": "105181105",
+                "containerId": "105237906",
                 "type": "CLICK_ELEMENT",
                 "name": "Click Element"
+            },
+            {
+                "accountId": "6057864509",
+                "containerId": "105237906",
+                "type": "FORM_ELEMENT",
+                "name": "Form Element"
+            },
+            {
+                "accountId": "6057864509",
+                "containerId": "105237906",
+                "type": "FORM_ID",
+                "name": "Form ID"
             }
         ],
-        "fingerprint": "1679455068824",
-        "tagManagerUrl": "https://tagmanager.google.com/#/versions/accounts/6057864509/containers/105181105/versions/0?apiLink=version"
+        "fingerprint": "1679472140867",
+        "tagManagerUrl": "https://tagmanager.google.com/#/versions/accounts/6057864509/containers/105237906/versions/0?apiLink=version"
     }
 }
