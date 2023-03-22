@@ -1,6 +1,6 @@
 {
     "exportFormatVersion": 2,
-    "exportTime": "2023-03-22 09:30:51",
+    "exportTime": "2023-03-22 09:32:17",
     "containerVersion": {
         "path": "accounts/6057864509/containers/105240514/versions/0",
         "accountId": "6057864509",
@@ -271,7 +271,7 @@
                 "accountId": "6057864509",
                 "containerId": "105240514",
                 "tagId": "10",
-                "name": "G-11111",
+                "name": "G-CGD0KT31FK",
                 "type": "gaawc",
                 "parameter": [
                     {
@@ -287,10 +287,10 @@
                     {
                         "type": "TEMPLATE",
                         "key": "measurementId",
-                        "value": "G-111"
+                        "value": "G-CGD0KT31FK"
                     }
                 ],
-                "fingerprint": "1679477150063",
+                "fingerprint": "1679477525503",
                 "firingTriggerId": [
                     "2147479553"
                 ],
@@ -322,7 +322,7 @@
                     {
                         "type": "TAG_REFERENCE",
                         "key": "measurementId",
-                        "value": "G-11111"
+                        "value": "G-CGD0KT31FK"
                     }
                 ],
                 "fingerprint": "1679477172786",
@@ -357,7 +357,7 @@
                     {
                         "type": "TAG_REFERENCE",
                         "key": "measurementId",
-                        "value": "G-11111"
+                        "value": "G-CGD0KT31FK"
                     }
                 ],
                 "fingerprint": "1679477235390",
@@ -392,7 +392,7 @@
                     {
                         "type": "TAG_REFERENCE",
                         "key": "measurementId",
-                        "value": "G-11111"
+                        "value": "G-CGD0KT31FK"
                     }
                 ],
                 "fingerprint": "1679477394817",
@@ -567,7 +567,7 @@
                 "name": "Form ID"
             }
         ],
-        "fingerprint": "1679477451353",
+        "fingerprint": "1679477537129",
         "tagManagerUrl": "https://tagmanager.google.com/#/versions/accounts/6057864509/containers/105240514/versions/0?apiLink=version"
     }
 }
