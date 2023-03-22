@@ -1,22 +1,22 @@
 {
     "exportFormatVersion": 2,
-    "exportTime": "2023-03-20 10:15:38",
+    "exportTime": "2023-03-22 03:17:48",
     "containerVersion": {
-        "path": "accounts/6057864509/containers/104983569/versions/0",
+        "path": "accounts/6057864509/containers/105181105/versions/0",
         "accountId": "6057864509",
-        "containerId": "104983569",
+        "containerId": "105181105",
         "containerVersionId": "0",
         "container": {
-            "path": "accounts/6057864509/containers/104983569",
+            "path": "accounts/6057864509/containers/105181105",
             "accountId": "6057864509",
-            "containerId": "104983569",
-            "name": "0321 - thietkewebngay.com",
-            "publicId": "GTM-PMZVZJD",
+            "containerId": "105181105",
+            "name": "vinfastchevrolet3s.com",
+            "publicId": "GTM-NZZQSBQ",
             "usageContext": [
                 "WEB"
             ],
-            "fingerprint": "1679306554761",
-            "tagManagerUrl": "https://tagmanager.google.com/#/container/accounts/6057864509/containers/104983569/workspaces?apiLink=container",
+            "fingerprint": "1679453134651",
+            "tagManagerUrl": "https://tagmanager.google.com/#/container/accounts/6057864509/containers/105181105/workspaces?apiLink=container",
             "features": {
                 "supportUserPermissions": true,
                 "supportEnvironments": true,
@@ -33,34 +33,34 @@
                 "supportZones": true
             },
             "tagIds": [
-                "GTM-PMZVZJD"
+                "GTM-NZZQSBQ"
             ]
         },
         "tag": [
             {
                 "accountId": "6057864509",
-                "containerId": "104983569",
-                "tagId": "6",
-                "name": "Trình liên kết chuyển đổi",
-                "type": "gclidw",
+                "containerId": "105181105",
+                "tagId": "3",
+                "name": "G-11111",
+                "type": "gaawc",
                 "parameter": [
                     {
                         "type": "BOOLEAN",
-                        "key": "enableCrossDomain",
-                        "value": "false"
+                        "key": "sendPageView",
+                        "value": "true"
                     },
                     {
                         "type": "BOOLEAN",
-                        "key": "enableUrlPassthrough",
+                        "key": "enableSendToServerContainer",
                         "value": "false"
                     },
                     {
-                        "type": "BOOLEAN",
-                        "key": "enableCookieOverrides",
-                        "value": "false"
+                        "type": "TEMPLATE",
+                        "key": "measurementId",
+                        "value": "G-11111"
                     }
                 ],
-                "fingerprint": "1679307097351",
+                "fingerprint": "1679453169432",
                 "firingTriggerId": [
                     "2147479553"
                 ],
@@ -74,60 +74,25 @@
             },
             {
                 "accountId": "6057864509",
-                "containerId": "104983569",
-                "tagId": "7",
-                "name": "Ads Hotline",
-                "type": "awct",
+                "containerId": "105181105",
+                "tagId": "5",
+                "name": "HTML tùy chỉnh - Form Gửi Yêu cầu - Click",
+                "type": "html",
                 "parameter": [
                     {
-                        "type": "BOOLEAN",
-                        "key": "enableNewCustomerReporting",
-                        "value": "false"
-                    },
-                    {
-                        "type": "BOOLEAN",
-                        "key": "enableConversionLinker",
-                        "value": "true"
-                    },
-                    {
-                        "type": "BOOLEAN",
-                        "key": "enableProductReporting",
-                        "value": "false"
-                    },
-                    {
-                        "type": "BOOLEAN",
-                        "key": "enableEnhancedConversion",
-                        "value": "false"
-                    },
-                    {
                         "type": "TEMPLATE",
-                        "key": "conversionCookiePrefix",
-                        "value": "_gcl"
+                        "key": "html",
+                        "value": "<script>\nvar _tempStorage = sessionStorage || localStorage;\n_tempStorage.setItem('act_guiform', '1');\n</script>"
                     },
                     {
                         "type": "BOOLEAN",
-                        "key": "enableShippingData",
-                        "value": "false"
-                    },
-                    {
-                        "type": "TEMPLATE",
-                        "key": "conversionId",
-                        "value": "111"
-                    },
-                    {
-                        "type": "TEMPLATE",
-                        "key": "conversionLabel",
-                        "value": "111"
-                    },
-                    {
-                        "type": "BOOLEAN",
-                        "key": "rdp",
+                        "key": "supportDocumentWrite",
                         "value": "false"
                     }
                 ],
-                "fingerprint": "1679307107264",
+                "fingerprint": "1679453280598",
                 "firingTriggerId": [
-                    "3"
+                    "4"
                 ],
                 "tagFiringOption": "ONCE_PER_EVENT",
                 "monitoringMetadata": {
@@ -139,60 +104,130 @@
             },
             {
                 "accountId": "6057864509",
-                "containerId": "104983569",
-                "tagId": "9",
-                "name": "Ads form",
-                "type": "awct",
+                "containerId": "105181105",
+                "tagId": "7",
+                "name": "HTML tùy chỉnh - Form Gửi Yêu cầu - /gui-bao-gia-thanh-cong.html",
+                "type": "html",
                 "parameter": [
                     {
-                        "type": "BOOLEAN",
-                        "key": "enableNewCustomerReporting",
-                        "value": "false"
-                    },
-                    {
-                        "type": "BOOLEAN",
-                        "key": "enableConversionLinker",
-                        "value": "true"
-                    },
-                    {
-                        "type": "BOOLEAN",
-                        "key": "enableProductReporting",
-                        "value": "false"
-                    },
-                    {
-                        "type": "BOOLEAN",
-                        "key": "enableEnhancedConversion",
-                        "value": "false"
-                    },
-                    {
                         "type": "TEMPLATE",
-                        "key": "conversionCookiePrefix",
-                        "value": "_gcl"
+                        "key": "html",
+                        "value": "<script>\nvar _tempStorage = sessionStorage || localStorage;\nif(_tempStorage.getItem('act_guiform')) {\n    dataLayer.push({\"event\": \"guiformyeucau\"});\n    _tempStorage.removeItem('act_guiform');\n}\n</script>"
                     },
                     {
                         "type": "BOOLEAN",
-                        "key": "enableShippingData",
-                        "value": "false"
-                    },
-                    {
-                        "type": "TEMPLATE",
-                        "key": "conversionId",
-                        "value": "111"
-                    },
-                    {
-                        "type": "TEMPLATE",
-                        "key": "conversionLabel",
-                        "value": "111"
-                    },
-                    {
-                        "type": "BOOLEAN",
-                        "key": "rdp",
+                        "key": "supportDocumentWrite",
                         "value": "false"
                     }
                 ],
-                "fingerprint": "1679307184990",
+                "fingerprint": "1679454989670",
+                "firingTriggerId": [
+                    "6"
+                ],
+                "tagFiringOption": "ONCE_PER_EVENT",
+                "monitoringMetadata": {
+                    "type": "MAP"
+                },
+                "consentSettings": {
+                    "consentStatus": "NOT_SET"
+                }
+            },
+            {
+                "accountId": "6057864509",
+                "containerId": "105181105",
+                "tagId": "10",
+                "name": "GA4 - Click Hotline",
+                "type": "gaawe",
+                "parameter": [
+                    {
+                        "type": "BOOLEAN",
+                        "key": "sendEcommerceData",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "eventName",
+                        "value": "click_hotline"
+                    },
+                    {
+                        "type": "TAG_REFERENCE",
+                        "key": "measurementId",
+                        "value": "G-11111"
+                    }
+                ],
+                "fingerprint": "1679454092282",
+                "firingTriggerId": [
+                    "9"
+                ],
+                "tagFiringOption": "ONCE_PER_EVENT",
+                "monitoringMetadata": {
+                    "type": "MAP"
+                },
+                "consentSettings": {
+                    "consentStatus": "NOT_SET"
+                }
+            },
+            {
+                "accountId": "6057864509",
+                "containerId": "105181105",
+                "tagId": "11",
+                "name": "GA4 - Click Zalo",
+                "type": "gaawe",
+                "parameter": [
+                    {
+                        "type": "BOOLEAN",
+                        "key": "sendEcommerceData",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "eventName",
+                        "value": "click_zalo"
+                    },
+                    {
+                        "type": "TAG_REFERENCE",
+                        "key": "measurementId",
+                        "value": "G-11111"
+                    }
+                ],
+                "fingerprint": "1679454840633",
                 "firingTriggerId": [
                     "8"
+                ],
+                "tagFiringOption": "ONCE_PER_EVENT",
+                "monitoringMetadata": {
+                    "type": "MAP"
+                },
+                "consentSettings": {
+                    "consentStatus": "NOT_SET"
+                }
+            },
+            {
+                "accountId": "6057864509",
+                "containerId": "105181105",
+                "tagId": "13",
+                "name": "GA4 - Form Gui Yeu Cau",
+                "type": "gaawe",
+                "parameter": [
+                    {
+                        "type": "BOOLEAN",
+                        "key": "sendEcommerceData",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "eventName",
+                        "value": "form_guiyeucau"
+                    },
+                    {
+                        "type": "TAG_REFERENCE",
+                        "key": "measurementId",
+                        "value": "G-11111"
+                    }
+                ],
+                "fingerprint": "1679454962342",
+                "firingTriggerId": [
+                    "12"
                 ],
                 "tagFiringOption": "ONCE_PER_EVENT",
                 "monitoringMetadata": {
@@ -206,8 +241,83 @@
         "trigger": [
             {
                 "accountId": "6057864509",
-                "containerId": "104983569",
-                "triggerId": "3",
+                "containerId": "105181105",
+                "triggerId": "4",
+                "name": "Form Button Gửi",
+                "type": "CLICK",
+                "filter": [
+                    {
+                        "type": "CSS_SELECTOR",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{Click Element}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": "div#popupBaoGia #btnModel, div#popupBaoGia #btnModel *"
+                            }
+                        ]
+                    }
+                ],
+                "fingerprint": "1679453237616"
+            },
+            {
+                "accountId": "6057864509",
+                "containerId": "105181105",
+                "triggerId": "6",
+                "name": "Lượt xem trang - /gui-bao-gia-thanh-cong.html",
+                "type": "PAGEVIEW",
+                "filter": [
+                    {
+                        "type": "CONTAINS",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{Page URL}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": "gui-bao-gia-thanh-cong.html"
+                            }
+                        ]
+                    }
+                ],
+                "fingerprint": "1679453952121"
+            },
+            {
+                "accountId": "6057864509",
+                "containerId": "105181105",
+                "triggerId": "8",
+                "name": "Click Zalo",
+                "type": "CLICK",
+                "filter": [
+                    {
+                        "type": "CSS_SELECTOR",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{Click Element}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": "[href*=\"zalo.me\"], [href*=\"zalo.me\"] *"
+                            }
+                        ]
+                    }
+                ],
+                "fingerprint": "1679454047783"
+            },
+            {
+                "accountId": "6057864509",
+                "containerId": "105181105",
+                "triggerId": "9",
                 "name": "Click Hotline",
                 "type": "CLICK",
                 "filter": [
@@ -227,92 +337,73 @@
                         ]
                     }
                 ],
-                "fingerprint": "1679306681707"
+                "fingerprint": "1679454079351"
             },
             {
                 "accountId": "6057864509",
-                "containerId": "104983569",
-                "triggerId": "8",
-                "name": "Gửi biểu mẫu - form_contact",
-                "type": "FORM_SUBMISSION",
-                "filter": [
+                "containerId": "105181105",
+                "triggerId": "12",
+                "name": "Sự kiện tùy chỉnh - guiformyeucau",
+                "type": "CUSTOM_EVENT",
+                "customEventFilter": [
                     {
                         "type": "EQUALS",
                         "parameter": [
                             {
                                 "type": "TEMPLATE",
                                 "key": "arg0",
-                                "value": "{{Form ID}}"
+                                "value": "{{_event}}"
                             },
                             {
                                 "type": "TEMPLATE",
                                 "key": "arg1",
-                                "value": "form_contact"
+                                "value": "guiformyeucau"
                             }
                         ]
                     }
                 ],
-                "waitForTags": {
-                    "type": "TEMPLATE"
-                },
-                "checkValidation": {
-                    "type": "TEMPLATE"
-                },
-                "waitForTagsTimeout": {
-                    "type": "TEMPLATE",
-                    "value": "2000"
-                },
-                "uniqueTriggerId": {
-                    "type": "TEMPLATE"
-                },
-                "fingerprint": "1679307163610"
+                "fingerprint": "1679454950208"
             }
         ],
         "builtInVariable": [
             {
                 "accountId": "6057864509",
-                "containerId": "104983569",
+                "containerId": "105181105",
                 "type": "PAGE_URL",
                 "name": "Page URL"
             },
             {
                 "accountId": "6057864509",
-                "containerId": "104983569",
+                "containerId": "105181105",
                 "type": "PAGE_HOSTNAME",
                 "name": "Page Hostname"
             },
             {
                 "accountId": "6057864509",
-                "containerId": "104983569",
+                "containerId": "105181105",
                 "type": "PAGE_PATH",
                 "name": "Page Path"
             },
             {
                 "accountId": "6057864509",
-                "containerId": "104983569",
+                "containerId": "105181105",
                 "type": "REFERRER",
                 "name": "Referrer"
             },
             {
                 "accountId": "6057864509",
-                "containerId": "104983569",
+                "containerId": "105181105",
                 "type": "EVENT",
                 "name": "Event"
             },
             {
                 "accountId": "6057864509",
-                "containerId": "104983569",
+                "containerId": "105181105",
                 "type": "CLICK_ELEMENT",
                 "name": "Click Element"
-            },
-            {
-                "accountId": "6057864509",
-                "containerId": "104983569",
-                "type": "FORM_ID",
-                "name": "Form ID"
             }
         ],
-        "fingerprint": "1679307338167",
-        "tagManagerUrl": "https://tagmanager.google.com/#/versions/accounts/6057864509/containers/104983569/versions/0?apiLink=version"
+        "fingerprint": "1679455068824",
+        "tagManagerUrl": "https://tagmanager.google.com/#/versions/accounts/6057864509/containers/105181105/versions/0?apiLink=version"
     }
 }
