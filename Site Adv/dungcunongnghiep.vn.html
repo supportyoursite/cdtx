@@ -1,0 +1,67 @@
+<script>
+    // GET EMAIL
+    var _email = '';
+    document.querySelectorAll('.giohang_form p').forEach(function(elm){
+        if(elm.querySelector(".nhan").innerText.toLowerCase().includes("email")) {
+            _email = elm.querySelector(".control").innerText;
+        }
+    });
+
+
+    // transaction_id
+    var _idorder = function () {
+        var _date_key = [
+            new Date().getFullYear(),
+            ("0" + new Date().getMonth()).slice(-2),
+            ("0" + new Date().getDate()).slice(-2),
+            ("0" + new Date().getHours()).slice(-2),
+            ("0" + new Date().getMinutes()).slice(-2),
+        ];
+
+        return _date_key.join("") + Math.floor(Math.random() * 99999);
+    };
+
+    var _elmtinhtong = document.querySelector('.giohang_tinhtong');
+    if(_elmtinhtong) {
+        var _price = +_elmtinhtong.innerText.replace(/[^\d-]+/g, "");
+
+        var _currency = "VND";
+
+        var _arr = [_idorder(), _price, _currency];
+
+        _tempStorage.setItem("_purchase", _arr.join("|-|"));
+
+
+        // Once 
+        if(document.body.classList.contains("purchase_complete") === false) {
+            // GTM
+            dataLayer.push({
+                'event': 'purchase_conv',
+                'transaction_id' : _idorder(),
+                'value' : _price,
+                'currency' : _currency,
+                'attributes': {
+                    // Return empty strings to prevent accidental inheritance of old data
+                    'type': opts.type || '',
+                    'url': fullUrl.href || '',
+                    'queryParameters': queryParameters,
+                    'pathname': pathname || '',
+                    'hostname': fullUrl.hostname || '',
+                    'protocol': fullUrl.protocol || '',
+                    'fragment': fullUrl.hash || '',
+                    'statusCode': jqXhr.status || '',
+                    'statusText': jqXhr.statusText || '',
+                    'headers': headers,
+                    'timestamp': evt.timeStamp || '',
+                    'contentType': opts.contentType || '',
+                    // Defer to jQuery's handling of the response
+                    'response': (jqXhr.responseJSON || jqXhr.responseXML || jqXhr.responseText || '')
+                }
+            });
+
+            // Add Finish
+            document.body.classList.add("purchase_complete");
+        }
+
+    }
+</script>

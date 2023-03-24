@@ -1,0 +1,13 @@
+<script>
+    document.addEventListener( 'wpcf7mailsent', function( event ) {
+        window.dataLayer = window.dataLayer || []; 
+    
+        if ( '151' == event.detail.contactFormId ) {
+            window.dataLayer.push({'event': 'form_guibaogia'});
+        }
+    
+        if ( '156' == event.detail.contactFormId ) {
+            window.dataLayer.push({'event': 'form_lienhe'});
+        }
+    }, false );
+</script>
