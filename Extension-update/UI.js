@@ -38,12 +38,14 @@ function _barlist() {
     var _htmlinner = `<caselistbar>${_option_case + _casesbar_list}</caselistbar>`;
 
     _htmlinner = _trustScript(_htmlinner);
-    if(!_cardetail.querySelector('caselistbar')) {
-        _cardetail.querySelector('card-deck').insertAdjacentHTML("beforeBegin", _htmlinner);
-    } else {
+
+
+
+    
+    if(_cardetail.querySelector('caselistbar')) {
         _cardetail.querySelector('caselistbar').remove();
-        _cardetail.querySelector('card-deck').insertAdjacentHTML("beforeBegin", _htmlinner);
     }
+    _cardetail.querySelector('card-deck').insertAdjacentHTML("beforeBegin", _htmlinner);
 }
 
 _barlist();
