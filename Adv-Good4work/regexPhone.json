@@ -1,0 +1,207 @@
+{
+    "exportFormatVersion": 2,
+    "exportTime": "2023-03-27 09:07:11",
+    "containerVersion": {
+        "path": "accounts/6073037745/containers/105575631/versions/0",
+        "accountId": "6073037745",
+        "containerId": "105575631",
+        "containerVersionId": "0",
+        "container": {
+            "path": "accounts/6073037745/containers/105575631",
+            "accountId": "6073037745",
+            "containerId": "105575631",
+            "name": "vielimousine.com",
+            "publicId": "GTM-KWQVT5T",
+            "usageContext": [
+                "WEB"
+            ],
+            "fingerprint": "1679903046733",
+            "tagManagerUrl": "https://tagmanager.google.com/#/container/accounts/6073037745/containers/105575631/workspaces?apiLink=container",
+            "features": {
+                "supportUserPermissions": true,
+                "supportEnvironments": true,
+                "supportWorkspaces": true,
+                "supportGtagConfigs": false,
+                "supportBuiltInVariables": true,
+                "supportClients": false,
+                "supportFolders": true,
+                "supportTags": true,
+                "supportTemplates": true,
+                "supportTriggers": true,
+                "supportVariables": true,
+                "supportVersions": true,
+                "supportZones": true
+            },
+            "tagIds": [
+                "GTM-KWQVT5T"
+            ]
+        },
+        "variable": [
+            {
+                "accountId": "6073037745",
+                "containerId": "105575631",
+                "variableId": "6",
+                "name": "JavaScript tùy chỉnh - sdt",
+                "type": "jsm",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "javascript",
+                        "value": "function() {\n  var _sdt = document.querySelectorAll('.table-info .value')[2];\n  return _sdt.innerText;\n}"
+                    }
+                ],
+                "fingerprint": "1679906044372",
+                "formatValue": {}
+            },
+            {
+                "accountId": "6073037745",
+                "containerId": "105575631",
+                "variableId": "7",
+                "name": "Bảng RegEx - SDT",
+                "type": "remm",
+                "parameter": [
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "input",
+                        "value": "{{JavaScript tùy chỉnh - sdt}}"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "fullMatch",
+                        "value": "true"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "replaceAfterMatch",
+                        "value": "true"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "ignoreCase",
+                        "value": "true"
+                    },
+                    {
+                        "type": "LIST",
+                        "key": "map",
+                        "list": [
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "key",
+                                        "value": "0(\\d+)"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "value",
+                                        "value": "84$1"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "key",
+                                        "value": "\\840(\\d+)"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "value",
+                                        "value": "84$1"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "key",
+                                        "value": "\\(\\+84\\)0(\\d+)\\s(\\d+)\\s(\\d+)"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "value",
+                                        "value": "84$1$2$3"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "key",
+                                        "value": "\\(\\+84\\)(\\d+)"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "value",
+                                        "value": "84$1"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "key",
+                                        "value": "\\+840(\\d+)"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "value",
+                                        "value": "84$1"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "key",
+                                        "value": "\\+84(\\d+)"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "value",
+                                        "value": "84$1"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "key",
+                                        "value": "(\\+0)\\s([()])\\d+([()])\\s\\d+-\\d+"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "value",
+                                        "value": "84$1"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ],
+                "fingerprint": "1679905818556",
+                "formatValue": {}
+            }
+        ],
+        "fingerprint": "1679908031195",
+        "tagManagerUrl": "https://tagmanager.google.com/#/versions/accounts/6073037745/containers/105575631/versions/0?apiLink=version"
+    }
+}
