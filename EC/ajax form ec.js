@@ -28,9 +28,9 @@
 
         // GET EMAIL
         var _email = '';
-        $(document).on('click', '.schedule_contact_form', function () {
+        $(document).on('click', '[name="et_builder_submit_button"]', function () {
             var _form = $(this).closest('form');
-            _email = _form.find('[name="email"]').val()
+            _email = _form.find('[data-field_type="email"]').val()
         });
 
 
@@ -50,16 +50,17 @@
             var headers = objMap(jqXhr.getAllResponseHeaders(), '\n', ':');
 
             // EEC 
-            if (jqXhr.responseJSON.success !== false) {
-                gtag('event', 'conversion', {
-                    'send_to': 'AW-415603589/QOm4CL7x5_YBEIW3lsYB',
-                    'email': _email
-                })
-            }
+            // if (jqXhr.responseJSON.success !== false) {
+            //     gtag('event', 'conversion', {
+            //         'send_to': 'AW-415603589/QOm4CL7x5_YBEIW3lsYB',
+            //         'email': _email
+            //     })
+            // }
 
             // GTM
             dataLayer.push({
                 'event': 'ajaxComplete',
+                'email': _email,
                 'attributes': {
                     // Return empty strings to prevent accidental inheritance of old data
                     'type': opts.type || '',
