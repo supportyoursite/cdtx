@@ -28,7 +28,7 @@
 
         // GET EMAIL
         var _email = '';
-        $(document).on('click', '[name="et_builder_submit_button"]', function () {
+        $(document).on('click', '[name="sendbutton"]', function () {
             var _form = $(this).closest('form');
             _email = _form.find('[data-field_type="email"]').val()
         });
