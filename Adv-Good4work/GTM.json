@@ -1,22 +1,22 @@
 {
     "exportFormatVersion": 2,
-    "exportTime": "2023-03-10 05:02:01",
+    "exportTime": "2023-03-30 07:08:06",
     "containerVersion": {
-        "path": "accounts/11111111/containers/11111111/versions/0",
-        "accountId": "11111111",
-        "containerId": "11111111",
+        "path": "accounts/6073037745/containers/106014713/versions/0",
+        "accountId": "6073037745",
+        "containerId": "106014713",
         "containerVersionId": "0",
         "container": {
-            "path": "accounts/11111111/containers/11111111",
-            "accountId": "11111111",
-            "containerId": "11111111",
-            "name": "0",
-            "publicId": "",
+            "path": "accounts/6073037745/containers/106014713",
+            "accountId": "6073037745",
+            "containerId": "106014713",
+            "name": "3003 - otofordcantho.com",
+            "publicId": "GTM-KM9G9S9",
             "usageContext": [
                 "WEB"
             ],
-            "fingerprint": "1678422355449",
-            "tagManagerUrl": "https://tagmanager.google.com/#/container/accounts/11111111/containers/11111111/workspaces?apiLink=container",
+            "fingerprint": "1680157162491",
+            "tagManagerUrl": "https://tagmanager.google.com/#/container/accounts/6073037745/containers/106014713/workspaces?apiLink=container",
             "features": {
                 "supportUserPermissions": true,
                 "supportEnvironments": true,
@@ -33,15 +33,325 @@
                 "supportZones": true
             },
             "tagIds": [
-                "GTM-KZ49PGS"
+                "GTM-KM9G9S9"
             ]
         },
         "tag": [
             {
-                "accountId": "11111111",
-                "containerId": "11111111",
+                "accountId": "6073037745",
+                "containerId": "106014713",
+                "tagId": "5",
+                "name": "otofordcantho.com/-cuộc gọi",
+                "type": "awct",
+                "parameter": [
+                    {
+                        "type": "BOOLEAN",
+                        "key": "enableNewCustomerReporting",
+                        "value": "false"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "enableConversionLinker",
+                        "value": "true"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "enableProductReporting",
+                        "value": "false"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "enableEnhancedConversion",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "conversionCookiePrefix",
+                        "value": "_gcl"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "enableShippingData",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "conversionId",
+                        "value": "869388330"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "conversionLabel",
+                        "value": "HLiXCPT154cYEKqgx54D"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "rdp",
+                        "value": "false"
+                    }
+                ],
+                "fingerprint": "1680157225190",
+                "firingTriggerId": [
+                    "3"
+                ],
+                "tagFiringOption": "ONCE_PER_EVENT",
+                "monitoringMetadata": {
+                    "type": "MAP"
+                },
+                "consentSettings": {
+                    "consentStatus": "NOT_SET"
+                }
+            },
+            {
+                "accountId": "6073037745",
+                "containerId": "106014713",
+                "tagId": "6",
+                "name": "Trình liên kết chuyển đổi",
+                "type": "gclidw",
+                "parameter": [
+                    {
+                        "type": "BOOLEAN",
+                        "key": "enableCrossDomain",
+                        "value": "false"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "enableUrlPassthrough",
+                        "value": "false"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "enableCookieOverrides",
+                        "value": "false"
+                    }
+                ],
+                "fingerprint": "1680157225190",
+                "firingTriggerId": [
+                    "2147479553"
+                ],
+                "tagFiringOption": "ONCE_PER_EVENT",
+                "monitoringMetadata": {
+                    "type": "MAP"
+                },
+                "consentSettings": {
+                    "consentStatus": "NOT_SET"
+                }
+            },
+            {
+                "accountId": "6073037745",
+                "containerId": "106014713",
                 "tagId": "7",
-                "name": "Ads Form",
+                "name": "otofordcantho.com/-tiếp thị lại",
+                "type": "sp",
+                "parameter": [
+                    {
+                        "type": "BOOLEAN",
+                        "key": "enableConversionLinker",
+                        "value": "true"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "enableDynamicRemarketing",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "conversionCookiePrefix",
+                        "value": "_gcl"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "conversionId",
+                        "value": "869388330"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "customParamsFormat",
+                        "value": "NONE"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "rdp",
+                        "value": "false"
+                    }
+                ],
+                "fingerprint": "1680157225190",
+                "firingTriggerId": [
+                    "2147479553"
+                ],
+                "tagFiringOption": "ONCE_PER_EVENT",
+                "monitoringMetadata": {
+                    "type": "MAP"
+                },
+                "consentSettings": {
+                    "consentStatus": "NOT_SET"
+                }
+            },
+            {
+                "accountId": "6073037745",
+                "containerId": "106014713",
+                "tagId": "9",
+                "name": "otofordcantho.com/-zalo",
+                "type": "awct",
+                "parameter": [
+                    {
+                        "type": "BOOLEAN",
+                        "key": "enableNewCustomerReporting",
+                        "value": "false"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "enableConversionLinker",
+                        "value": "true"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "enableProductReporting",
+                        "value": "false"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "enableEnhancedConversion",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "conversionCookiePrefix",
+                        "value": "_gcl"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "enableShippingData",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "conversionId",
+                        "value": "869388330"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "conversionLabel",
+                        "value": "lWpoCPf154cYEKqgx54D"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "rdp",
+                        "value": "false"
+                    }
+                ],
+                "fingerprint": "1680157225191",
+                "firingTriggerId": [
+                    "8"
+                ],
+                "tagFiringOption": "ONCE_PER_EVENT",
+                "monitoringMetadata": {
+                    "type": "MAP"
+                },
+                "consentSettings": {
+                    "consentStatus": "NOT_SET"
+                }
+            },
+            {
+                "accountId": "6073037745",
+                "containerId": "106014713",
+                "tagId": "10",
+                "name": "otofordcantho.com/-form trả góp",
+                "type": "awct",
+                "parameter": [
+                    {
+                        "type": "BOOLEAN",
+                        "key": "enableNewCustomerReporting",
+                        "value": "false"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "enableConversionLinker",
+                        "value": "true"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "enableProductReporting",
+                        "value": "false"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "enableEnhancedConversion",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "conversionCookiePrefix",
+                        "value": "_gcl"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "enableShippingData",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "conversionId",
+                        "value": "869388330"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "conversionLabel",
+                        "value": "Nx9PCJj554cYEKqgx54D"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "rdp",
+                        "value": "false"
+                    }
+                ],
+                "fingerprint": "1680157225191",
+                "firingTriggerId": [
+                    "4"
+                ],
+                "tagFiringOption": "ONCE_PER_EVENT",
+                "monitoringMetadata": {
+                    "type": "MAP"
+                },
+                "consentSettings": {
+                    "consentStatus": "NOT_SET"
+                }
+            },
+            {
+                "accountId": "6073037745",
+                "containerId": "106014713",
+                "tagId": "12",
+                "name": "HTML tùy chỉnh",
+                "type": "html",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "html",
+                        "value": "<script>\n function _xHrComplete(_callback) {\n    var open = window.XMLHttpRequest.prototype.open,\n        send = window.XMLHttpRequest.prototype.send,\n        onReadyStateChange,\n        formData,\n        once_dl = 0;\n        ;\n\n    function openReplacement(method, url, async, user, password) {\n        var syncMode = async !== false ? 'async' : 'sync';\n        return open.apply(this, arguments);\n    }\n\n    function sendReplacement(data) {\n        formData = data;\n\n        if(this.onreadystatechange) {\n            this._onreadystatechange = this.onreadystatechange;\n        }\n        this.onreadystatechange = onReadyStateChangeReplacement;\n\n        return send.apply(this, arguments);\n    }\n\n    function onReadyStateChangeReplacement() {\n        if(this.status == 200 && this.readyState == 4) {\n            _callback(formData);\n            once_dl++;\n        }\n        if(this._onreadystatechange) {\n            return this._onreadystatechange.apply(this, arguments);\n        }\n    }\n\n    window.XMLHttpRequest.prototype.open = openReplacement;\n    window.XMLHttpRequest.prototype.send = sendReplacement;\n\n}\n\n_xHrComplete(function(formData){\n    var _phone = formData.get('sdt');\n    if(_phone) {\n        dataLayer.push({\n            \"event\": \"forminfo_submit\",\n            \"phone\": _phone \n        })\n    }\n    var _phone2 = formData.get('dienthoai');\n    if(_phone2) {\n        dataLayer.push({\n            \"event\": \"forminfo_submit\",\n            \"phone\": _phone2 \n        })\n    }\n})\n</script>"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "supportDocumentWrite",
+                        "value": "false"
+                    }
+                ],
+                "fingerprint": "1680159589569",
+                "firingTriggerId": [
+                    "11"
+                ],
+                "tagFiringOption": "ONCE_PER_EVENT",
+                "monitoringMetadata": {
+                    "type": "MAP"
+                },
+                "consentSettings": {
+                    "consentStatus": "NOT_SET"
+                }
+            },
+            {
+                "accountId": "6073037745",
+                "containerId": "106014713",
+                "tagId": "16",
+                "name": "Ads Form Lien He",
                 "type": "awct",
                 "parameter": [
                     {
@@ -67,7 +377,7 @@
                     {
                         "type": "TEMPLATE",
                         "key": "cssProvidedEnhancedConversionValue",
-                        "value": "{{EC - Information}}"
+                        "value": "{{Dữ liệu do người dùng cung cấp}}"
                     },
                     {
                         "type": "TEMPLATE",
@@ -82,12 +392,12 @@
                     {
                         "type": "TEMPLATE",
                         "key": "conversionId",
-                        "value": "1"
+                        "value": "1111"
                     },
                     {
                         "type": "TEMPLATE",
                         "key": "conversionLabel",
-                        "value": "1"
+                        "value": "1111"
                     },
                     {
                         "type": "BOOLEAN",
@@ -95,11 +405,11 @@
                         "value": "false"
                     }
                 ],
-                "fingerprint": "1678423147030",
+                "fingerprint": "1680159521649",
                 "firingTriggerId": [
-                    "3"
+                    "13"
                 ],
-                "tagFiringOption": "ONCE_PER_EVENT",
+                "tagFiringOption": "ONCE_PER_LOAD",
                 "monitoringMetadata": {
                     "type": "MAP"
                 },
@@ -110,10 +420,155 @@
         ],
         "trigger": [
             {
-                "accountId": "11111111",
-                "containerId": "11111111",
+                "accountId": "6073037745",
+                "containerId": "106014713",
                 "triggerId": "3",
-                "name": "form_submission",
+                "name": "otofordcantho.com/- cuộc gọi",
+                "type": "LINK_CLICK",
+                "filter": [
+                    {
+                        "type": "CONTAINS",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{Click URL}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": "tel:"
+                            }
+                        ]
+                    }
+                ],
+                "waitForTags": {
+                    "type": "BOOLEAN",
+                    "value": "false"
+                },
+                "checkValidation": {
+                    "type": "BOOLEAN",
+                    "value": "false"
+                },
+                "waitForTagsTimeout": {
+                    "type": "TEMPLATE",
+                    "value": "2000"
+                },
+                "uniqueTriggerId": {
+                    "type": "TEMPLATE"
+                },
+                "fingerprint": "1680157225189"
+            },
+            {
+                "accountId": "6073037745",
+                "containerId": "106014713",
+                "triggerId": "4",
+                "name": "otofordcantho.com/-form trả góp",
+                "type": "ELEMENT_VISIBILITY",
+                "filter": [
+                    {
+                        "type": "CONTAINS",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{Click Text}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": "KỲ TRẢ"
+                            }
+                        ]
+                    }
+                ],
+                "fingerprint": "1680157225189",
+                "parameter": [
+                    {
+                        "type": "BOOLEAN",
+                        "key": "useOnScreenDuration",
+                        "value": "false"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "useDomChangeListener",
+                        "value": "true"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "elementSelector",
+                        "value": "#table-kqtragop > div > table > thead > tr > th:nth-child(1)"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "firingFrequency",
+                        "value": "ONCE"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "selectorType",
+                        "value": "CSS"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "onScreenRatio",
+                        "value": "50"
+                    }
+                ]
+            },
+            {
+                "accountId": "6073037745",
+                "containerId": "106014713",
+                "triggerId": "8",
+                "name": "otofordcantho.com/-zalo",
+                "type": "LINK_CLICK",
+                "filter": [
+                    {
+                        "type": "CONTAINS",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{Click URL}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": "zalo.me"
+                            }
+                        ]
+                    }
+                ],
+                "waitForTags": {
+                    "type": "BOOLEAN",
+                    "value": "false"
+                },
+                "checkValidation": {
+                    "type": "BOOLEAN",
+                    "value": "false"
+                },
+                "waitForTagsTimeout": {
+                    "type": "TEMPLATE",
+                    "value": "2000"
+                },
+                "uniqueTriggerId": {
+                    "type": "TEMPLATE"
+                },
+                "fingerprint": "1680157225191"
+            },
+            {
+                "accountId": "6073037745",
+                "containerId": "106014713",
+                "triggerId": "11",
+                "name": "DOM sẵn sàng",
+                "type": "DOM_READY",
+                "fingerprint": "1680158055268"
+            },
+            {
+                "accountId": "6073037745",
+                "containerId": "106014713",
+                "triggerId": "13",
+                "name": "formiinfo_submit",
                 "type": "CUSTOM_EVENT",
                 "customEventFilter": [
                     {
@@ -127,19 +582,19 @@
                             {
                                 "type": "TEMPLATE",
                                 "key": "arg1",
-                                "value": "form_submission"
+                                "value": "forminfo_submit"
                             }
                         ]
                     }
                 ],
                 "filter": [
                     {
-                        "type": "STARTS_WITH",
+                        "type": "CONTAINS",
                         "parameter": [
                             {
                                 "type": "TEMPLATE",
                                 "key": "arg0",
-                                "value": "{{Bảng RegEx - Phone EC}}"
+                                "value": "{{Bảng RegEx - phone}}"
                             },
                             {
                                 "type": "TEMPLATE",
@@ -149,15 +604,15 @@
                         ]
                     }
                 ],
-                "fingerprint": "1678423344713"
+                "fingerprint": "1680159570771"
             }
         ],
         "variable": [
             {
-                "accountId": "11111111",
-                "containerId": "11111111",
-                "variableId": "4",
-                "name": "phone_ec",
+                "accountId": "6073037745",
+                "containerId": "106014713",
+                "variableId": "14",
+                "name": "phone",
                 "type": "v",
                 "parameter": [
                     {
@@ -173,17 +628,17 @@
                     {
                         "type": "TEMPLATE",
                         "key": "name",
-                        "value": "phone_ec"
+                        "value": "phone"
                     }
                 ],
-                "fingerprint": "1678423035785",
+                "fingerprint": "1680158113247",
                 "formatValue": {}
             },
             {
-                "accountId": "11111111",
-                "containerId": "11111111",
-                "variableId": "5",
-                "name": "Bảng RegEx - Phone EC",
+                "accountId": "6073037745",
+                "containerId": "106014713",
+                "variableId": "15",
+                "name": "Bảng RegEx - phone",
                 "type": "remm",
                 "parameter": [
                     {
@@ -194,7 +649,7 @@
                     {
                         "type": "TEMPLATE",
                         "key": "input",
-                        "value": "{{phone_ec}}"
+                        "value": "{{phone}}"
                     },
                     {
                         "type": "BOOLEAN",
@@ -236,7 +691,7 @@
                                     {
                                         "type": "TEMPLATE",
                                         "key": "key",
-                                        "value": "\\840(\\d+)"
+                                        "value": "0(\\d+)"
                                     },
                                     {
                                         "type": "TEMPLATE",
@@ -304,18 +759,33 @@
                                         "value": "84$1"
                                     }
                                 ]
+                            },
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "key",
+                                        "value": "(\\+0)\\s([()])\\d+([()])\\s\\d+-\\d+"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "value",
+                                        "value": "84$1"
+                                    }
+                                ]
                             }
                         ]
                     }
                 ],
-                "fingerprint": "1678423100533",
+                "fingerprint": "1680158258686",
                 "formatValue": {}
             },
             {
-                "accountId": "11111111",
-                "containerId": "11111111",
-                "variableId": "6",
-                "name": "EC - Information",
+                "accountId": "6073037745",
+                "containerId": "106014713",
+                "variableId": "17",
+                "name": "Dữ liệu do người dùng cung cấp",
                 "type": "awec",
                 "parameter": [
                     {
@@ -326,14 +796,64 @@
                     {
                         "type": "TEMPLATE",
                         "key": "phone_number",
-                        "value": "{{Bảng RegEx - Phone EC}}"
+                        "value": "{{Bảng RegEx - phone}}"
                     }
                 ],
-                "fingerprint": "1678423119057",
+                "fingerprint": "1680158324940",
                 "formatValue": {}
             }
         ],
-        "fingerprint": "1678424521326",
-        "tagManagerUrl": "https://tagmanager.google.com/#/versions/accounts/11111111/containers/11111111/versions/0?apiLink=version"
+        "builtInVariable": [
+            {
+                "accountId": "6073037745",
+                "containerId": "106014713",
+                "type": "PAGE_URL",
+                "name": "Page URL"
+            },
+            {
+                "accountId": "6073037745",
+                "containerId": "106014713",
+                "type": "PAGE_HOSTNAME",
+                "name": "Page Hostname"
+            },
+            {
+                "accountId": "6073037745",
+                "containerId": "106014713",
+                "type": "PAGE_PATH",
+                "name": "Page Path"
+            },
+            {
+                "accountId": "6073037745",
+                "containerId": "106014713",
+                "type": "REFERRER",
+                "name": "Referrer"
+            },
+            {
+                "accountId": "6073037745",
+                "containerId": "106014713",
+                "type": "EVENT",
+                "name": "Event"
+            },
+            {
+                "accountId": "6073037745",
+                "containerId": "106014713",
+                "type": "CLICK_URL",
+                "name": "Click URL"
+            },
+            {
+                "accountId": "6073037745",
+                "containerId": "106014713",
+                "type": "CLICK_TEXT",
+                "name": "Click Text"
+            },
+            {
+                "accountId": "6073037745",
+                "containerId": "106014713",
+                "type": "ERROR_URL",
+                "name": "Error URL"
+            }
+        ],
+        "fingerprint": "1680160086788",
+        "tagManagerUrl": "https://tagmanager.google.com/#/versions/accounts/6073037745/containers/106014713/versions/0?apiLink=version"
     }
 }
