@@ -43,7 +43,7 @@ document.querySelectorAll('#sheet-menu li').forEach((item) => {
     _objtemp.text = item.innerText;
     _objtemp.sheettab = ConvertSheetTable2JsonObject(document.querySelector('[id="' + _objtemp.id + '"] table tbody'));
 
-    _sheetobj.push(_objtemp);
+    _sheetobj[_objtemp.text].push(_objtemp);
 });
 
 
@@ -60,13 +60,18 @@ _sheetobj.forEach((itemsheettab) => {
             if(_html.trim()) {
                 var _html = _html;
                 var htmlDecode = decodeHTMLEntities(_html);
-                console.log(htmlDecode)
+                // console.log(htmlDecode)
                 // HTML decode
                 document.body.insertAdjacentHTML('beforeEnd', htmlDecode);
             }
         }
     })
 })
+
+
+
+
+
 
 
 // Compare ldap
@@ -79,6 +84,8 @@ console.log(_ldap === _userassigneer);
 
 
 
+
+// == CALENDAR
 
 
 function _TrustScript(_string) {
@@ -108,33 +115,49 @@ observeOnce((elm) => {
     var _headelm = document.querySelector('#rAECCd');
     if(_headelm) {
         var _title = _headelm.innerText;
-        // if(_title != "" && _title != _title_diff) {
-    
-            
-        //     console.log("Calendar", _title);
-        //     var _contenthtml = `<div class="_casecalendar_info">ZZZZZZZZZZZZZZZZ</div>`;
-        //     _contenthtml = _TrustScript(_contenthtml);
-        //     var _elmappend = document.querySelector('[jscontroller="dIQ6id"] [jscontroller="UHpdjc"]');
-        //     if(_elmappend) {
-        //         console.log(123123123)
-        //         setInterval(() => {
-        //             if(!document.querySelector('._casecalendar_info')) {
-        //                 _elmappend.insertAdjacentHTML("afterEnd", _contenthtml);
-        //             }
-        //         }, 500)
-        //     }
-        //     // once
-        //     _title_diff = _title;
-        // }
-        if(!document.querySelector('[jscontroller="dIQ6id"] ._casecalendar_info')) {
-            var _contenthtml = `<div class="_casecalendar_info">ZZZZZZZZZZZZZZZZ</div>`;
-                _contenthtml = _TrustScript(_contenthtml);
-            _elmappend.insertAdjacentHTML("afterEnd", _contenthtml);
-        }
+        // 
+        if(document.querySelector('[jscontroller="dIQ6id"]')) {
+            if(!document.querySelector('[jscontroller="dIQ6id"] ._casecalendar_info')) {
+
+                // Display after Title
+                    // Ads ID, Ocid
+                    // Customer: Name, phone, website, 
+                    // task, Attribution Model,
+                    // Request, AM name (Is GCC color red)
+                    // Note, 
+
+                var _elmappend = document.querySelectorAll('[jscontroller="dIQ6id"] .nBzcnc.OcVpRe')[0];
+                var _contenthtml = `<div class="_casecalendar_info">
+                <a href="#" target="_blank" class="_casecalendar_info-50per" data-title="Case ID:" >7-5404000034216</a>
+                
+                <span class="_casecalendar_info-50per" data-title="Ads ID & Adv name:" >
+                    <a href="#" target="_blank" >710-439-4086</a>
+                    <br>
+                    Nguyễn Thanh Tùng
+                </span>
+                
+                <span class="_casecalendar_info-50per" data-title="Phone:" >+84 94 127 37 77</span>
+                <span class="_casecalendar_info-50per" data-title="Website:" >www.dong.com</span>
+
+                <span class="_casecalendar_info-50per" data-title="Request:" >Request</span>
+                <span class="_casecalendar_info-50per is-gcc" data-title="AM:" >Lisa Rita</span>
+
+                <span class="_casecalendar_info-50per" data-title="Task:" >Ads Conversion Tracking, Ads Remarketing,Analytics Setup</span>
+                <span class="_casecalendar_info-50per" data-title="Attribution Model:" >Data Driven Attribution (DDA)
+                </span>
+
+                <span class="_casecalendar_info-100per" data-title="Note:"></span>
+                </div>`;
+                    _contenthtml = _TrustScript(_contenthtml);
+                _elmappend.insertAdjacentHTML("afterEnd", _contenthtml);
+            }
+        } 
     }
     
     
 }, document.body);
+
+
 
 
 // -----
