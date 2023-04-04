@@ -1,22 +1,22 @@
 {
     "exportFormatVersion": 2,
-    "exportTime": "2023-04-03 03:52:13",
+    "exportTime": "2023-04-04 10:11:21",
     "containerVersion": {
-        "path": "accounts/1057864509/containers/105842739/versions/0",
-        "accountId": "1057864509",
-        "containerId": "105842739",
+        "path": "accounts/6073037745/containers/107625777/versions/0",
+        "accountId": "6073037745",
+        "containerId": "107625777",
         "containerVersionId": "0",
         "container": {
-            "path": "accounts/1057864509/containers/105842739",
-            "accountId": "1057864509",
-            "containerId": "105842739",
-            "name": "tongdaicskhlg.com",
-            "publicId": "GTM-M1234567",
+            "path": "accounts/6073037745/containers/107625777",
+            "accountId": "6073037745",
+            "containerId": "107625777",
+            "name": "denchumgiare.com",
+            "publicId": "GTM-KH65MRQ",
             "usageContext": [
                 "WEB"
             ],
-            "fingerprint": "1680076246329",
-            "tagManagerUrl": "https://tagmanager.google.com/#/container/accounts/1057864509/containers/105842739/workspaces?apiLink=container",
+            "fingerprint": "1680600788910",
+            "tagManagerUrl": "https://tagmanager.google.com/#/container/accounts/6073037745/containers/107625777/workspaces?apiLink=container",
             "features": {
                 "supportUserPermissions": true,
                 "supportEnvironments": true,
@@ -33,49 +33,14 @@
                 "supportZones": true
             },
             "tagIds": [
-                "GTM-M1234567"
+                "GTM-KH65MRQ"
             ]
         },
         "tag": [
             {
-                "accountId": "1057864509",
-                "containerId": "105842739",
-                "tagId": "4",
-                "name": "G-1111",
-                "type": "gaawc",
-                "parameter": [
-                    {
-                        "type": "BOOLEAN",
-                        "key": "sendPageView",
-                        "value": "true"
-                    },
-                    {
-                        "type": "BOOLEAN",
-                        "key": "enableSendToServerContainer",
-                        "value": "false"
-                    },
-                    {
-                        "type": "TEMPLATE",
-                        "key": "measurementId",
-                        "value": "G-1111"
-                    }
-                ],
-                "fingerprint": "1680076396027",
-                "firingTriggerId": [
-                    "2147479553"
-                ],
-                "tagFiringOption": "ONCE_PER_EVENT",
-                "monitoringMetadata": {
-                    "type": "MAP"
-                },
-                "consentSettings": {
-                    "consentStatus": "NOT_SET"
-                }
-            },
-            {
-                "accountId": "1057864509",
-                "containerId": "105842739",
-                "tagId": "5",
+                "accountId": "6073037745",
+                "containerId": "107625777",
+                "tagId": "7",
                 "name": "Trình liên kết chuyển đổi",
                 "type": "gclidw",
                 "parameter": [
@@ -95,7 +60,7 @@
                         "value": "false"
                     }
                 ],
-                "fingerprint": "1680076404124",
+                "fingerprint": "1680602546446",
                 "firingTriggerId": [
                     "2147479553"
                 ],
@@ -108,9 +73,75 @@
                 }
             },
             {
-                "accountId": "1057864509",
-                "containerId": "105842739",
-                "tagId": "6",
+                "accountId": "6073037745",
+                "containerId": "107625777",
+                "tagId": "8",
+                "name": "Ads Facebook Messenger",
+                "type": "awct",
+                "parameter": [
+                    {
+                        "type": "BOOLEAN",
+                        "key": "enableNewCustomerReporting",
+                        "value": "false"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "enableConversionLinker",
+                        "value": "true"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "enableProductReporting",
+                        "value": "false"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "enableEnhancedConversion",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "conversionCookiePrefix",
+                        "value": "_gcl"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "enableShippingData",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "conversionId",
+                        "value": "1111"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "conversionLabel",
+                        "value": "1111"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "rdp",
+                        "value": "false"
+                    }
+                ],
+                "fingerprint": "1680602568618",
+                "firingTriggerId": [
+                    "3",
+                    "4"
+                ],
+                "tagFiringOption": "ONCE_PER_EVENT",
+                "monitoringMetadata": {
+                    "type": "MAP"
+                },
+                "consentSettings": {
+                    "consentStatus": "NOT_SET"
+                }
+            },
+            {
+                "accountId": "6073037745",
+                "containerId": "107625777",
+                "tagId": "9",
                 "name": "Ads Hotline",
                 "type": "awct",
                 "parameter": [
@@ -147,7 +178,7 @@
                     {
                         "type": "TEMPLATE",
                         "key": "conversionId",
-                        "value": "11093679997"
+                        "value": "1111"
                     },
                     {
                         "type": "TEMPLATE",
@@ -160,9 +191,9 @@
                         "value": "false"
                     }
                 ],
-                "fingerprint": "1680076514475",
+                "fingerprint": "1680602590210",
                 "firingTriggerId": [
-                    "3"
+                    "5"
                 ],
                 "tagFiringOption": "ONCE_PER_EVENT",
                 "monitoringMetadata": {
@@ -173,12 +204,17 @@
                 }
             },
             {
-                "accountId": "1057864509",
-                "containerId": "105842739",
-                "tagId": "7",
-                "name": "Tiếp thị lại trên Google Ads",
-                "type": "sp",
+                "accountId": "6073037745",
+                "containerId": "107625777",
+                "tagId": "10",
+                "name": "Ads Zalo",
+                "type": "awct",
                 "parameter": [
+                    {
+                        "type": "BOOLEAN",
+                        "key": "enableNewCustomerReporting",
+                        "value": "false"
+                    },
                     {
                         "type": "BOOLEAN",
                         "key": "enableConversionLinker",
@@ -186,7 +222,12 @@
                     },
                     {
                         "type": "BOOLEAN",
-                        "key": "enableDynamicRemarketing",
+                        "key": "enableProductReporting",
+                        "value": "false"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "enableEnhancedConversion",
                         "value": "false"
                     },
                     {
@@ -195,14 +236,19 @@
                         "value": "_gcl"
                     },
                     {
-                        "type": "TEMPLATE",
-                        "key": "conversionId",
-                        "value": "11093679997"
+                        "type": "BOOLEAN",
+                        "key": "enableShippingData",
+                        "value": "false"
                     },
                     {
                         "type": "TEMPLATE",
-                        "key": "customParamsFormat",
-                        "value": "NONE"
+                        "key": "conversionId",
+                        "value": "1111"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "conversionLabel",
+                        "value": "1111"
                     },
                     {
                         "type": "BOOLEAN",
@@ -210,9 +256,9 @@
                         "value": "false"
                     }
                 ],
-                "fingerprint": "1680076528133",
+                "fingerprint": "1680602611547",
                 "firingTriggerId": [
-                    "2147479553"
+                    "6"
                 ],
                 "tagFiringOption": "ONCE_PER_EVENT",
                 "monitoringMetadata": {
@@ -225,9 +271,59 @@
         ],
         "trigger": [
             {
-                "accountId": "1057864509",
-                "containerId": "105842739",
+                "accountId": "6073037745",
+                "containerId": "107625777",
                 "triggerId": "3",
+                "name": "Click Facebook",
+                "type": "CLICK",
+                "filter": [
+                    {
+                        "type": "CSS_SELECTOR",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{Click Element}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": "[href*=\"www.facebook.com/messages\"],[href*=\"www.facebook.com/messages\"] *"
+                            }
+                        ]
+                    }
+                ],
+                "fingerprint": "1680601341969"
+            },
+            {
+                "accountId": "6073037745",
+                "containerId": "107625777",
+                "triggerId": "4",
+                "name": "Click Messenger",
+                "type": "CLICK",
+                "filter": [
+                    {
+                        "type": "CSS_SELECTOR",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{Click Element}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": "[href*=\"m.me\"],[href*=\"m.me\"] *"
+                            }
+                        ]
+                    }
+                ],
+                "fingerprint": "1680602529158"
+            },
+            {
+                "accountId": "6073037745",
+                "containerId": "107625777",
+                "triggerId": "5",
                 "name": "Click Hotline",
                 "type": "CLICK",
                 "filter": [
@@ -242,53 +338,78 @@
                             {
                                 "type": "TEMPLATE",
                                 "key": "arg1",
-                                "value": "[href*=\"tel:\"], [href*=\"tel:\"] *"
+                                "value": "[href*=\"tel:\"],[href*=\"tel:\"] *"
                             }
                         ]
                     }
                 ],
-                "fingerprint": "1680076337711"
+                "fingerprint": "1680602520516"
+            },
+            {
+                "accountId": "6073037745",
+                "containerId": "107625777",
+                "triggerId": "6",
+                "name": "Click Zalo",
+                "type": "CLICK",
+                "filter": [
+                    {
+                        "type": "CSS_SELECTOR",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{Click Element}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": "[href*=\"zalo.me\"],[href*=\"zalo.me\"] *"
+                            }
+                        ]
+                    }
+                ],
+                "fingerprint": "1680602512538"
             }
         ],
         "builtInVariable": [
             {
-                "accountId": "1057864509",
-                "containerId": "105842739",
+                "accountId": "6073037745",
+                "containerId": "107625777",
                 "type": "PAGE_URL",
                 "name": "Page URL"
             },
             {
-                "accountId": "1057864509",
-                "containerId": "105842739",
+                "accountId": "6073037745",
+                "containerId": "107625777",
                 "type": "PAGE_HOSTNAME",
                 "name": "Page Hostname"
             },
             {
-                "accountId": "1057864509",
-                "containerId": "105842739",
+                "accountId": "6073037745",
+                "containerId": "107625777",
                 "type": "PAGE_PATH",
                 "name": "Page Path"
             },
             {
-                "accountId": "1057864509",
-                "containerId": "105842739",
+                "accountId": "6073037745",
+                "containerId": "107625777",
                 "type": "REFERRER",
                 "name": "Referrer"
             },
             {
-                "accountId": "1057864509",
-                "containerId": "105842739",
+                "accountId": "6073037745",
+                "containerId": "107625777",
                 "type": "EVENT",
                 "name": "Event"
             },
             {
-                "accountId": "1057864509",
-                "containerId": "105842739",
+                "accountId": "6073037745",
+                "containerId": "107625777",
                 "type": "CLICK_ELEMENT",
                 "name": "Click Element"
             }
         ],
-        "fingerprint": "1680493933334",
-        "tagManagerUrl": "https://tagmanager.google.com/#/versions/accounts/1057864509/containers/105842739/versions/0?apiLink=version"
+        "fingerprint": "1680603081702",
+        "tagManagerUrl": "https://tagmanager.google.com/#/versions/accounts/6073037745/containers/107625777/versions/0?apiLink=version"
     }
 }

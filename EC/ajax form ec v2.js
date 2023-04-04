@@ -124,8 +124,8 @@ function _xHrComplete(_callback) {
 // GET EMAIL
 var _email = '';
 var _phone = '';
-// $(document).on('click', '[name="sendbutton"]', function () {
-//     var _form = $(this).closest('form');
+// jQuery(document).on('click', '[name="sendbutton"]', function () {
+//     var _form = jQuery(this).closest('form');
 //     _email = _form.find('[data-field_type="email"]').val()
 // });
 
