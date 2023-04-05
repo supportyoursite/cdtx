@@ -1,22 +1,22 @@
 {
     "exportFormatVersion": 2,
-    "exportTime": "2023-04-04 10:11:21",
+    "exportTime": "2023-04-05 08:37:55",
     "containerVersion": {
-        "path": "accounts/6073037745/containers/107625777/versions/0",
-        "accountId": "6073037745",
-        "containerId": "107625777",
+        "path": "accounts/6073037741/containers/108051478/versions/0",
+        "accountId": "6073037741",
+        "containerId": "108051478",
         "containerVersionId": "0",
         "container": {
-            "path": "accounts/6073037745/containers/107625777",
-            "accountId": "6073037745",
-            "containerId": "107625777",
-            "name": "denchumgiare.com",
-            "publicId": "GTM-KH65MRQ",
+            "path": "accounts/6073037741/containers/108051478",
+            "accountId": "6073037741",
+            "containerId": "108051478",
+            "name": "Kimisu",
+            "publicId": "GTM-TMFP68Z",
             "usageContext": [
                 "WEB"
             ],
-            "fingerprint": "1680600788910",
-            "tagManagerUrl": "https://tagmanager.google.com/#/container/accounts/6073037745/containers/107625777/workspaces?apiLink=container",
+            "fingerprint": "1680682761926",
+            "tagManagerUrl": "https://tagmanager.google.com/#/container/accounts/6073037741/containers/108051478/workspaces?apiLink=container",
             "features": {
                 "supportUserPermissions": true,
                 "supportEnvironments": true,
@@ -33,14 +33,14 @@
                 "supportZones": true
             },
             "tagIds": [
-                "GTM-KH65MRQ"
+                "GTM-TMFP68Z"
             ]
         },
         "tag": [
             {
-                "accountId": "6073037745",
-                "containerId": "107625777",
-                "tagId": "7",
+                "accountId": "6073037741",
+                "containerId": "108051478",
+                "tagId": "3",
                 "name": "Trình liên kết chuyển đổi",
                 "type": "gclidw",
                 "parameter": [
@@ -60,7 +60,7 @@
                         "value": "false"
                     }
                 ],
-                "fingerprint": "1680602546446",
+                "fingerprint": "1680682811274",
                 "firingTriggerId": [
                     "2147479553"
                 ],
@@ -73,10 +73,10 @@
                 }
             },
             {
-                "accountId": "6073037745",
-                "containerId": "107625777",
+                "accountId": "6073037741",
+                "containerId": "108051478",
                 "tagId": "8",
-                "name": "Ads Facebook Messenger",
+                "name": "Ads Mua Hang",
                 "type": "awct",
                 "parameter": [
                     {
@@ -90,9 +90,19 @@
                         "value": "true"
                     },
                     {
+                        "type": "TEMPLATE",
+                        "key": "orderId",
+                        "value": "{{transaction_id}}"
+                    },
+                    {
                         "type": "BOOLEAN",
                         "key": "enableProductReporting",
                         "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "conversionValue",
+                        "value": "{{value}}"
                     },
                     {
                         "type": "BOOLEAN",
@@ -116,6 +126,11 @@
                     },
                     {
                         "type": "TEMPLATE",
+                        "key": "currencyCode",
+                        "value": "{{currency}}"
+                    },
+                    {
+                        "type": "TEMPLATE",
                         "key": "conversionLabel",
                         "value": "1111"
                     },
@@ -125,9 +140,8 @@
                         "value": "false"
                     }
                 ],
-                "fingerprint": "1680602568618",
+                "fingerprint": "1680683784215",
                 "firingTriggerId": [
-                    "3",
                     "4"
                 ],
                 "tagFiringOption": "ONCE_PER_EVENT",
@@ -139,9 +153,9 @@
                 }
             },
             {
-                "accountId": "6073037745",
-                "containerId": "107625777",
-                "tagId": "9",
+                "accountId": "6073037741",
+                "containerId": "108051478",
+                "tagId": "10",
                 "name": "Ads Hotline",
                 "type": "awct",
                 "parameter": [
@@ -178,12 +192,12 @@
                     {
                         "type": "TEMPLATE",
                         "key": "conversionId",
-                        "value": "1111"
+                        "value": "111"
                     },
                     {
                         "type": "TEMPLATE",
                         "key": "conversionLabel",
-                        "value": "1111"
+                        "value": "111"
                     },
                     {
                         "type": "BOOLEAN",
@@ -191,9 +205,9 @@
                         "value": "false"
                     }
                 ],
-                "fingerprint": "1680602590210",
+                "fingerprint": "1680683831284",
                 "firingTriggerId": [
-                    "5"
+                    "9"
                 ],
                 "tagFiringOption": "ONCE_PER_EVENT",
                 "monitoringMetadata": {
@@ -204,9 +218,9 @@
                 }
             },
             {
-                "accountId": "6073037745",
-                "containerId": "107625777",
-                "tagId": "10",
+                "accountId": "6073037741",
+                "containerId": "108051478",
+                "tagId": "12",
                 "name": "Ads Zalo",
                 "type": "awct",
                 "parameter": [
@@ -256,9 +270,9 @@
                         "value": "false"
                     }
                 ],
-                "fingerprint": "1680602611547",
+                "fingerprint": "1680683860669",
                 "firingTriggerId": [
-                    "6"
+                    "11"
                 ],
                 "tagFiringOption": "ONCE_PER_EVENT",
                 "monitoringMetadata": {
@@ -271,59 +285,34 @@
         ],
         "trigger": [
             {
-                "accountId": "6073037745",
-                "containerId": "107625777",
-                "triggerId": "3",
-                "name": "Click Facebook",
-                "type": "CLICK",
-                "filter": [
-                    {
-                        "type": "CSS_SELECTOR",
-                        "parameter": [
-                            {
-                                "type": "TEMPLATE",
-                                "key": "arg0",
-                                "value": "{{Click Element}}"
-                            },
-                            {
-                                "type": "TEMPLATE",
-                                "key": "arg1",
-                                "value": "[href*=\"www.facebook.com/messages\"],[href*=\"www.facebook.com/messages\"] *"
-                            }
-                        ]
-                    }
-                ],
-                "fingerprint": "1680601341969"
-            },
-            {
-                "accountId": "6073037745",
-                "containerId": "107625777",
+                "accountId": "6073037741",
+                "containerId": "108051478",
                 "triggerId": "4",
-                "name": "Click Messenger",
-                "type": "CLICK",
-                "filter": [
+                "name": "purchase_woo",
+                "type": "CUSTOM_EVENT",
+                "customEventFilter": [
                     {
-                        "type": "CSS_SELECTOR",
+                        "type": "EQUALS",
                         "parameter": [
                             {
                                 "type": "TEMPLATE",
                                 "key": "arg0",
-                                "value": "{{Click Element}}"
+                                "value": "{{_event}}"
                             },
                             {
                                 "type": "TEMPLATE",
                                 "key": "arg1",
-                                "value": "[href*=\"m.me\"],[href*=\"m.me\"] *"
+                                "value": "purchase_woo"
                             }
                         ]
                     }
                 ],
-                "fingerprint": "1680602529158"
+                "fingerprint": "1680683683266"
             },
             {
-                "accountId": "6073037745",
-                "containerId": "107625777",
-                "triggerId": "5",
+                "accountId": "6073037741",
+                "containerId": "108051478",
+                "triggerId": "9",
                 "name": "Click Hotline",
                 "type": "CLICK",
                 "filter": [
@@ -338,17 +327,17 @@
                             {
                                 "type": "TEMPLATE",
                                 "key": "arg1",
-                                "value": "[href*=\"tel:\"],[href*=\"tel:\"] *"
+                                "value": "[href*=\"tel:\"], [href*=\"tel:\"] *"
                             }
                         ]
                     }
                 ],
-                "fingerprint": "1680602520516"
+                "fingerprint": "1680683822551"
             },
             {
-                "accountId": "6073037745",
-                "containerId": "107625777",
-                "triggerId": "6",
+                "accountId": "6073037741",
+                "containerId": "108051478",
+                "triggerId": "11",
                 "name": "Click Zalo",
                 "type": "CLICK",
                 "filter": [
@@ -363,53 +352,133 @@
                             {
                                 "type": "TEMPLATE",
                                 "key": "arg1",
-                                "value": "[href*=\"zalo.me\"],[href*=\"zalo.me\"] *"
+                                "value": "[href*=\"zalo.me\"], [href*=\"zalo.me\"] *"
                             }
                         ]
                     }
                 ],
-                "fingerprint": "1680602512538"
+                "fingerprint": "1680683852936"
+            }
+        ],
+        "variable": [
+            {
+                "accountId": "6073037741",
+                "containerId": "108051478",
+                "variableId": "5",
+                "name": "value",
+                "type": "v",
+                "parameter": [
+                    {
+                        "type": "INTEGER",
+                        "key": "dataLayerVersion",
+                        "value": "2"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "value"
+                    }
+                ],
+                "fingerprint": "1680683703446",
+                "formatValue": {}
+            },
+            {
+                "accountId": "6073037741",
+                "containerId": "108051478",
+                "variableId": "6",
+                "name": "currency",
+                "type": "v",
+                "parameter": [
+                    {
+                        "type": "INTEGER",
+                        "key": "dataLayerVersion",
+                        "value": "2"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "currency"
+                    }
+                ],
+                "fingerprint": "1680683729018",
+                "formatValue": {}
+            },
+            {
+                "accountId": "6073037741",
+                "containerId": "108051478",
+                "variableId": "7",
+                "name": "transaction_id",
+                "type": "v",
+                "parameter": [
+                    {
+                        "type": "INTEGER",
+                        "key": "dataLayerVersion",
+                        "value": "2"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "transaction_id"
+                    }
+                ],
+                "fingerprint": "1680683764967",
+                "formatValue": {}
             }
         ],
         "builtInVariable": [
             {
-                "accountId": "6073037745",
-                "containerId": "107625777",
+                "accountId": "6073037741",
+                "containerId": "108051478",
                 "type": "PAGE_URL",
                 "name": "Page URL"
             },
             {
-                "accountId": "6073037745",
-                "containerId": "107625777",
+                "accountId": "6073037741",
+                "containerId": "108051478",
                 "type": "PAGE_HOSTNAME",
                 "name": "Page Hostname"
             },
             {
-                "accountId": "6073037745",
-                "containerId": "107625777",
+                "accountId": "6073037741",
+                "containerId": "108051478",
                 "type": "PAGE_PATH",
                 "name": "Page Path"
             },
             {
-                "accountId": "6073037745",
-                "containerId": "107625777",
+                "accountId": "6073037741",
+                "containerId": "108051478",
                 "type": "REFERRER",
                 "name": "Referrer"
             },
             {
-                "accountId": "6073037745",
-                "containerId": "107625777",
+                "accountId": "6073037741",
+                "containerId": "108051478",
                 "type": "EVENT",
                 "name": "Event"
             },
             {
-                "accountId": "6073037745",
-                "containerId": "107625777",
+                "accountId": "6073037741",
+                "containerId": "108051478",
                 "type": "CLICK_ELEMENT",
                 "name": "Click Element"
             }
         ],
-        "fingerprint": "1680603081702",
-        "tagManagerUrl": "https://tagmanager.google.com/#/versions/accounts/6073037745/containers/107625777/versions/0?apiLink=version"
+        "fingerprint": "1680683875236",
+        "tagManagerUrl": "https://tagmanager.google.com/#/versions/accounts/6073037741/containers/108051478/versions/0?apiLink=version"
     }
 }
