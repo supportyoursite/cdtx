@@ -1,22 +1,22 @@
 {
     "exportFormatVersion": 2,
-    "exportTime": "2023-04-05 08:37:55",
+    "exportTime": "2023-04-06 08:18:03",
     "containerVersion": {
-        "path": "accounts/6073037741/containers/108051478/versions/0",
-        "accountId": "6073037741",
-        "containerId": "108051478",
+        "path": "accounts/6057864509/containers/108137841/versions/0",
+        "accountId": "6057864509",
+        "containerId": "108137841",
         "containerVersionId": "0",
         "container": {
-            "path": "accounts/6073037741/containers/108051478",
-            "accountId": "6073037741",
-            "containerId": "108051478",
-            "name": "Kimisu",
-            "publicId": "GTM-TMFP68Z",
+            "path": "accounts/6057864509/containers/108137841",
+            "accountId": "6057864509",
+            "containerId": "108137841",
+            "name": "xehoiandanang.com",
+            "publicId": "GTM-WB2BH61",
             "usageContext": [
                 "WEB"
             ],
-            "fingerprint": "1680682761926",
-            "tagManagerUrl": "https://tagmanager.google.com/#/container/accounts/6073037741/containers/108051478/workspaces?apiLink=container",
+            "fingerprint": "1680760984566",
+            "tagManagerUrl": "https://tagmanager.google.com/#/container/accounts/6057864509/containers/108137841/workspaces?apiLink=container",
             "features": {
                 "supportUserPermissions": true,
                 "supportEnvironments": true,
@@ -33,14 +33,44 @@
                 "supportZones": true
             },
             "tagIds": [
-                "GTM-TMFP68Z"
+                "GTM-WB2BH61"
             ]
         },
         "tag": [
             {
-                "accountId": "6073037741",
-                "containerId": "108051478",
+                "accountId": "6057864509",
+                "containerId": "108137841",
                 "tagId": "3",
+                "name": "HTML tùy chỉnh",
+                "type": "html",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "html",
+                        "value": "<script>\nfunction _xHrComplete(_callback) {\n    try {\n        var s_ajaxListener = new Object();\n        s_ajaxListener.tempOpen = XMLHttpRequest.prototype.open;\n        s_ajaxListener.tempSend = XMLHttpRequest.prototype.send;\n        s_ajaxListener.callback = function () {\n            // this.method :the ajax method used\n            // this.url    :the url of the requested script (including query string, if any) (urlencoded) \n            // this.data   :the data sent, if any ex: foo=bar&a=b (urlencoded)\n            \n\n            var object = {};\n            if(typeof this.data == 'object') {\n                this.data.forEach(function (value, key) {\n                    object[key] = value;\n                });\n            } else {\n                object = this.data;\n            }\n\n\n            var fullUrl = location;\n            var _data_response = {\n                \"location\": window.location,\n                \"urlrequest\": this.url,\n                \"method\": this.method,\n                \"formDataInput\": object,\n            }\n\n            _callback(_data_response);\n        }\n\n\n\n\n        XMLHttpRequest.prototype.open = function (a, b) {\n            if (!a) var a = '';\n            if (!b) var b = '';\n            s_ajaxListener.tempOpen.apply(this, arguments);\n            s_ajaxListener.method = a;\n            s_ajaxListener.url = b;\n            if (a.toLowerCase() == 'get') {\n                s_ajaxListener.data = b.split('?');\n                s_ajaxListener.data = s_ajaxListener.data[1];\n            }\n\n        }\n\n\n\n        XMLHttpRequest.prototype.send = function (a, b) {\n            if (!a) var a='';\n            if (!b) var b='';\n            s_ajaxListener.tempSend.apply(this, arguments);\n            if(s_ajaxListener.method.toLowerCase() == 'post')s_ajaxListener.data = a;\n            s_ajaxListener.callback();\n        }\n\n        \n    } catch (error) {\n        console.log(\"ERROR xHR\", e);\n    }\n    \n      \n    \n\n    // ========\n    // FETCH\n    // ========\n    try {\n\n        (function (ns, fetch) {\n            var _key_start = 0;\n            if (typeof fetch !== 'function') return;\n            ns.fetch = function () {\n                _key_start++;\n                var _out = [];\n                _out[0] = fetch.apply(this, arguments);\n    \n                var _formData = [];\n    \n    \n                if (arguments[1]) {\n                    if (arguments[1].body) {\n                        _formData = arguments[1].body;\n                        _out[1] = _formData;\n                    }\n                }\n    \n    \n                // get response\n                // side-effect\n                _out[0].then(function (_ref) {\n                    var _responses_data = {\n                        \"ok\": _ref.ok,\n                        \"url\": _ref.url,\n                        \"status\": _ref.status,\n                        \"redirected\": _ref.redirected,\n                    };\n    \n                    // formData\n                    // _responses_data.formDataInput\n                    if (_out[1]) {\n                        var object = {};\n                        _out[1].forEach(function (value, key) {\n                            object[key] = value;\n                        });\n    \n                        _responses_data.formDataInput = object;\n                    }\n    \n                    return _callback(_responses_data);\n                });\n                return _out[0];\n    \n            };\n        })(window, window.fetch);\n    } catch (e) {\n        console.log(\"ERROR fetch\", e);\n    }\n}\n\n\n// GET EMAIL\nvar _email = '';\nvar _phone = '';\n// jQuery(document).on('click', '[name=\"sendbutton\"]', function () {\n//     var _form = jQuery(this).closest('form');\n//     _email = _form.find('[data-field_type=\"email\"]').val()\n// });\n\n_xHrComplete(function (_response) {\n    if (_response) {\n        var _object_dl = {\n            \"event\": \"apiSend\",\n            \"attributes\": _response \n        };\n\n        if(_email) {\n            _object_dl.email = _email;\n        }\n        \n        if(_phone) {\n            _object_dl.phone = _phone;\n        }\n\n        dataLayer.push(\n            _object_dl\n        );\n        console.log(_object_dl);\n    }\n})\n</script>"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "supportDocumentWrite",
+                        "value": "false"
+                    }
+                ],
+                "fingerprint": "1680761334109",
+                "firingTriggerId": [
+                    "2147479553"
+                ],
+                "tagFiringOption": "ONCE_PER_EVENT",
+                "monitoringMetadata": {
+                    "type": "MAP"
+                },
+                "consentSettings": {
+                    "consentStatus": "NOT_SET"
+                }
+            },
+            {
+                "accountId": "6057864509",
+                "containerId": "108137841",
+                "tagId": "4",
                 "name": "Trình liên kết chuyển đổi",
                 "type": "gclidw",
                 "parameter": [
@@ -60,7 +90,7 @@
                         "value": "false"
                     }
                 ],
-                "fingerprint": "1680682811274",
+                "fingerprint": "1680761345262",
                 "firingTriggerId": [
                     "2147479553"
                 ],
@@ -73,90 +103,10 @@
                 }
             },
             {
-                "accountId": "6073037741",
-                "containerId": "108051478",
+                "accountId": "6057864509",
+                "containerId": "108137841",
                 "tagId": "8",
-                "name": "Ads Mua Hang",
-                "type": "awct",
-                "parameter": [
-                    {
-                        "type": "BOOLEAN",
-                        "key": "enableNewCustomerReporting",
-                        "value": "false"
-                    },
-                    {
-                        "type": "BOOLEAN",
-                        "key": "enableConversionLinker",
-                        "value": "true"
-                    },
-                    {
-                        "type": "TEMPLATE",
-                        "key": "orderId",
-                        "value": "{{transaction_id}}"
-                    },
-                    {
-                        "type": "BOOLEAN",
-                        "key": "enableProductReporting",
-                        "value": "false"
-                    },
-                    {
-                        "type": "TEMPLATE",
-                        "key": "conversionValue",
-                        "value": "{{value}}"
-                    },
-                    {
-                        "type": "BOOLEAN",
-                        "key": "enableEnhancedConversion",
-                        "value": "false"
-                    },
-                    {
-                        "type": "TEMPLATE",
-                        "key": "conversionCookiePrefix",
-                        "value": "_gcl"
-                    },
-                    {
-                        "type": "BOOLEAN",
-                        "key": "enableShippingData",
-                        "value": "false"
-                    },
-                    {
-                        "type": "TEMPLATE",
-                        "key": "conversionId",
-                        "value": "1111"
-                    },
-                    {
-                        "type": "TEMPLATE",
-                        "key": "currencyCode",
-                        "value": "{{currency}}"
-                    },
-                    {
-                        "type": "TEMPLATE",
-                        "key": "conversionLabel",
-                        "value": "1111"
-                    },
-                    {
-                        "type": "BOOLEAN",
-                        "key": "rdp",
-                        "value": "false"
-                    }
-                ],
-                "fingerprint": "1680683784215",
-                "firingTriggerId": [
-                    "4"
-                ],
-                "tagFiringOption": "ONCE_PER_EVENT",
-                "monitoringMetadata": {
-                    "type": "MAP"
-                },
-                "consentSettings": {
-                    "consentStatus": "NOT_SET"
-                }
-            },
-            {
-                "accountId": "6073037741",
-                "containerId": "108051478",
-                "tagId": "10",
-                "name": "Ads Hotline",
+                "name": "Ads EC form dat xe",
                 "type": "awct",
                 "parameter": [
                     {
@@ -177,7 +127,12 @@
                     {
                         "type": "BOOLEAN",
                         "key": "enableEnhancedConversion",
-                        "value": "false"
+                        "value": "true"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "cssProvidedEnhancedConversionValue",
+                        "value": "{{Dữ liệu do người dùng cung cấp - Phone}}"
                     },
                     {
                         "type": "TEMPLATE",
@@ -205,74 +160,9 @@
                         "value": "false"
                     }
                 ],
-                "fingerprint": "1680683831284",
+                "fingerprint": "1680761722455",
                 "firingTriggerId": [
-                    "9"
-                ],
-                "tagFiringOption": "ONCE_PER_EVENT",
-                "monitoringMetadata": {
-                    "type": "MAP"
-                },
-                "consentSettings": {
-                    "consentStatus": "NOT_SET"
-                }
-            },
-            {
-                "accountId": "6073037741",
-                "containerId": "108051478",
-                "tagId": "12",
-                "name": "Ads Zalo",
-                "type": "awct",
-                "parameter": [
-                    {
-                        "type": "BOOLEAN",
-                        "key": "enableNewCustomerReporting",
-                        "value": "false"
-                    },
-                    {
-                        "type": "BOOLEAN",
-                        "key": "enableConversionLinker",
-                        "value": "true"
-                    },
-                    {
-                        "type": "BOOLEAN",
-                        "key": "enableProductReporting",
-                        "value": "false"
-                    },
-                    {
-                        "type": "BOOLEAN",
-                        "key": "enableEnhancedConversion",
-                        "value": "false"
-                    },
-                    {
-                        "type": "TEMPLATE",
-                        "key": "conversionCookiePrefix",
-                        "value": "_gcl"
-                    },
-                    {
-                        "type": "BOOLEAN",
-                        "key": "enableShippingData",
-                        "value": "false"
-                    },
-                    {
-                        "type": "TEMPLATE",
-                        "key": "conversionId",
-                        "value": "1111"
-                    },
-                    {
-                        "type": "TEMPLATE",
-                        "key": "conversionLabel",
-                        "value": "1111"
-                    },
-                    {
-                        "type": "BOOLEAN",
-                        "key": "rdp",
-                        "value": "false"
-                    }
-                ],
-                "fingerprint": "1680683860669",
-                "firingTriggerId": [
-                    "11"
+                    "7"
                 ],
                 "tagFiringOption": "ONCE_PER_EVENT",
                 "monitoringMetadata": {
@@ -285,10 +175,10 @@
         ],
         "trigger": [
             {
-                "accountId": "6073037741",
-                "containerId": "108051478",
-                "triggerId": "4",
-                "name": "purchase_woo",
+                "accountId": "6057864509",
+                "containerId": "108137841",
+                "triggerId": "7",
+                "name": "apiSend",
                 "type": "CUSTOM_EVENT",
                 "customEventFilter": [
                     {
@@ -302,77 +192,22 @@
                             {
                                 "type": "TEMPLATE",
                                 "key": "arg1",
-                                "value": "purchase_woo"
+                                "value": "apiSend"
                             }
                         ]
                     }
                 ],
-                "fingerprint": "1680683683266"
-            },
-            {
-                "accountId": "6073037741",
-                "containerId": "108051478",
-                "triggerId": "9",
-                "name": "Click Hotline",
-                "type": "CLICK",
-                "filter": [
-                    {
-                        "type": "CSS_SELECTOR",
-                        "parameter": [
-                            {
-                                "type": "TEMPLATE",
-                                "key": "arg0",
-                                "value": "{{Click Element}}"
-                            },
-                            {
-                                "type": "TEMPLATE",
-                                "key": "arg1",
-                                "value": "[href*=\"tel:\"], [href*=\"tel:\"] *"
-                            }
-                        ]
-                    }
-                ],
-                "fingerprint": "1680683822551"
-            },
-            {
-                "accountId": "6073037741",
-                "containerId": "108051478",
-                "triggerId": "11",
-                "name": "Click Zalo",
-                "type": "CLICK",
-                "filter": [
-                    {
-                        "type": "CSS_SELECTOR",
-                        "parameter": [
-                            {
-                                "type": "TEMPLATE",
-                                "key": "arg0",
-                                "value": "{{Click Element}}"
-                            },
-                            {
-                                "type": "TEMPLATE",
-                                "key": "arg1",
-                                "value": "[href*=\"zalo.me\"], [href*=\"zalo.me\"] *"
-                            }
-                        ]
-                    }
-                ],
-                "fingerprint": "1680683852936"
+                "fingerprint": "1680761534800"
             }
         ],
         "variable": [
             {
-                "accountId": "6073037741",
-                "containerId": "108051478",
+                "accountId": "6057864509",
+                "containerId": "108137841",
                 "variableId": "5",
-                "name": "value",
-                "type": "v",
+                "name": "Regex - Tel",
+                "type": "remm",
                 "parameter": [
-                    {
-                        "type": "INTEGER",
-                        "key": "dataLayerVersion",
-                        "value": "2"
-                    },
                     {
                         "type": "BOOLEAN",
                         "key": "setDefaultValue",
@@ -380,44 +215,165 @@
                     },
                     {
                         "type": "TEMPLATE",
-                        "key": "name",
-                        "value": "value"
+                        "key": "input",
+                        "value": "{{attributes.formDataInput.form-tel}}"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "fullMatch",
+                        "value": "true"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "replaceAfterMatch",
+                        "value": "true"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "ignoreCase",
+                        "value": "true"
+                    },
+                    {
+                        "type": "LIST",
+                        "key": "map",
+                        "list": [
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "key",
+                                        "value": "0(\\d+)"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "value",
+                                        "value": "84$1"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "key",
+                                        "value": "\\840(\\d+)"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "value",
+                                        "value": "84$1"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "key",
+                                        "value": "\\(\\+84\\)0(\\d+)\\s(\\d+)\\s(\\d+)"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "value",
+                                        "value": "84$1$2$3"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "key",
+                                        "value": "\\(\\+84\\)(\\d+)"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "value",
+                                        "value": "84$1"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "key",
+                                        "value": "\\+840(\\d+)"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "value",
+                                        "value": "84$1"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "key",
+                                        "value": "\\+84(\\d+)"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "value",
+                                        "value": "84$1"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "key",
+                                        "value": "(\\+0)\\s([()])\\d+([()])\\s\\d+-\\d+"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "value",
+                                        "value": "84$1"
+                                    }
+                                ]
+                            }
+                        ]
                     }
                 ],
-                "fingerprint": "1680683703446",
+                "fingerprint": "1680761913756",
                 "formatValue": {}
             },
             {
-                "accountId": "6073037741",
-                "containerId": "108051478",
+                "accountId": "6057864509",
+                "containerId": "108137841",
                 "variableId": "6",
-                "name": "currency",
-                "type": "v",
+                "name": "Dữ liệu do người dùng cung cấp - Phone",
+                "type": "awec",
                 "parameter": [
                     {
-                        "type": "INTEGER",
-                        "key": "dataLayerVersion",
-                        "value": "2"
-                    },
-                    {
-                        "type": "BOOLEAN",
-                        "key": "setDefaultValue",
-                        "value": "false"
+                        "type": "TEMPLATE",
+                        "key": "mode",
+                        "value": "MANUAL"
                     },
                     {
                         "type": "TEMPLATE",
-                        "key": "name",
-                        "value": "currency"
+                        "key": "phone_number",
+                        "value": "{{Regex - Tel}}"
                     }
                 ],
-                "fingerprint": "1680683729018",
+                "fingerprint": "1680761704488",
                 "formatValue": {}
             },
             {
-                "accountId": "6073037741",
-                "containerId": "108051478",
-                "variableId": "7",
-                "name": "transaction_id",
+                "accountId": "6057864509",
+                "containerId": "108137841",
+                "variableId": "9",
+                "name": "attributes.formDataInput.form-tel",
                 "type": "v",
                 "parameter": [
                     {
@@ -433,52 +389,46 @@
                     {
                         "type": "TEMPLATE",
                         "key": "name",
-                        "value": "transaction_id"
+                        "value": "attributes.formDataInput.form-tel"
                     }
                 ],
-                "fingerprint": "1680683764967",
+                "fingerprint": "1680761911060",
                 "formatValue": {}
             }
         ],
         "builtInVariable": [
             {
-                "accountId": "6073037741",
-                "containerId": "108051478",
+                "accountId": "6057864509",
+                "containerId": "108137841",
                 "type": "PAGE_URL",
                 "name": "Page URL"
             },
             {
-                "accountId": "6073037741",
-                "containerId": "108051478",
+                "accountId": "6057864509",
+                "containerId": "108137841",
                 "type": "PAGE_HOSTNAME",
                 "name": "Page Hostname"
             },
             {
-                "accountId": "6073037741",
-                "containerId": "108051478",
+                "accountId": "6057864509",
+                "containerId": "108137841",
                 "type": "PAGE_PATH",
                 "name": "Page Path"
             },
             {
-                "accountId": "6073037741",
-                "containerId": "108051478",
+                "accountId": "6057864509",
+                "containerId": "108137841",
                 "type": "REFERRER",
                 "name": "Referrer"
             },
             {
-                "accountId": "6073037741",
-                "containerId": "108051478",
+                "accountId": "6057864509",
+                "containerId": "108137841",
                 "type": "EVENT",
                 "name": "Event"
-            },
-            {
-                "accountId": "6073037741",
-                "containerId": "108051478",
-                "type": "CLICK_ELEMENT",
-                "name": "Click Element"
             }
         ],
-        "fingerprint": "1680683875236",
-        "tagManagerUrl": "https://tagmanager.google.com/#/versions/accounts/6073037741/containers/108051478/versions/0?apiLink=version"
+        "fingerprint": "1680769083336",
+        "tagManagerUrl": "https://tagmanager.google.com/#/versions/accounts/6057864509/containers/108137841/versions/0?apiLink=version"
     }
 }
