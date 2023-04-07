@@ -1,22 +1,22 @@
 {
     "exportFormatVersion": 2,
-    "exportTime": "2023-04-06 08:18:03",
+    "exportTime": "2023-04-07 07:53:56",
     "containerVersion": {
-        "path": "accounts/6057864509/containers/108137841/versions/0",
-        "accountId": "6057864509",
-        "containerId": "108137841",
+        "path": "accounts/6057864501/containers/108261141/versions/0",
+        "accountId": "6057864501",
+        "containerId": "108261141",
         "containerVersionId": "0",
         "container": {
-            "path": "accounts/6057864509/containers/108137841",
-            "accountId": "6057864509",
-            "containerId": "108137841",
-            "name": "xehoiandanang.com",
-            "publicId": "GTM-WB2BH61",
+            "path": "accounts/6057864501/containers/108261141",
+            "accountId": "6057864501",
+            "containerId": "108261141",
+            "name": "xxxxxxxxxxxxxx",
+            "publicId": "GTM-NLG2S8D",
             "usageContext": [
                 "WEB"
             ],
-            "fingerprint": "1680760984566",
-            "tagManagerUrl": "https://tagmanager.google.com/#/container/accounts/6057864509/containers/108137841/workspaces?apiLink=container",
+            "fingerprint": "1680852173074",
+            "tagManagerUrl": "https://tagmanager.google.com/#/container/accounts/6057864501/containers/108261141/workspaces?apiLink=container",
             "features": {
                 "supportUserPermissions": true,
                 "supportEnvironments": true,
@@ -33,80 +33,15 @@
                 "supportZones": true
             },
             "tagIds": [
-                "GTM-WB2BH61"
+                "GTM-NLG2S8C"
             ]
         },
         "tag": [
             {
-                "accountId": "6057864509",
-                "containerId": "108137841",
-                "tagId": "3",
-                "name": "HTML tùy chỉnh",
-                "type": "html",
-                "parameter": [
-                    {
-                        "type": "TEMPLATE",
-                        "key": "html",
-                        "value": "<script>\nfunction _xHrComplete(_callback) {\n    try {\n        var s_ajaxListener = new Object();\n        s_ajaxListener.tempOpen = XMLHttpRequest.prototype.open;\n        s_ajaxListener.tempSend = XMLHttpRequest.prototype.send;\n        s_ajaxListener.callback = function () {\n            // this.method :the ajax method used\n            // this.url    :the url of the requested script (including query string, if any) (urlencoded) \n            // this.data   :the data sent, if any ex: foo=bar&a=b (urlencoded)\n            \n\n            var object = {};\n            if(typeof this.data == 'object') {\n                this.data.forEach(function (value, key) {\n                    object[key] = value;\n                });\n            } else {\n                object = this.data;\n            }\n\n\n            var fullUrl = location;\n            var _data_response = {\n                \"location\": window.location,\n                \"urlrequest\": this.url,\n                \"method\": this.method,\n                \"formDataInput\": object,\n            }\n\n            _callback(_data_response);\n        }\n\n\n\n\n        XMLHttpRequest.prototype.open = function (a, b) {\n            if (!a) var a = '';\n            if (!b) var b = '';\n            s_ajaxListener.tempOpen.apply(this, arguments);\n            s_ajaxListener.method = a;\n            s_ajaxListener.url = b;\n            if (a.toLowerCase() == 'get') {\n                s_ajaxListener.data = b.split('?');\n                s_ajaxListener.data = s_ajaxListener.data[1];\n            }\n\n        }\n\n\n\n        XMLHttpRequest.prototype.send = function (a, b) {\n            if (!a) var a='';\n            if (!b) var b='';\n            s_ajaxListener.tempSend.apply(this, arguments);\n            if(s_ajaxListener.method.toLowerCase() == 'post')s_ajaxListener.data = a;\n            s_ajaxListener.callback();\n        }\n\n        \n    } catch (error) {\n        console.log(\"ERROR xHR\", e);\n    }\n    \n      \n    \n\n    // ========\n    // FETCH\n    // ========\n    try {\n\n        (function (ns, fetch) {\n            var _key_start = 0;\n            if (typeof fetch !== 'function') return;\n            ns.fetch = function () {\n                _key_start++;\n                var _out = [];\n                _out[0] = fetch.apply(this, arguments);\n    \n                var _formData = [];\n    \n    \n                if (arguments[1]) {\n                    if (arguments[1].body) {\n                        _formData = arguments[1].body;\n                        _out[1] = _formData;\n                    }\n                }\n    \n    \n                // get response\n                // side-effect\n                _out[0].then(function (_ref) {\n                    var _responses_data = {\n                        \"ok\": _ref.ok,\n                        \"url\": _ref.url,\n                        \"status\": _ref.status,\n                        \"redirected\": _ref.redirected,\n                    };\n    \n                    // formData\n                    // _responses_data.formDataInput\n                    if (_out[1]) {\n                        var object = {};\n                        _out[1].forEach(function (value, key) {\n                            object[key] = value;\n                        });\n    \n                        _responses_data.formDataInput = object;\n                    }\n    \n                    return _callback(_responses_data);\n                });\n                return _out[0];\n    \n            };\n        })(window, window.fetch);\n    } catch (e) {\n        console.log(\"ERROR fetch\", e);\n    }\n}\n\n\n// GET EMAIL\nvar _email = '';\nvar _phone = '';\n// jQuery(document).on('click', '[name=\"sendbutton\"]', function () {\n//     var _form = jQuery(this).closest('form');\n//     _email = _form.find('[data-field_type=\"email\"]').val()\n// });\n\n_xHrComplete(function (_response) {\n    if (_response) {\n        var _object_dl = {\n            \"event\": \"apiSend\",\n            \"attributes\": _response \n        };\n\n        if(_email) {\n            _object_dl.email = _email;\n        }\n        \n        if(_phone) {\n            _object_dl.phone = _phone;\n        }\n\n        dataLayer.push(\n            _object_dl\n        );\n        console.log(_object_dl);\n    }\n})\n</script>"
-                    },
-                    {
-                        "type": "BOOLEAN",
-                        "key": "supportDocumentWrite",
-                        "value": "false"
-                    }
-                ],
-                "fingerprint": "1680761334109",
-                "firingTriggerId": [
-                    "2147479553"
-                ],
-                "tagFiringOption": "ONCE_PER_EVENT",
-                "monitoringMetadata": {
-                    "type": "MAP"
-                },
-                "consentSettings": {
-                    "consentStatus": "NOT_SET"
-                }
-            },
-            {
-                "accountId": "6057864509",
-                "containerId": "108137841",
+                "accountId": "6057864501",
+                "containerId": "108261141",
                 "tagId": "4",
-                "name": "Trình liên kết chuyển đổi",
-                "type": "gclidw",
-                "parameter": [
-                    {
-                        "type": "BOOLEAN",
-                        "key": "enableCrossDomain",
-                        "value": "false"
-                    },
-                    {
-                        "type": "BOOLEAN",
-                        "key": "enableUrlPassthrough",
-                        "value": "false"
-                    },
-                    {
-                        "type": "BOOLEAN",
-                        "key": "enableCookieOverrides",
-                        "value": "false"
-                    }
-                ],
-                "fingerprint": "1680761345262",
-                "firingTriggerId": [
-                    "2147479553"
-                ],
-                "tagFiringOption": "ONCE_PER_EVENT",
-                "monitoringMetadata": {
-                    "type": "MAP"
-                },
-                "consentSettings": {
-                    "consentStatus": "NOT_SET"
-                }
-            },
-            {
-                "accountId": "6057864509",
-                "containerId": "108137841",
-                "tagId": "8",
-                "name": "Ads EC form dat xe",
+                "name": "Ads Form ladi EC Phone",
                 "type": "awct",
                 "parameter": [
                     {
@@ -132,7 +67,7 @@
                     {
                         "type": "TEMPLATE",
                         "key": "cssProvidedEnhancedConversionValue",
-                        "value": "{{Dữ liệu do người dùng cung cấp - Phone}}"
+                        "value": "{{User - Tel}}"
                     },
                     {
                         "type": "TEMPLATE",
@@ -147,12 +82,12 @@
                     {
                         "type": "TEMPLATE",
                         "key": "conversionId",
-                        "value": "111"
+                        "value": "1111"
                     },
                     {
                         "type": "TEMPLATE",
                         "key": "conversionLabel",
-                        "value": "111"
+                        "value": "1111"
                     },
                     {
                         "type": "BOOLEAN",
@@ -160,9 +95,74 @@
                         "value": "false"
                     }
                 ],
-                "fingerprint": "1680761722455",
+                "fingerprint": "1680854017839",
                 "firingTriggerId": [
-                    "7"
+                    "3"
+                ],
+                "tagFiringOption": "ONCE_PER_EVENT",
+                "monitoringMetadata": {
+                    "type": "MAP"
+                },
+                "consentSettings": {
+                    "consentStatus": "NOT_SET"
+                }
+            },
+            {
+                "accountId": "6057864501",
+                "containerId": "108261141",
+                "tagId": "6",
+                "name": "HTML custom",
+                "type": "html",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "html",
+                        "value": "<script>\n  document.querySelectorAll('form').forEach(function(elm){\n    elm.addEventListener('click', function(e){\n        document.querySelectorAll('form').forEach(function(elm2){\n            elm2.classList.remove(\"form_here\");    \n        })\n        \n        elm.classList.add(\"form_here\");\n    })\n});\n</script>"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "supportDocumentWrite",
+                        "value": "false"
+                    }
+                ],
+                "fingerprint": "1680853861928",
+                "firingTriggerId": [
+                    "5"
+                ],
+                "tagFiringOption": "ONCE_PER_EVENT",
+                "monitoringMetadata": {
+                    "type": "MAP"
+                },
+                "consentSettings": {
+                    "consentStatus": "NOT_SET"
+                }
+            },
+            {
+                "accountId": "6057864501",
+                "containerId": "108261141",
+                "tagId": "10",
+                "name": "Trình liên kết chuyển đổi",
+                "type": "gclidw",
+                "parameter": [
+                    {
+                        "type": "BOOLEAN",
+                        "key": "enableCrossDomain",
+                        "value": "false"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "enableUrlPassthrough",
+                        "value": "false"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "enableCookieOverrides",
+                        "value": "false"
+                    }
+                ],
+                "fingerprint": "1680852510360",
+                "firingTriggerId": [
+                    "2147479553"
                 ],
                 "tagFiringOption": "ONCE_PER_EVENT",
                 "monitoringMetadata": {
@@ -175,37 +175,89 @@
         ],
         "trigger": [
             {
-                "accountId": "6057864509",
-                "containerId": "108137841",
-                "triggerId": "7",
-                "name": "apiSend",
-                "type": "CUSTOM_EVENT",
-                "customEventFilter": [
+                "accountId": "6057864501",
+                "containerId": "108261141",
+                "triggerId": "3",
+                "name": "Ladi - form",
+                "type": "FORM_SUBMISSION",
+                "filter": [
                     {
-                        "type": "EQUALS",
+                        "type": "CONTAINS",
                         "parameter": [
                             {
                                 "type": "TEMPLATE",
                                 "key": "arg0",
-                                "value": "{{_event}}"
+                                "value": "{{Form Classes}}"
                             },
                             {
                                 "type": "TEMPLATE",
                                 "key": "arg1",
-                                "value": "apiSend"
+                                "value": "ladi-form"
+                            }
+                        ]
+                    },
+                    {
+                        "type": "CONTAINS",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{User - Tel}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": "84"
                             }
                         ]
                     }
                 ],
-                "fingerprint": "1680761534800"
+                "waitForTags": {
+                    "type": "TEMPLATE"
+                },
+                "checkValidation": {
+                    "type": "TEMPLATE"
+                },
+                "waitForTagsTimeout": {
+                    "type": "TEMPLATE",
+                    "value": "2000"
+                },
+                "uniqueTriggerId": {
+                    "type": "TEMPLATE"
+                },
+                "fingerprint": "1680852917885"
+            },
+            {
+                "accountId": "6057864501",
+                "containerId": "108261141",
+                "triggerId": "5",
+                "name": "DOM sẵn sàng",
+                "type": "DOM_READY",
+                "fingerprint": "1680852280590"
             }
         ],
         "variable": [
             {
-                "accountId": "6057864509",
-                "containerId": "108137841",
-                "variableId": "5",
-                "name": "Regex - Tel",
+                "accountId": "6057864501",
+                "containerId": "108261141",
+                "variableId": "7",
+                "name": "JavaScript tùy chỉnh - sdt",
+                "type": "jsm",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "javascript",
+                        "value": "function(){\nreturn document.querySelector('.form_here [type=\"tel\"]').value;\n}"
+                    }
+                ],
+                "fingerprint": "1680852469822",
+                "formatValue": {}
+            },
+            {
+                "accountId": "6057864501",
+                "containerId": "108261141",
+                "variableId": "8",
+                "name": "Bảng RegEx - Tel",
                 "type": "remm",
                 "parameter": [
                     {
@@ -216,7 +268,7 @@
                     {
                         "type": "TEMPLATE",
                         "key": "input",
-                        "value": "{{attributes.formDataInput.form-tel}}"
+                        "value": "{{JavaScript tùy chỉnh - sdt}}"
                     },
                     {
                         "type": "BOOLEAN",
@@ -345,14 +397,14 @@
                         ]
                     }
                 ],
-                "fingerprint": "1680761913756",
+                "fingerprint": "1680852482589",
                 "formatValue": {}
             },
             {
-                "accountId": "6057864509",
-                "containerId": "108137841",
-                "variableId": "6",
-                "name": "Dữ liệu do người dùng cung cấp - Phone",
+                "accountId": "6057864501",
+                "containerId": "108261141",
+                "variableId": "9",
+                "name": "User - Tel",
                 "type": "awec",
                 "parameter": [
                     {
@@ -363,72 +415,52 @@
                     {
                         "type": "TEMPLATE",
                         "key": "phone_number",
-                        "value": "{{Regex - Tel}}"
+                        "value": "{{Bảng RegEx - Tel}}"
                     }
                 ],
-                "fingerprint": "1680761704488",
-                "formatValue": {}
-            },
-            {
-                "accountId": "6057864509",
-                "containerId": "108137841",
-                "variableId": "9",
-                "name": "attributes.formDataInput.form-tel",
-                "type": "v",
-                "parameter": [
-                    {
-                        "type": "INTEGER",
-                        "key": "dataLayerVersion",
-                        "value": "2"
-                    },
-                    {
-                        "type": "BOOLEAN",
-                        "key": "setDefaultValue",
-                        "value": "false"
-                    },
-                    {
-                        "type": "TEMPLATE",
-                        "key": "name",
-                        "value": "attributes.formDataInput.form-tel"
-                    }
-                ],
-                "fingerprint": "1680761911060",
+                "fingerprint": "1680852494306",
                 "formatValue": {}
             }
         ],
         "builtInVariable": [
             {
-                "accountId": "6057864509",
-                "containerId": "108137841",
+                "accountId": "6057864501",
+                "containerId": "108261141",
                 "type": "PAGE_URL",
                 "name": "Page URL"
             },
             {
-                "accountId": "6057864509",
-                "containerId": "108137841",
+                "accountId": "6057864501",
+                "containerId": "108261141",
                 "type": "PAGE_HOSTNAME",
                 "name": "Page Hostname"
             },
             {
-                "accountId": "6057864509",
-                "containerId": "108137841",
+                "accountId": "6057864501",
+                "containerId": "108261141",
                 "type": "PAGE_PATH",
                 "name": "Page Path"
             },
             {
-                "accountId": "6057864509",
-                "containerId": "108137841",
+                "accountId": "6057864501",
+                "containerId": "108261141",
                 "type": "REFERRER",
                 "name": "Referrer"
             },
             {
-                "accountId": "6057864509",
-                "containerId": "108137841",
+                "accountId": "6057864501",
+                "containerId": "108261141",
                 "type": "EVENT",
                 "name": "Event"
+            },
+            {
+                "accountId": "6057864501",
+                "containerId": "108261141",
+                "type": "FORM_CLASSES",
+                "name": "Form Classes"
             }
         ],
-        "fingerprint": "1680769083336",
-        "tagManagerUrl": "https://tagmanager.google.com/#/versions/accounts/6057864509/containers/108137841/versions/0?apiLink=version"
+        "fingerprint": "1680854036932",
+        "tagManagerUrl": "https://tagmanager.google.com/#/versions/accounts/6057864501/containers/108261141/versions/0?apiLink=version"
     }
 }
