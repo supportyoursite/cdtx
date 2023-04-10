@@ -1,22 +1,22 @@
 {
     "exportFormatVersion": 2,
-    "exportTime": "2023-04-07 07:53:56",
+    "exportTime": "2023-04-10 04:20:54",
     "containerVersion": {
-        "path": "accounts/6057864501/containers/108261141/versions/0",
-        "accountId": "6057864501",
-        "containerId": "108261141",
+        "path": "accounts/6073037741/containers/108434651/versions/0",
+        "accountId": "6073037741",
+        "containerId": "108434651",
         "containerVersionId": "0",
         "container": {
-            "path": "accounts/6057864501/containers/108261141",
-            "accountId": "6057864501",
-            "containerId": "108261141",
-            "name": "xxxxxxxxxxxxxx",
-            "publicId": "GTM-NLG2S8D",
+            "path": "accounts/6073037741/containers/108434651",
+            "accountId": "6073037741",
+            "containerId": "108434651",
+            "name": "basic",
+            "publicId": "GTM-5WWPCJ1",
             "usageContext": [
                 "WEB"
             ],
-            "fingerprint": "1680852173074",
-            "tagManagerUrl": "https://tagmanager.google.com/#/container/accounts/6057864501/containers/108261141/workspaces?apiLink=container",
+            "fingerprint": "1681099115732",
+            "tagManagerUrl": "https://tagmanager.google.com/#/container/accounts/6073037741/containers/108434651/workspaces?apiLink=container",
             "features": {
                 "supportUserPermissions": true,
                 "supportEnvironments": true,
@@ -33,15 +33,15 @@
                 "supportZones": true
             },
             "tagIds": [
-                "GTM-NLG2S8C"
+                "GTM-5WWPCJ1"
             ]
         },
         "tag": [
             {
-                "accountId": "6057864501",
-                "containerId": "108261141",
+                "accountId": "6073037741",
+                "containerId": "108434651",
                 "tagId": "4",
-                "name": "Ads Form ladi EC Phone",
+                "name": "Ads Hotline",
                 "type": "awct",
                 "parameter": [
                     {
@@ -62,12 +62,7 @@
                     {
                         "type": "BOOLEAN",
                         "key": "enableEnhancedConversion",
-                        "value": "true"
-                    },
-                    {
-                        "type": "TEMPLATE",
-                        "key": "cssProvidedEnhancedConversionValue",
-                        "value": "{{User - Tel}}"
+                        "value": "false"
                     },
                     {
                         "type": "TEMPLATE",
@@ -82,12 +77,12 @@
                     {
                         "type": "TEMPLATE",
                         "key": "conversionId",
-                        "value": "1111"
+                        "value": "111"
                     },
                     {
                         "type": "TEMPLATE",
                         "key": "conversionLabel",
-                        "value": "1111"
+                        "value": "111"
                     },
                     {
                         "type": "BOOLEAN",
@@ -95,7 +90,7 @@
                         "value": "false"
                     }
                 ],
-                "fingerprint": "1680854017839",
+                "fingerprint": "1681099308900",
                 "firingTriggerId": [
                     "3"
                 ],
@@ -108,39 +103,9 @@
                 }
             },
             {
-                "accountId": "6057864501",
-                "containerId": "108261141",
-                "tagId": "6",
-                "name": "HTML custom",
-                "type": "html",
-                "parameter": [
-                    {
-                        "type": "TEMPLATE",
-                        "key": "html",
-                        "value": "<script>\n  document.querySelectorAll('form').forEach(function(elm){\n    elm.addEventListener('click', function(e){\n        document.querySelectorAll('form').forEach(function(elm2){\n            elm2.classList.remove(\"form_here\");    \n        })\n        \n        elm.classList.add(\"form_here\");\n    })\n});\n</script>"
-                    },
-                    {
-                        "type": "BOOLEAN",
-                        "key": "supportDocumentWrite",
-                        "value": "false"
-                    }
-                ],
-                "fingerprint": "1680853861928",
-                "firingTriggerId": [
-                    "5"
-                ],
-                "tagFiringOption": "ONCE_PER_EVENT",
-                "monitoringMetadata": {
-                    "type": "MAP"
-                },
-                "consentSettings": {
-                    "consentStatus": "NOT_SET"
-                }
-            },
-            {
-                "accountId": "6057864501",
-                "containerId": "108261141",
-                "tagId": "10",
+                "accountId": "6073037741",
+                "containerId": "108434651",
+                "tagId": "5",
                 "name": "Trình liên kết chuyển đổi",
                 "type": "gclidw",
                 "parameter": [
@@ -160,9 +125,74 @@
                         "value": "false"
                     }
                 ],
-                "fingerprint": "1680852510360",
+                "fingerprint": "1681099320071",
                 "firingTriggerId": [
                     "2147479553"
+                ],
+                "tagFiringOption": "ONCE_PER_EVENT",
+                "monitoringMetadata": {
+                    "type": "MAP"
+                },
+                "consentSettings": {
+                    "consentStatus": "NOT_SET"
+                }
+            },
+            {
+                "accountId": "6073037741",
+                "containerId": "108434651",
+                "tagId": "7",
+                "name": "Ads Zalo",
+                "type": "awct",
+                "parameter": [
+                    {
+                        "type": "BOOLEAN",
+                        "key": "enableNewCustomerReporting",
+                        "value": "false"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "enableConversionLinker",
+                        "value": "true"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "enableProductReporting",
+                        "value": "false"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "enableEnhancedConversion",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "conversionCookiePrefix",
+                        "value": "_gcl"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "enableShippingData",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "conversionId",
+                        "value": "111"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "conversionLabel",
+                        "value": "111"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "rdp",
+                        "value": "false"
+                    }
+                ],
+                "fingerprint": "1681099405191",
+                "firingTriggerId": [
+                    "6"
                 ],
                 "tagFiringOption": "ONCE_PER_EVENT",
                 "monitoringMetadata": {
@@ -175,292 +205,95 @@
         ],
         "trigger": [
             {
-                "accountId": "6057864501",
-                "containerId": "108261141",
+                "accountId": "6073037741",
+                "containerId": "108434651",
                 "triggerId": "3",
-                "name": "Ladi - form",
-                "type": "FORM_SUBMISSION",
+                "name": "Click Hotline",
+                "type": "CLICK",
                 "filter": [
                     {
-                        "type": "CONTAINS",
+                        "type": "CSS_SELECTOR",
                         "parameter": [
                             {
                                 "type": "TEMPLATE",
                                 "key": "arg0",
-                                "value": "{{Form Classes}}"
+                                "value": "{{Click Element}}"
                             },
                             {
                                 "type": "TEMPLATE",
                                 "key": "arg1",
-                                "value": "ladi-form"
+                                "value": ".aml_dk-channel-click_to_call, .aml_dk-channel-click_to_call *"
                             }
                         ]
-                    },
+                    }
+                ],
+                "fingerprint": "1681100440531"
+            },
+            {
+                "accountId": "6073037741",
+                "containerId": "108434651",
+                "triggerId": "6",
+                "name": "Click Zalo",
+                "type": "CLICK",
+                "filter": [
                     {
-                        "type": "CONTAINS",
+                        "type": "CSS_SELECTOR",
                         "parameter": [
                             {
                                 "type": "TEMPLATE",
                                 "key": "arg0",
-                                "value": "{{User - Tel}}"
+                                "value": "{{Click Element}}"
                             },
                             {
                                 "type": "TEMPLATE",
                                 "key": "arg1",
-                                "value": "84"
+                                "value": "[onclick*=\"zalo.me\"], [onclick*=\"zalo.me\"] *"
                             }
                         ]
                     }
                 ],
-                "waitForTags": {
-                    "type": "TEMPLATE"
-                },
-                "checkValidation": {
-                    "type": "TEMPLATE"
-                },
-                "waitForTagsTimeout": {
-                    "type": "TEMPLATE",
-                    "value": "2000"
-                },
-                "uniqueTriggerId": {
-                    "type": "TEMPLATE"
-                },
-                "fingerprint": "1680852917885"
-            },
-            {
-                "accountId": "6057864501",
-                "containerId": "108261141",
-                "triggerId": "5",
-                "name": "DOM sẵn sàng",
-                "type": "DOM_READY",
-                "fingerprint": "1680852280590"
-            }
-        ],
-        "variable": [
-            {
-                "accountId": "6057864501",
-                "containerId": "108261141",
-                "variableId": "7",
-                "name": "JavaScript tùy chỉnh - sdt",
-                "type": "jsm",
-                "parameter": [
-                    {
-                        "type": "TEMPLATE",
-                        "key": "javascript",
-                        "value": "function(){\nreturn document.querySelector('.form_here [type=\"tel\"]').value;\n}"
-                    }
-                ],
-                "fingerprint": "1680852469822",
-                "formatValue": {}
-            },
-            {
-                "accountId": "6057864501",
-                "containerId": "108261141",
-                "variableId": "8",
-                "name": "Bảng RegEx - Tel",
-                "type": "remm",
-                "parameter": [
-                    {
-                        "type": "BOOLEAN",
-                        "key": "setDefaultValue",
-                        "value": "false"
-                    },
-                    {
-                        "type": "TEMPLATE",
-                        "key": "input",
-                        "value": "{{JavaScript tùy chỉnh - sdt}}"
-                    },
-                    {
-                        "type": "BOOLEAN",
-                        "key": "fullMatch",
-                        "value": "true"
-                    },
-                    {
-                        "type": "BOOLEAN",
-                        "key": "replaceAfterMatch",
-                        "value": "true"
-                    },
-                    {
-                        "type": "BOOLEAN",
-                        "key": "ignoreCase",
-                        "value": "true"
-                    },
-                    {
-                        "type": "LIST",
-                        "key": "map",
-                        "list": [
-                            {
-                                "type": "MAP",
-                                "map": [
-                                    {
-                                        "type": "TEMPLATE",
-                                        "key": "key",
-                                        "value": "0(\\d+)"
-                                    },
-                                    {
-                                        "type": "TEMPLATE",
-                                        "key": "value",
-                                        "value": "84$1"
-                                    }
-                                ]
-                            },
-                            {
-                                "type": "MAP",
-                                "map": [
-                                    {
-                                        "type": "TEMPLATE",
-                                        "key": "key",
-                                        "value": "\\840(\\d+)"
-                                    },
-                                    {
-                                        "type": "TEMPLATE",
-                                        "key": "value",
-                                        "value": "84$1"
-                                    }
-                                ]
-                            },
-                            {
-                                "type": "MAP",
-                                "map": [
-                                    {
-                                        "type": "TEMPLATE",
-                                        "key": "key",
-                                        "value": "\\(\\+84\\)0(\\d+)\\s(\\d+)\\s(\\d+)"
-                                    },
-                                    {
-                                        "type": "TEMPLATE",
-                                        "key": "value",
-                                        "value": "84$1$2$3"
-                                    }
-                                ]
-                            },
-                            {
-                                "type": "MAP",
-                                "map": [
-                                    {
-                                        "type": "TEMPLATE",
-                                        "key": "key",
-                                        "value": "\\(\\+84\\)(\\d+)"
-                                    },
-                                    {
-                                        "type": "TEMPLATE",
-                                        "key": "value",
-                                        "value": "84$1"
-                                    }
-                                ]
-                            },
-                            {
-                                "type": "MAP",
-                                "map": [
-                                    {
-                                        "type": "TEMPLATE",
-                                        "key": "key",
-                                        "value": "\\+840(\\d+)"
-                                    },
-                                    {
-                                        "type": "TEMPLATE",
-                                        "key": "value",
-                                        "value": "84$1"
-                                    }
-                                ]
-                            },
-                            {
-                                "type": "MAP",
-                                "map": [
-                                    {
-                                        "type": "TEMPLATE",
-                                        "key": "key",
-                                        "value": "\\+84(\\d+)"
-                                    },
-                                    {
-                                        "type": "TEMPLATE",
-                                        "key": "value",
-                                        "value": "84$1"
-                                    }
-                                ]
-                            },
-                            {
-                                "type": "MAP",
-                                "map": [
-                                    {
-                                        "type": "TEMPLATE",
-                                        "key": "key",
-                                        "value": "(\\+0)\\s([()])\\d+([()])\\s\\d+-\\d+"
-                                    },
-                                    {
-                                        "type": "TEMPLATE",
-                                        "key": "value",
-                                        "value": "84$1"
-                                    }
-                                ]
-                            }
-                        ]
-                    }
-                ],
-                "fingerprint": "1680852482589",
-                "formatValue": {}
-            },
-            {
-                "accountId": "6057864501",
-                "containerId": "108261141",
-                "variableId": "9",
-                "name": "User - Tel",
-                "type": "awec",
-                "parameter": [
-                    {
-                        "type": "TEMPLATE",
-                        "key": "mode",
-                        "value": "MANUAL"
-                    },
-                    {
-                        "type": "TEMPLATE",
-                        "key": "phone_number",
-                        "value": "{{Bảng RegEx - Tel}}"
-                    }
-                ],
-                "fingerprint": "1680852494306",
-                "formatValue": {}
+                "fingerprint": "1681099848945"
             }
         ],
         "builtInVariable": [
             {
-                "accountId": "6057864501",
-                "containerId": "108261141",
+                "accountId": "6073037741",
+                "containerId": "108434651",
                 "type": "PAGE_URL",
                 "name": "Page URL"
             },
             {
-                "accountId": "6057864501",
-                "containerId": "108261141",
+                "accountId": "6073037741",
+                "containerId": "108434651",
                 "type": "PAGE_HOSTNAME",
                 "name": "Page Hostname"
             },
             {
-                "accountId": "6057864501",
-                "containerId": "108261141",
+                "accountId": "6073037741",
+                "containerId": "108434651",
                 "type": "PAGE_PATH",
                 "name": "Page Path"
             },
             {
-                "accountId": "6057864501",
-                "containerId": "108261141",
+                "accountId": "6073037741",
+                "containerId": "108434651",
                 "type": "REFERRER",
                 "name": "Referrer"
             },
             {
-                "accountId": "6057864501",
-                "containerId": "108261141",
+                "accountId": "6073037741",
+                "containerId": "108434651",
                 "type": "EVENT",
                 "name": "Event"
             },
             {
-                "accountId": "6057864501",
-                "containerId": "108261141",
-                "type": "FORM_CLASSES",
-                "name": "Form Classes"
+                "accountId": "6073037741",
+                "containerId": "108434651",
+                "type": "CLICK_ELEMENT",
+                "name": "Click Element"
             }
         ],
-        "fingerprint": "1680854036932",
-        "tagManagerUrl": "https://tagmanager.google.com/#/versions/accounts/6057864501/containers/108261141/versions/0?apiLink=version"
+        "fingerprint": "1681100453953",
+        "tagManagerUrl": "https://tagmanager.google.com/#/versions/accounts/6073037741/containers/108434651/versions/0?apiLink=version"
     }
 }
