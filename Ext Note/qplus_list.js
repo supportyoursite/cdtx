@@ -1,47 +1,95 @@
-//
-// url demo: https://gauge.corp.google.com/reports/afffa910-23c5-440e-8896-7e794cc3b450/989136c7-87f6-46f6-b8bc-448940f7c5ec/6d45b3c6-c6b1-41f1-b9be-e83579353634?id=0&dateRangeField=1&timeRangeType=Last+7+days&startTime=Mar+16%2C++2023&endTime=Mar+22%2C++2023
-
-function _convertDateCustom(_str_input, style=1) {
-    // Mar 6, 2023, 3:14 PM GMT+8
-
-    _str_input = _str_input.trim();
-    _str_input = _str_input.replace("  ", " ");
-    var _str_input_arr = _str_input.split(" ");
-    var _listshortmonth = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
-    var _m = _listshortmonth.findIndex((_month) => {
-        return _month === _str_input_arr[0];
-    });
-
-    var _d = parseInt(_str_input_arr[1]);
-
-    var _y = parseInt(_str_input_arr[2]);
-
-    var _time = _str_input_arr[3];
-
-    var _sangorchieu = _str_input_arr[4];
-
-    var _format =
-        ("0" + _d).slice(-2) + "/" +
-        ("0" + (_m + 1)).slice(-2) + "/" +
-        _y + " " +
-        _time + " " +
-        _sangorchieu + " " +
-        _str_input_arr[5];
-
-    if(style === 2) {
-        _format =
-        _y +
-        ("0" + (_m + 1)).slice(-2) +
-        ("0" + _d).slice(-2) + 
-        _time
-    }
-
-    return _format;
+// _TrustScript
+function _TrustScript(_string) {
+    const staticHtmlPolicyv2 = trustedTypes.createPolicy('foo-static', { createHTML: () => _string });
+    return staticHtmlPolicyv2.createHTML('');
 }
 
 
-var _listcase = [];
+// Libs
+var _loadurlqplus = function (url_file, frameID, elm_query, _callback) {
+    var _str_iframe = '<iframe src="' + url_file + '" id="' + frameID + '" style="width: 1600px; height: 768px; transform: scale(.3); position: absolute; left: 0; top: 0; opacity: 1; pointer-events: none;"></iframe>';
+    _str_iframe = _TrustScript(_str_iframe);
+    document.body.insertAdjacentHTML("beforeEnd", _str_iframe);
+
+
+    var _temp_memory = sessionStorage || localStorage;
+    var _number = 0;
+    var _date_key = [
+        new Date().getFullYear(),
+        ("0" + new Date().getMonth()).slice(-2),
+        ("0" + new Date().getDate()).slice(-2),
+        ("0" + new Date().getHours()).slice(-2),
+        ("0" + new Date().getMinutes()).slice(-2),
+    ];
+
+    // Frame
+    const iframe = document.getElementById(frameID);
+    const handleLoad = () => {
+        var nTime = 0;
+        var myTime = setInterval(function () {
+            // console.log("ID: "+ frameID);
+            var frameObj = document.getElementById(frameID);
+            if (frameObj) {
+                var frameContent = frameObj.contentWindow.document.documentElement.outerHTML || frameObj.contentWindow.document.body.innerHTML;
+                var frameContentObj = frameObj.contentWindow.document.documentElement || frameObj.contentWindow.document.body;
+
+                var _elms_id_sumary = frameContentObj.querySelectorAll(elm_query);
+
+                var _isfinish = false;
+                if (_elms_id_sumary.length) {
+                    _isfinish = true;
+                }
+
+
+                if (_isfinish) {
+                    console.log("finish frame id: " + frameID)
+
+                    _number = _elms_id_sumary.length;
+
+                    if (parseInt(_number) > 0) {
+                        // LOAD UI
+                        console.log("callback")
+
+                        _callback(frameContentObj)
+                    }
+
+                    // Stop
+                    clearInterval(myTime);
+                    frameObj.remove();
+                }
+                // } else {
+                //     console.log("tao lai frame ID: " + frameID)
+
+                //     var _str_iframe = '<iframe src="' + url_file + '" id="' + frameID + '" style="width: 1600px; height: 768px; transform: scale(.3); position: absolute; left: 0; top: 0; opacity: 0; pointer-events: none;"></iframe>';
+                //     _str_iframe = _TrustScript(_str_iframe);
+                //     document.body.insertAdjacentHTML("beforeEnd",_str_iframe);
+            }
+
+
+            // 10s
+            if (nTime > 20) {
+                console.log("stop 10s");
+                frameObj.remove();
+                clearInterval(myTime);
+            }
+            nTime++;
+        }, 2000);
+
+
+    };
+
+    iframe.addEventListener('load', handleLoad, true);
+
+}
+
+
+// Step 2: 
+var _list_case = [];
+
+
+
 document.querySelectorAll(`[jsaction="click: qOOoce"]`).forEach((elm3) => {
+// frameContentObj.querySelectorAll(`[jsaction="click: qOOoce"]`).forEach((elm3) => {
     if (elm3.innerText.includes('View Evaluation Details')) {
 
 
@@ -52,7 +100,6 @@ document.querySelectorAll(`[jsaction="click: qOOoce"]`).forEach((elm3) => {
                 caseID: '',
                 caseIDInner: '',
                 dateReview: '',
-                dateReviewCompare: '',
                 linkEvaluationDetails: '',
                 statusCase: '',
                 followUpCase: '',
@@ -69,16 +116,71 @@ document.querySelectorAll(`[jsaction="click: qOOoce"]`).forEach((elm3) => {
         _string = _regex.exec(_elmTask.caseID);
         if (_string[0]) {
             _elmTask.caseID = _string[0];
-        }
 
-        // Review case Time
-        if (_dateReviewElm) {
-            _dateReview_string = _dateReviewElm.innerText.replace("Reviewed at", "");
-            _elmTask.dateReview = _convertDateCustom(_dateReview_string);
-            _elmTask.dateReviewCompare = _convertDateCustom(_dateReview_string, 2);
+            // Review case Time
+            if (_dateReviewElm) {
+                _dateReview_string = _dateReviewElm.innerText.replace("Reviewed at", "");
+                _elmTask.dateReview = _dateReview_string;
+            } 
+
+            
+            // Push
+            _list_case.push(_elmTask);
         }
-        _listcase.push(_elmTask);
     }
 });
 
-console.log(_listcase)
+
+// Loop get detail
+var _ncout = 0;
+var _n_step_done = 1;
+// _list_case.forEach((item, index) => {
+
+var dquiLoadCase = (index) => {
+    item = _list_case[index];
+    _loadurlqplus(item.linkEvaluationDetails, '_detail_' + index, '.uzMjAe', (frameContentObj) => {
+        console.log("CDTX", _n_step_done + "/" + _list_case.length, _list_case[index]); 
+        _n_step_done++;
+
+        // Case ID
+        if(frameContentObj.querySelector('[href*="/#/case/"]')) {
+            _list_case[index].caseIDInner = frameContentObj.querySelector('[href*="/#/case/"]').innerText;
+        }
+
+        frameContentObj.querySelectorAll('.uzMjAe').forEach((_elminframe) => {
+            
+            // // Sub-Status
+            if (_elminframe.innerText.includes('Sub-Status')) {
+                console.log("Sub-Status", _elminframe.querySelector('.FEZIwd').innerText);
+                _list_case[index].statusCase = _elminframe.querySelector('.FEZIwd').innerText;
+            }
+
+            // // Follow up date
+            if (_elminframe.innerText.includes('Follow up date')) {
+                var _dateformat = _elminframe.querySelector('.FEZIwd').innerText;
+
+                if (/^\d\d\/\d\d\/\d\d\d\d$/.test(_dateformat)) {
+
+                    _list_case[index].followUpCase = _dateformat;
+
+                }
+            }
+
+        });
+
+        index++; 
+        if(index < _list_case.length) {
+            dquiLoadCase(index);
+        }
+    });
+}
+dquiLoadCase(0);
+
+
+
+    // if(_ncout > 0) return; _ncout++;
+    
+     // console.log("123123", item, item.linkEvaluationDetails);
+    
+    
+// })

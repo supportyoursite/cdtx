@@ -1,22 +1,22 @@
 {
     "exportFormatVersion": 2,
-    "exportTime": "2023-04-10 04:20:54",
+    "exportTime": "2023-04-13 06:16:49",
     "containerVersion": {
-        "path": "accounts/6073037741/containers/108434651/versions/0",
-        "accountId": "6073037741",
-        "containerId": "108434651",
+        "path": "accounts/6057864501/containers/111098221/versions/0",
+        "accountId": "6057864501",
+        "containerId": "111098221",
         "containerVersionId": "0",
         "container": {
-            "path": "accounts/6073037741/containers/108434651",
-            "accountId": "6073037741",
-            "containerId": "108434651",
-            "name": "basic",
-            "publicId": "GTM-5WWPCJ1",
+            "path": "accounts/6057864501/containers/111098221",
+            "accountId": "6057864501",
+            "containerId": "111098221",
+            "name": "mayphiendich.net",
+            "publicId": "GTM-5NFQZ91",
             "usageContext": [
                 "WEB"
             ],
-            "fingerprint": "1681099115732",
-            "tagManagerUrl": "https://tagmanager.google.com/#/container/accounts/6073037741/containers/108434651/workspaces?apiLink=container",
+            "fingerprint": "1681300285632",
+            "tagManagerUrl": "https://tagmanager.google.com/#/container/accounts/6057864501/containers/111098221/workspaces?apiLink=container",
             "features": {
                 "supportUserPermissions": true,
                 "supportEnvironments": true,
@@ -33,15 +33,50 @@
                 "supportZones": true
             },
             "tagIds": [
-                "GTM-5WWPCJ1"
+                "GTM-5NFQZ91"
             ]
         },
         "tag": [
             {
-                "accountId": "6073037741",
-                "containerId": "108434651",
-                "tagId": "4",
-                "name": "Ads Hotline",
+                "accountId": "6057864501",
+                "containerId": "111098221",
+                "tagId": "3",
+                "name": "Trình liên kết chuyển đổi",
+                "type": "gclidw",
+                "parameter": [
+                    {
+                        "type": "BOOLEAN",
+                        "key": "enableCrossDomain",
+                        "value": "false"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "enableUrlPassthrough",
+                        "value": "false"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "enableCookieOverrides",
+                        "value": "false"
+                    }
+                ],
+                "fingerprint": "1681300836273",
+                "firingTriggerId": [
+                    "2147479553"
+                ],
+                "tagFiringOption": "ONCE_PER_EVENT",
+                "monitoringMetadata": {
+                    "type": "MAP"
+                },
+                "consentSettings": {
+                    "consentStatus": "NOT_SET"
+                }
+            },
+            {
+                "accountId": "6057864501",
+                "containerId": "111098221",
+                "tagId": "7",
+                "name": "Ads Mua Hang",
                 "type": "awct",
                 "parameter": [
                     {
@@ -55,9 +90,19 @@
                         "value": "true"
                     },
                     {
+                        "type": "TEMPLATE",
+                        "key": "orderId",
+                        "value": "{{transaction_id}}"
+                    },
+                    {
                         "type": "BOOLEAN",
                         "key": "enableProductReporting",
                         "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "conversionValue",
+                        "value": "{{JavaScript tùy chỉnh - Price}}"
                     },
                     {
                         "type": "BOOLEAN",
@@ -81,6 +126,11 @@
                     },
                     {
                         "type": "TEMPLATE",
+                        "key": "currencyCode",
+                        "value": "VND"
+                    },
+                    {
+                        "type": "TEMPLATE",
                         "key": "conversionLabel",
                         "value": "111"
                     },
@@ -90,9 +140,9 @@
                         "value": "false"
                     }
                 ],
-                "fingerprint": "1681099308900",
+                "fingerprint": "1681301029828",
                 "firingTriggerId": [
-                    "3"
+                    "4"
                 ],
                 "tagFiringOption": "ONCE_PER_EVENT",
                 "monitoringMetadata": {
@@ -103,44 +153,9 @@
                 }
             },
             {
-                "accountId": "6073037741",
-                "containerId": "108434651",
-                "tagId": "5",
-                "name": "Trình liên kết chuyển đổi",
-                "type": "gclidw",
-                "parameter": [
-                    {
-                        "type": "BOOLEAN",
-                        "key": "enableCrossDomain",
-                        "value": "false"
-                    },
-                    {
-                        "type": "BOOLEAN",
-                        "key": "enableUrlPassthrough",
-                        "value": "false"
-                    },
-                    {
-                        "type": "BOOLEAN",
-                        "key": "enableCookieOverrides",
-                        "value": "false"
-                    }
-                ],
-                "fingerprint": "1681099320071",
-                "firingTriggerId": [
-                    "2147479553"
-                ],
-                "tagFiringOption": "ONCE_PER_EVENT",
-                "monitoringMetadata": {
-                    "type": "MAP"
-                },
-                "consentSettings": {
-                    "consentStatus": "NOT_SET"
-                }
-            },
-            {
-                "accountId": "6073037741",
-                "containerId": "108434651",
-                "tagId": "7",
+                "accountId": "6057864501",
+                "containerId": "111098221",
+                "tagId": "9",
                 "name": "Ads Zalo",
                 "type": "awct",
                 "parameter": [
@@ -190,9 +205,109 @@
                         "value": "false"
                     }
                 ],
-                "fingerprint": "1681099405191",
+                "fingerprint": "1681301112835",
                 "firingTriggerId": [
-                    "6"
+                    "8"
+                ],
+                "tagFiringOption": "ONCE_PER_EVENT",
+                "monitoringMetadata": {
+                    "type": "MAP"
+                },
+                "consentSettings": {
+                    "consentStatus": "NOT_SET"
+                }
+            },
+            {
+                "accountId": "6057864501",
+                "containerId": "111098221",
+                "tagId": "11",
+                "name": "Ads Hotline",
+                "type": "awct",
+                "parameter": [
+                    {
+                        "type": "BOOLEAN",
+                        "key": "enableNewCustomerReporting",
+                        "value": "false"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "enableConversionLinker",
+                        "value": "true"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "enableProductReporting",
+                        "value": "false"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "enableEnhancedConversion",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "conversionCookiePrefix",
+                        "value": "_gcl"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "enableShippingData",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "conversionId",
+                        "value": "111"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "conversionLabel",
+                        "value": "111"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "rdp",
+                        "value": "false"
+                    }
+                ],
+                "fingerprint": "1681301153442",
+                "firingTriggerId": [
+                    "10"
+                ],
+                "tagFiringOption": "ONCE_PER_EVENT",
+                "monitoringMetadata": {
+                    "type": "MAP"
+                },
+                "consentSettings": {
+                    "consentStatus": "NOT_SET"
+                }
+            },
+            {
+                "accountId": "6057864501",
+                "containerId": "111098221",
+                "tagId": "12",
+                "name": "G-1111",
+                "type": "gaawc",
+                "parameter": [
+                    {
+                        "type": "BOOLEAN",
+                        "key": "sendPageView",
+                        "value": "true"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "enableSendToServerContainer",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "measurementId",
+                        "value": "G-111"
+                    }
+                ],
+                "fingerprint": "1681301208470",
+                "firingTriggerId": [
+                    "2147479553"
                 ],
                 "tagFiringOption": "ONCE_PER_EVENT",
                 "monitoringMetadata": {
@@ -205,34 +320,49 @@
         ],
         "trigger": [
             {
-                "accountId": "6073037741",
-                "containerId": "108434651",
-                "triggerId": "3",
-                "name": "Click Hotline",
-                "type": "CLICK",
+                "accountId": "6057864501",
+                "containerId": "111098221",
+                "triggerId": "4",
+                "name": "DOM sẵn sàng - checkout/order-received",
+                "type": "DOM_READY",
                 "filter": [
                     {
-                        "type": "CSS_SELECTOR",
+                        "type": "CONTAINS",
                         "parameter": [
                             {
                                 "type": "TEMPLATE",
                                 "key": "arg0",
-                                "value": "{{Click Element}}"
+                                "value": "{{Page Path}}"
                             },
                             {
                                 "type": "TEMPLATE",
                                 "key": "arg1",
-                                "value": ".aml_dk-channel-click_to_call, .aml_dk-channel-click_to_call *"
+                                "value": "/thanh-toan/"
+                            }
+                        ]
+                    },
+                    {
+                        "type": "CONTAINS",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{Page Path}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": "/order-received/"
                             }
                         ]
                     }
                 ],
-                "fingerprint": "1681100440531"
+                "fingerprint": "1681300878786"
             },
             {
-                "accountId": "6073037741",
-                "containerId": "108434651",
-                "triggerId": "6",
+                "accountId": "6057864501",
+                "containerId": "111098221",
+                "triggerId": "8",
                 "name": "Click Zalo",
                 "type": "CLICK",
                 "filter": [
@@ -247,53 +377,112 @@
                             {
                                 "type": "TEMPLATE",
                                 "key": "arg1",
-                                "value": "[onclick*=\"zalo.me\"], [onclick*=\"zalo.me\"] *"
+                                "value": "[href*=\"zalo.me\"], [href*=\"zalo.me\"] *"
                             }
                         ]
                     }
                 ],
-                "fingerprint": "1681099848945"
+                "fingerprint": "1681301105635"
+            },
+            {
+                "accountId": "6057864501",
+                "containerId": "111098221",
+                "triggerId": "10",
+                "name": "Click Hotline",
+                "type": "CLICK",
+                "filter": [
+                    {
+                        "type": "CSS_SELECTOR",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{Click Element}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": "[href*=\"tel:\"], [href*=\"tel:\"] *"
+                            }
+                        ]
+                    }
+                ],
+                "fingerprint": "1681301146788"
+            }
+        ],
+        "variable": [
+            {
+                "accountId": "6057864501",
+                "containerId": "111098221",
+                "variableId": "5",
+                "name": "JavaScript tùy chỉnh - Price",
+                "type": "jsm",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "javascript",
+                        "value": "function() {\n  return +document.querySelector('.woocommerce-order-  overview__total.total').innerText.replace(/[^\\d-]+/g, \"\");\n\n}"
+                    }
+                ],
+                "fingerprint": "1681300938091",
+                "formatValue": {}
+            },
+            {
+                "accountId": "6057864501",
+                "containerId": "111098221",
+                "variableId": "6",
+                "name": "transaction_id",
+                "type": "jsm",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "javascript",
+                        "value": "function() {\nreturn +document.querySelector('.woocommerce-order-overview__order.order').innerText.replace(/[^\\d-]+/g, \"\");\n}"
+                    }
+                ],
+                "fingerprint": "1681301013924",
+                "formatValue": {}
             }
         ],
         "builtInVariable": [
             {
-                "accountId": "6073037741",
-                "containerId": "108434651",
+                "accountId": "6057864501",
+                "containerId": "111098221",
                 "type": "PAGE_URL",
                 "name": "Page URL"
             },
             {
-                "accountId": "6073037741",
-                "containerId": "108434651",
+                "accountId": "6057864501",
+                "containerId": "111098221",
                 "type": "PAGE_HOSTNAME",
                 "name": "Page Hostname"
             },
             {
-                "accountId": "6073037741",
-                "containerId": "108434651",
+                "accountId": "6057864501",
+                "containerId": "111098221",
                 "type": "PAGE_PATH",
                 "name": "Page Path"
             },
             {
-                "accountId": "6073037741",
-                "containerId": "108434651",
+                "accountId": "6057864501",
+                "containerId": "111098221",
                 "type": "REFERRER",
                 "name": "Referrer"
             },
             {
-                "accountId": "6073037741",
-                "containerId": "108434651",
+                "accountId": "6057864501",
+                "containerId": "111098221",
                 "type": "EVENT",
                 "name": "Event"
             },
             {
-                "accountId": "6073037741",
-                "containerId": "108434651",
+                "accountId": "6057864501",
+                "containerId": "111098221",
                 "type": "CLICK_ELEMENT",
                 "name": "Click Element"
             }
         ],
-        "fingerprint": "1681100453953",
-        "tagManagerUrl": "https://tagmanager.google.com/#/versions/accounts/6073037741/containers/108434651/versions/0?apiLink=version"
+        "fingerprint": "1681366609922",
+        "tagManagerUrl": "https://tagmanager.google.com/#/versions/accounts/6057864501/containers/111098221/versions/0?apiLink=version"
     }
 }
