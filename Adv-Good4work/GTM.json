@@ -2,21 +2,21 @@
     "exportFormatVersion": 2,
     "exportTime": "2023-04-14 08:25:42",
     "containerVersion": {
-        "path": "accounts/6057864509/containers/112718184/versions/0",
-        "accountId": "6057864509",
-        "containerId": "112718184",
+        "path": "accounts/6057864501/containers/112718181/versions/0",
+        "accountId": "6057864501",
+        "containerId": "112718181",
         "containerVersionId": "0",
         "container": {
-            "path": "accounts/6057864509/containers/112718184",
-            "accountId": "6057864509",
-            "containerId": "112718184",
+            "path": "accounts/6057864501/containers/112718181",
+            "accountId": "6057864501",
+            "containerId": "112718181",
             "name": "dacsanbakien.com",
-            "publicId": "GTM-PL6QXSQ",
+            "publicId": "GTM-PL6QXS1",
             "usageContext": [
                 "WEB"
             ],
             "fingerprint": "1681457525493",
-            "tagManagerUrl": "https://tagmanager.google.com/#/container/accounts/6057864509/containers/112718184/workspaces?apiLink=container",
+            "tagManagerUrl": "https://tagmanager.google.com/#/container/accounts/6057864501/containers/112718181/workspaces?apiLink=container",
             "features": {
                 "supportUserPermissions": true,
                 "supportEnvironments": true,
@@ -34,13 +34,13 @@
                 "supportTransformations": false
             },
             "tagIds": [
-                "GTM-PL6QXSQ"
+                "GTM-PL6QXS1"
             ]
         },
         "tag": [
             {
-                "accountId": "6057864509",
-                "containerId": "112718184",
+                "accountId": "6057864501",
+                "containerId": "112718181",
                 "tagId": "4",
                 "name": "HTML tùy chỉnh - apiSend",
                 "type": "html",
@@ -69,8 +69,8 @@
                 }
             },
             {
-                "accountId": "6057864509",
-                "containerId": "112718184",
+                "accountId": "6057864501",
+                "containerId": "112718181",
                 "tagId": "12",
                 "name": "Ads Mua Hang Landing Page",
                 "type": "awct",
@@ -156,16 +156,16 @@
         ],
         "trigger": [
             {
-                "accountId": "6057864509",
-                "containerId": "112718184",
+                "accountId": "6057864501",
+                "containerId": "112718181",
                 "triggerId": "3",
                 "name": "DOM sẵn sàng",
                 "type": "DOM_READY",
                 "fingerprint": "1681457840548"
             },
             {
-                "accountId": "6057864509",
-                "containerId": "112718184",
+                "accountId": "6057864501",
+                "containerId": "112718181",
                 "triggerId": "9",
                 "name": "apiSend - phone",
                 "type": "CUSTOM_EVENT",
@@ -223,8 +223,8 @@
         ],
         "variable": [
             {
-                "accountId": "6057864509",
-                "containerId": "112718184",
+                "accountId": "6057864501",
+                "containerId": "112718181",
                 "variableId": "5",
                 "name": "dlv_phone",
                 "type": "v",
@@ -249,8 +249,8 @@
                 "formatValue": {}
             },
             {
-                "accountId": "6057864509",
-                "containerId": "112718184",
+                "accountId": "6057864501",
+                "containerId": "112718181",
                 "variableId": "6",
                 "name": "dlv_price",
                 "type": "v",
@@ -275,8 +275,8 @@
                 "formatValue": {}
             },
             {
-                "accountId": "6057864509",
-                "containerId": "112718184",
+                "accountId": "6057864501",
+                "containerId": "112718181",
                 "variableId": "7",
                 "name": "Bảng RegEx - phone",
                 "type": "remm",
@@ -422,8 +422,8 @@
                 "formatValue": {}
             },
             {
-                "accountId": "6057864509",
-                "containerId": "112718184",
+                "accountId": "6057864501",
+                "containerId": "112718181",
                 "variableId": "8",
                 "name": "attributes.urlrequest",
                 "type": "v",
@@ -448,8 +448,8 @@
                 "formatValue": {}
             },
             {
-                "accountId": "6057864509",
-                "containerId": "112718184",
+                "accountId": "6057864501",
+                "containerId": "112718181",
                 "variableId": "10",
                 "name": "dlv_idorder",
                 "type": "v",
@@ -474,8 +474,8 @@
                 "formatValue": {}
             },
             {
-                "accountId": "6057864509",
-                "containerId": "112718184",
+                "accountId": "6057864501",
+                "containerId": "112718181",
                 "variableId": "11",
                 "name": "Dữ liệu do người dùng cung cấp - Phone",
                 "type": "awec",
@@ -497,37 +497,37 @@
         ],
         "builtInVariable": [
             {
-                "accountId": "6057864509",
-                "containerId": "112718184",
+                "accountId": "6057864501",
+                "containerId": "112718181",
                 "type": "PAGE_URL",
                 "name": "Page URL"
             },
             {
-                "accountId": "6057864509",
-                "containerId": "112718184",
+                "accountId": "6057864501",
+                "containerId": "112718181",
                 "type": "PAGE_HOSTNAME",
                 "name": "Page Hostname"
             },
             {
-                "accountId": "6057864509",
-                "containerId": "112718184",
+                "accountId": "6057864501",
+                "containerId": "112718181",
                 "type": "PAGE_PATH",
                 "name": "Page Path"
             },
             {
-                "accountId": "6057864509",
-                "containerId": "112718184",
+                "accountId": "6057864501",
+                "containerId": "112718181",
                 "type": "REFERRER",
                 "name": "Referrer"
             },
             {
-                "accountId": "6057864509",
-                "containerId": "112718184",
+                "accountId": "6057864501",
+                "containerId": "112718181",
                 "type": "EVENT",
                 "name": "Event"
             }
         ],
         "fingerprint": "1681460742585",
-        "tagManagerUrl": "https://tagmanager.google.com/#/versions/accounts/6057864509/containers/112718184/versions/0?apiLink=version"
+        "tagManagerUrl": "https://tagmanager.google.com/#/versions/accounts/6057864501/containers/112718181/versions/0?apiLink=version"
     }
 }
