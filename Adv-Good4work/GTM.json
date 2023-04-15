@@ -1,1 +1,533 @@
-zxcaaw eqwe 
+{
+    "exportFormatVersion": 2,
+    "exportTime": "2023-04-14 08:25:42",
+    "containerVersion": {
+        "path": "accounts/6057864501/containers/112718181/versions/0",
+        "accountId": "6057864501",
+        "containerId": "112718181",
+        "containerVersionId": "010",
+        "container": {
+            "path": "accounts/6057864501/containers/112718181",
+            "accountId": "6057864501",
+            "containerId": "112718181",
+            "name": "dacsanbakien.com",
+            "publicId": "GTM-PL6QXS1",
+            "usageContext": [
+                "WEB"
+            ],
+            "fingerprint": "1681457525493",
+            "tagManagerUrl": "https://tagmanager.google.com/#/container/accounts/6057864501/containers/112718181/workspaces?apiLink=container",
+            "features": {
+                "supportUserPermissions": true,
+                "supportEnvironments": true,
+                "supportWorkspaces": true,
+                "supportGtagConfigs": false,
+                "supportBuiltInVariables": true,
+                "supportClients": false,
+                "supportFolders": true,
+                "supportTags": true,
+                "supportTemplates": true,
+                "supportTriggers": true,
+                "supportVariables": true,
+                "supportVersions": true,
+                "supportZones": true,
+                "supportTransformations": false
+            },
+            "tagIds": [
+                "GTM-PL6QXS1"
+            ]
+        },
+        "tag": [
+            {
+                "accountId": "6057864501",
+                "containerId": "112718181",
+                "tagId": "4",
+                "name": "HTML tùy chỉnh - apiSend",
+                "type": "html",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "html",
+                        "value": "<script>\n  function _xHrComplete(_callback) {\n    try {\n        var s_ajaxListener = new Object();\n        s_ajaxListener.tempOpen = XMLHttpRequest.prototype.open;\n        s_ajaxListener.tempSend = XMLHttpRequest.prototype.send;\n        s_ajaxListener.callback = function () {\n            var object = {};\n            if(typeof this.data == 'object') {\n                this.data.forEach(function (value, key) {\n                    object[key] = value;\n                });\n            } else {\n                object = this.data;\n            }\n\n\n            var fullUrl = location;\n            var _data_response = {\n                \"location\": window.location,\n                \"urlrequest\": this.url,\n                \"method\": this.method,\n                \"formDataInput\": object,\n            }\n\n            _callback(_data_response);\n        }\n\n\n\n\n        XMLHttpRequest.prototype.open = function (a, b) {\n            if (!a) var a = '';\n            if (!b) var b = '';\n            s_ajaxListener.tempOpen.apply(this, arguments);\n            s_ajaxListener.method = a;\n            s_ajaxListener.url = b;\n            if (a.toLowerCase() == 'get') {\n                s_ajaxListener.data = b.split('?');\n                s_ajaxListener.data = s_ajaxListener.data[1];\n            }\n\n        }\n\n\n\n        XMLHttpRequest.prototype.send = function (a, b) {\n            if (!a) var a='';\n            if (!b) var b='';\n            s_ajaxListener.tempSend.apply(this, arguments);\n            if(s_ajaxListener.method.toLowerCase() == 'post')s_ajaxListener.data = a;\n            s_ajaxListener.callback();\n        }\n\n        \n    } catch (error) {\n        console.log(\"ERROR xHR\", e);\n    }\n    \n      \n    \n\n    // ========\n    // FETCH\n    // ========\n    try {\n\n        (function (ns, fetch) {\n            var _key_start = 0;\n            if (typeof fetch !== 'function') return;\n            ns.fetch = function () {\n                _key_start++;\n                var _out = [];\n                _out[0] = fetch.apply(this, arguments);\n    \n                var _formData = [];\n    \n    \n                if (arguments[1]) {\n                    if (arguments[1].body) {\n                        _formData = arguments[1].body;\n                        _out[1] = _formData;\n                    }\n                }\n    \n    \n                // get response\n                // side-effect\n                _out[0].then(function (_ref) {\n                    var _responses_data = {\n                        \"ok\": _ref.ok,\n                        \"url\": _ref.url,\n                        \"status\": _ref.status,\n                        \"redirected\": _ref.redirected,\n                    };\n    \n                    // formData\n                    // _responses_data.formDataInput\n                    if (_out[1]) {\n                        var object = {};\n                        _out[1].forEach(function (value, key) {\n                            object[key] = value;\n                        });\n    \n                        _responses_data.formDataInput = object;\n                    }\n    \n                    return _callback(_responses_data);\n                });\n                return _out[0];\n    \n            };\n        })(window, window.fetch);\n    } catch (e) {\n        console.log(\"ERROR fetch\", e);\n    }\n}\n\n\n// GET EMAIL\nvar _email = '';\nvar _phone = '';\n\n_xHrComplete(function (_response) {\n    if (_response) {\n        var _object_dl = {\n            \"event\": \"apiSend\",\n            \"attributes\": _response \n        };\n\n        if(_email) {\n            _object_dl.email = _email;\n        }\n        \n        if(_phone) {\n            _object_dl.phone = _phone;\n        }\n\n        \n        if(_object_dl.attributes.urlrequest == 'https://api.ldpform.com/sendform') {\n\n            var _idorder = function () {\n                var _date_key = [\n                    new Date().getFullYear(),\n                    (\"0\" + new Date().getMonth()).slice(-2),\n                    (\"0\" + new Date().getDate()).slice(-2),\n                    (\"0\" + new Date().getHours()).slice(-2),\n                    (\"0\" + new Date().getMinutes()).slice(-2),\n                ];\n\n                return _date_key.join(\"\") + Math.floor(Math.random() * 99999);\n            };\n\n            _object_dl.dlv_idorder = _idorder();\n\n\n            var _data = JSON.parse(_object_dl.attributes.formDataInput);\n            var phoneObject = _data.form_data.find(function(item){\n                return item.name == \"phone\";\n            })\n            \n            var priceObject = _data.form_data.find(function(item){\n                return item.name == 'products';\n            })\n\n            if(priceObject && phoneObject) {\n                _object_dl.dlv_phone = phoneObject.value;\n                \n                var _nthis = priceObject.value.split(' - ');\n                _object_dl.dlv_price = parseFloat(_nthis[_nthis.length - 1].replace(/[^\\d-]+/g, \"\"));\n            }\n        }\n\n        dataLayer.push(\n            _object_dl\n        );\n\n    }\n})\n</script>"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "supportDocumentWrite",
+                        "value": "false"
+                    }
+                ],
+                "fingerprint": "1681459203070",
+                "firingTriggerId": [
+                    "3"
+                ],
+                "tagFiringOption": "ONCE_PER_EVENT",
+                "monitoringMetadata": {
+                    "type": "MAP"
+                },
+                "consentSettings": {
+                    "consentStatus": "NOT_SET"
+                }
+            },
+            {
+                "accountId": "6057864501",
+                "containerId": "112718181",
+                "tagId": "12",
+                "name": "Ads Mua Hang Landing Page",
+                "type": "awct",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "orderId",
+                        "value": "{{dlv_idorder}}"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "enableProductReporting",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "cssProvidedEnhancedConversionValue",
+                        "value": "{{Dữ liệu do người dùng cung cấp - Phone}}"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "enableShippingData",
+                        "value": "false"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "enableNewCustomerReporting",
+                        "value": "false"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "enableConversionLinker",
+                        "value": "true"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "conversionValue",
+                        "value": "{{dlv_price}}"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "enableEnhancedConversion",
+                        "value": "true"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "conversionCookiePrefix",
+                        "value": "_gcl"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "conversionId",
+                        "value": "1111"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "currencyCode",
+                        "value": "VND"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "conversionLabel",
+                        "value": "1111"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "rdp",
+                        "value": "false"
+                    }
+                ],
+                "fingerprint": "1681458583639",
+                "firingTriggerId": [
+                    "9"
+                ],
+                "tagFiringOption": "ONCE_PER_EVENT",
+                "monitoringMetadata": {
+                    "type": "MAP"
+                },
+                "consentSettings": {
+                    "consentStatus": "NOT_SET"
+                }
+            }
+        ],
+        "trigger": [
+            {
+                "accountId": "6057864501",
+                "containerId": "112718181",
+                "triggerId": "3",
+                "name": "DOM sẵn sàng",
+                "type": "DOM_READY",
+                "fingerprint": "1681457840548"
+            },
+            {
+                "accountId": "6057864501",
+                "containerId": "112718181",
+                "triggerId": "9",
+                "name": "apiSend - phone",
+                "type": "CUSTOM_EVENT",
+                "customEventFilter": [
+                    {
+                        "type": "EQUALS",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{_event}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": "apiSend"
+                            }
+                        ]
+                    }
+                ],
+                "filter": [
+                    {
+                        "type": "CONTAINS",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{attributes.urlrequest}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": "https://api.ldpform.com/sendform"
+                            }
+                        ]
+                    },
+                    {
+                        "type": "CONTAINS",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{Bảng RegEx - phone}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": "84"
+                            }
+                        ]
+                    }
+                ],
+                "fingerprint": "1681458864299"
+            }
+        ],
+        "variable": [
+            {
+                "accountId": "6057864501",
+                "containerId": "112718181",
+                "variableId": "5",
+                "name": "dlv_phone",
+                "type": "v",
+                "parameter": [
+                    {
+                        "type": "INTEGER",
+                        "key": "dataLayerVersion",
+                        "value": "2"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "dlv_phone"
+                    }
+                ],
+                "fingerprint": "1681457873071",
+                "formatValue": {}
+            },
+            {
+                "accountId": "6057864501",
+                "containerId": "112718181",
+                "variableId": "6",
+                "name": "dlv_price",
+                "type": "v",
+                "parameter": [
+                    {
+                        "type": "INTEGER",
+                        "key": "dataLayerVersion",
+                        "value": "2"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "dlv_price"
+                    }
+                ],
+                "fingerprint": "1681457884870",
+                "formatValue": {}
+            },
+            {
+                "accountId": "6057864501",
+                "containerId": "112718181",
+                "variableId": "7",
+                "name": "Bảng RegEx - phone",
+                "type": "remm",
+                "parameter": [
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "input",
+                        "value": "{{dlv_phone}}"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "fullMatch",
+                        "value": "true"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "replaceAfterMatch",
+                        "value": "true"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "ignoreCase",
+                        "value": "true"
+                    },
+                    {
+                        "type": "LIST",
+                        "key": "map",
+                        "list": [
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "key",
+                                        "value": "0(\\d+)"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "value",
+                                        "value": "84$1"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "key",
+                                        "value": "\\840(\\d+)"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "value",
+                                        "value": "84$1"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "key",
+                                        "value": "\\(\\+84\\)0(\\d+)\\s(\\d+)\\s(\\d+)"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "value",
+                                        "value": "84$1$2$3"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "key",
+                                        "value": "\\(\\+84\\)(\\d+)"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "value",
+                                        "value": "84$1"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "key",
+                                        "value": "\\+840(\\d+)"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "value",
+                                        "value": "84$1"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "key",
+                                        "value": "\\+84(\\d+)"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "value",
+                                        "value": "84$1"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "key",
+                                        "value": "(\\+0)\\s([()])\\d+([()])\\s\\d+-\\d+"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "value",
+                                        "value": "84$1"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ],
+                "fingerprint": "1681457961017",
+                "formatValue": {}
+            },
+            {
+                "accountId": "6057864501",
+                "containerId": "112718181",
+                "variableId": "8",
+                "name": "attributes.urlrequest",
+                "type": "v",
+                "parameter": [
+                    {
+                        "type": "INTEGER",
+                        "key": "dataLayerVersion",
+                        "value": "2"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "attributes.urlrequest"
+                    }
+                ],
+                "fingerprint": "1681458315391",
+                "formatValue": {}
+            },
+            {
+                "accountId": "6057864501",
+                "containerId": "112718181",
+                "variableId": "10",
+                "name": "dlv_idorder",
+                "type": "v",
+                "parameter": [
+                    {
+                        "type": "INTEGER",
+                        "key": "dataLayerVersion",
+                        "value": "2"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "dlv_idorder"
+                    }
+                ],
+                "fingerprint": "1681458547663",
+                "formatValue": {}
+            },
+            {
+                "accountId": "6057864501",
+                "containerId": "112718181",
+                "variableId": "11",
+                "name": "Dữ liệu do người dùng cung cấp - Phone",
+                "type": "awec",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "mode",
+                        "value": "MANUAL"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "phone_number",
+                        "value": "{{Bảng RegEx - phone}}"
+                    }
+                ],
+                "fingerprint": "1681458577390",
+                "formatValue": {}
+            }
+        ],
+        "builtInVariable": [
+            {
+                "accountId": "6057864501",
+                "containerId": "112718181",
+                "type": "PAGE_URL",
+                "name": "Page URL"
+            },
+            {
+                "accountId": "6057864501",
+                "containerId": "112718181",
+                "type": "PAGE_HOSTNAME",
+                "name": "Page Hostname"
+            },
+            {
+                "accountId": "6057864501",
+                "containerId": "112718181",
+                "type": "PAGE_PATH",
+                "name": "Page Path"
+            },
+            {
+                "accountId": "6057864501",
+                "containerId": "112718181",
+                "type": "REFERRER",
+                "name": "Referrer"
+            },
+            {
+                "accountId": "6057864501",
+                "containerId": "112718181",
+                "type": "EVENT",
+                "name": "Event"
+            }
+        ],
+        "fingerprint": "1681460742585",
+        "tagManagerUrl": "https://tagmanager.google.com/#/versions/accounts/6057864501/containers/112718181/versions/0?apiLink=version"
+    }
+}
