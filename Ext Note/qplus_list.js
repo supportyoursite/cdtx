@@ -4,6 +4,18 @@ function _TrustScript(_string) {
     return staticHtmlPolicyv2.createHTML('');
 }
 
+// them vao list localStorage
+var _updateQplusCaseIDTimeReview = function(strKey) {
+    strKey = strKey.toString();
+    var _lstitem = localStorage.getItem('dr_itemslst') || false;
+    var _lstarr = _lstitem ? _lstitem.split("//") : [];
+    if(!_lstarr.includes(strKey)) {
+        _lstarr.push(strKey);
+    
+        var _rs = _lstarr.join("//");
+        localStorage.setItem("dr_itemslst", _rs);
+    }
+}
 
 // Libs
 var _loadurlqplus = function (url_file, frameID, elm_query, _callback) {
@@ -131,6 +143,8 @@ document.querySelectorAll(`[jsaction="click: qOOoce"]`).forEach((elm3) => {
 });
 
 
+
+// Step 3
 // Loop get detail
 var _ncout = 0;
 var _n_step_done = 1;
@@ -169,6 +183,7 @@ var dquiLoadCase = (index) => {
         });
 
         index++; 
+        if(index > 3) {return false;}
         if(index < _list_case.length) {
             dquiLoadCase(index);
         }
@@ -184,3 +199,15 @@ dquiLoadCase(0);
     
     
 // })
+
+// Search
+var str_search = "1-1248000034254";
+var rs_lst_search = [];
+_list_case.forEach(function(item){
+    if(item.caseID === str_search && item.caseIDInner === str_search) {
+        rs_lst_search.push(item);
+        
+    }
+})
+
+rs_lst_search

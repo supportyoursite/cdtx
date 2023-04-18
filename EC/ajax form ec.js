@@ -26,7 +26,13 @@
     function bindToAjax() {
 
         // GET EMAIL
- 
+        var _email = '';
+        $(document).on('click', '[name="sendbutton"]', function () {
+            var _form = $(this).closest('form');
+            _email = _form.find('[data-field_type="email"]').val()
+        });
+
+
 
         $(document).bind('ajaxComplete', function (evt, jqXhr, opts) {
 
@@ -46,6 +52,7 @@
             // GTM
             dataLayer.push({
                 'event': 'ajaxComplete',
+                'email': _email,
                 'attributes': {
                     // Return empty strings to prevent accidental inheritance of old data
                     'type': opts.type || '',
