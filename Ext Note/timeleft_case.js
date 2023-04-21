@@ -151,4 +151,4 @@ function calendarGetInfoRealtime() {
 // run
 setInterval(() => {
     calendarGetInfoRealtime();
-}, 1000)
+}, 1000 * 60)
