@@ -34,8 +34,12 @@ dynamic_remarketing
 
 
 // HTML Custom
-function _DR_TEMPLATE_WOO() {
+function _DR_TEMPLATE() {
     var _tempStorage = sessionStorage || localStorage;
+    var GOOGLE_BUSINESS_VERTICAL = 'retail';
+    var CURRENCY = 'VND';
+    var IS_DEBUG = true;
+
     var addProductStorage = function(id_product) {
         id_product = id_product.toString();
         var _lstitem = _tempStorage.getItem('dr_itemslst') || false;
@@ -126,10 +130,8 @@ function _DR_TEMPLATE_WOO() {
     // DR
     var _dr_items = [];
     var _item = {};
-    var google_business_vertical = 'retail';
-    var _isdebug = true;
     
-    if(_isdebug) {
+    if(IS_DEBUG) {
         console.log(
             is_product_page,
             is_cart_page,
@@ -142,7 +144,7 @@ function _DR_TEMPLATE_WOO() {
     if(is_product_page) {
         var id_product = document.querySelector('[name="id_value"]').value;
     
-        _item = {"id": id_product, "google_business_vertical": google_business_vertical };
+        _item = {"id": id_product, "google_business_vertical": GOOGLE_BUSINESS_VERTICAL };
         _dr_items.push(_item);
         
     
@@ -153,12 +155,13 @@ function _DR_TEMPLATE_WOO() {
         if(_price_elm) {
             _value = parseFloat(_price_elm.innerText.replace(/[^\d]+/g, ''));
         } else {
-            if(_isdebug) {
-                console.log("debug", "price elm - product detail not fount");
+            if(IS_DEBUG) {
+                console.log("dr", "price elm - product detail not fount", dataLayer);
             }
         }
-    
-    
+        
+
+        if(IS_DEBUG) { console.log("dr", "view_item"); }
         dataLayer.push({
             'dr_event_type': 'view_item',
             'dr_items': _dr_items,
@@ -173,7 +176,7 @@ function _DR_TEMPLATE_WOO() {
             jQuery(document).on("click", '.btn-buynow', function(){
                 _dr_items = []; 
     
-                _item = {"id": id_product, "google_business_vertical": google_business_vertical };
+                _item = {"id": id_product, "google_business_vertical": GOOGLE_BUSINESS_VERTICAL };
                 _dr_items.push(_item);
                 
                 dataLayer.push({
@@ -186,8 +189,8 @@ function _DR_TEMPLATE_WOO() {
                 addProductStorage(id_product);
                 addValueProductStorage(_value, 1);
     
-                if(_isdebug) {
-                    console.log("add_to_cart", dataLayer);
+                if(IS_DEBUG) {
+                    console.log("dr", "add_to_cart click", dataLayer);
                 }
             });
     }
@@ -205,7 +208,7 @@ function _DR_TEMPLATE_WOO() {
                 id_product = jQuery(this).find('.remove-cart').attr('ref');
                                 
                 // For DR
-                _item = {"id": id_product, "google_business_vertical": google_business_vertical };
+                _item = {"id": id_product, "google_business_vertical": GOOGLE_BUSINESS_VERTICAL };
                 _dr_items.push(_item);
                 
         
@@ -227,8 +230,8 @@ function _DR_TEMPLATE_WOO() {
         
                 addValueProductStorage(_value, 2);
         
-                if(_isdebug) {
-                    console.log("add_to_cart cart page", dataLayer);
+                if(IS_DEBUG) {
+                    console.log("dr", "add_to_cart cart page", dataLayer);
                 }
             }
         }
@@ -259,7 +262,7 @@ function _DR_TEMPLATE_WOO() {
             
             if(_lstarr.length > 0) {  
                 _lstarr.forEach(function(id_product) {
-                    _item = {"id": id_product, "google_business_vertical": google_business_vertical };
+                    _item = {"id": id_product, "google_business_vertical": GOOGLE_BUSINESS_VERTICAL };
                     _dr_items.push(_item);
                 });
     
@@ -275,7 +278,7 @@ function _DR_TEMPLATE_WOO() {
                 _tempStorage.removeItem('dr_value_st');
     
                 // Debug
-                if(_isdebug) {
+                if(IS_DEBUG) {
                     console.log("purchase", dataLayer);
                     console.log("purchase", "dr_itemslst remove");
                 }
@@ -288,4 +291,4 @@ function _DR_TEMPLATE_WOO() {
 }
 
 // Start;
-_DR_TEMPLATE_WOO();
+_DR_TEMPLATE();

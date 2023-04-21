@@ -1,0 +1,41 @@
+// https://loiphat.com.vn/checkout/355a3d51ed2addf716190926e0578622/success
+
+/checkout/
+/success
+
+
+event: ec_purchase
+variable 
+
+price
+transaction_id
+currency
+email
+
+<script>
+var _email = '';
+document.querySelectorAll('.order-customer-info p').forEach(function(item) {
+    var _meta = item.querySelector('.order-customer-info-meta').innerText;
+    if(
+        item.innerText.toLowerCase().includes('email:') && 
+        _meta.toLowerCase().includes('@')
+      ) {
+        _email = item.querySelector('.order-customer-info-meta').innerText;
+    }
+    
+});
+if(_email) {
+    var _price = +document.querySelector('.total-text.raw-total-text').innerText.replace(/[^\d-]+/g, "");
+    var _transaction_id = document.querySelector('title').innerText.trim().split('#')[1];
+
+    var _objgtm = {
+        "event": "ec_purchase",
+        "price": _price,
+        "transaction_id": _transaction_id,
+        "currency": "VND",
+        "email": _email,
+    };
+
+    dataLayer.push(_objgtm);
+}
+</script>

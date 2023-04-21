@@ -1,0 +1,171 @@
+var _install = `
+<div class="_infocase_byme">
+<span class="_infocase_byme-btnopen"></span>
+<div class="_infocase_byme-inner">
+    <div>
+        XXXX
+    </div>
+</div>
+</div>
+`;
+
+if(!document.querySelector('._infocase_byme')) {
+    document.querySelector('material-input.case-summary-input').insertAdjacentHTML('afterEnd', _install);
+}
+
+
+-------------
+.panel_addamcontact_row {
+        display: flex;
+        flex-wrap: nowrap
+}
+
+.panel_addamcontact:not(.content_open) .panel_addamcontact_gr-content {
+        display: none
+}
+
+.panel_addamcontact.content_open>.panel_addamcontact_toggle {
+        display: none
+}
+
+.panel_addamcontact_btn {
+        display: inline-flex;
+        border: 1px solid #bbb7b7;
+        line-height: 0;
+        padding: 11px;
+        border-radius: 4px;
+        color: #444;
+        font-weight: 700;
+        text-shadow: 1px 1px 2px #fff;
+        background-color: #eee;
+        margin-right: 6px;
+        cursor: pointer;
+        font-size: 12px;
+        text-decoration: none;
+        font-family: "Google Sans", Roboto, Arial, sans-serif;
+        user-select: none;
+        align-items: center;
+        justify-content: center
+}
+
+.panel_addamcontact_save {
+        background-color: rgba(205, 220, 57, .51)
+}
+
+.panel_addamcontact [contenteditable] {
+        display: inline-block;
+        min-width: 100px;
+        max-width: 100%;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        padding: 4px;
+        font-size: 12px;
+        white-space: nowrap;
+        overflow: hidden;
+        font-family: "Google Sans", Roboto, Arial, sans-serif
+}
+
+.panel_addamcontact [contenteditable].panel_addamcontact_gr-email {
+        width: 40%
+}
+
+.panel_addamcontact [contenteditable]:focus {
+        outline: 0;
+        box-shadow: 0 0 10px #ccc
+}
+
+.panel_addamcontact_gr-content {
+        display: flex;
+        width: 100%;
+        align-items: center
+}
+
+.panel_addamcontact_gr-content>div,
+.panel_addamcontact_gr-content>span {
+        margin-right: 6px
+}
+
+.panel_addamcontact_gr-list a {
+        font-size: 14px;
+        text-decoration: none;
+        color: #000;
+        padding: 2px 6px;
+        font-family: "Google Sans", Roboto, Arial, sans-serif;
+        user-select: none
+}
+
+.panel_addamcontact_gr-list a:hover {
+        background: #bab7b7
+}
+
+.panel_addamcontact_gr-grbtn {
+        border: 1px solid #ccc;
+        margin-right: 6px;
+        margin-bottom: 12px;
+        border-radius: 5px;
+        display: inline-flex
+}
+
+.panel_addamcontact_gr-removebtn {
+        font-size: 10px;
+        background: #e4dcdc;
+        padding: 0 5px;
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        justify-content: center;
+        user-select: none
+}
+
+.panel_addamcontact_gr-removebtn:hover {
+        background: #acacac
+}
+
+span.panel_addamcontact_btn.panel_addamcontact_toggle {}
+
+._infocase_byme {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+span._infocase_byme-btnopen {
+    display: inline-block;
+    background: #000;
+    background: rgb(255,255,255);
+    background: linear-gradient(180deg, rgba(255,255,255,0) 0%, #a2a2a2 100%);
+    width: 62px;
+    height: 33px;
+    text-align: center;
+    line-height: 39px;
+    border-radius: 10px 10px 0 0;
+    color: #fff;
+    font-weight: bold;
+    user-select: none;
+    cursor: pointer;
+    font-size: 12px;
+}
+
+._infocase_byme-btnopen:before {
+    content: "CLOSE"
+}
+span._infocase_byme-btnopen:hover {
+    background: linear-gradient(180deg, rgba(255,255,255,0) 0%, #a2a2a2 100%);
+}
+
+._infocase_byme-inner {border: 1px solid #a2a2a2;background: #fff;flex: 0 0 100%;max-width: 100%;width: 100%;text-align: center;border-radius: 10px;padding: 10px;box-sizing: border-box;}
+
+._infocase_byme:not(.open) ._infocase_byme-btnopen {
+    border-radius: 0 0 10px 10px;
+    background: linear-gradient(180deg, rgba(255,255,255,0) 0%, #2196F3 100%);
+    
+}
+._infocase_byme:not(.open) ._infocase_byme-btnopen:before {
+    content: "OPEN"
+}
+._infocase_byme:not(.open) ._infocase_byme-inner {
+    display: none;
+    
+}

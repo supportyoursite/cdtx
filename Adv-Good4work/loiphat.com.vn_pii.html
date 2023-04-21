@@ -1,0 +1,19 @@
+// https://loiphat.com.vn/checkout/355a3d51ed2addf716190926e0578622/success
+
+/checkout/
+/success
+
+DOM Ready
+
+price
+transaction_id
+
+// price
+function() {
+    return +document.querySelector('.total-text.raw-total-text').innerText.replace(/[^\d-]+/g, "");
+}
+
+// transaction_id
+function() {
+    return document.querySelector('title').innerText.trim().split('#')[1];
+}

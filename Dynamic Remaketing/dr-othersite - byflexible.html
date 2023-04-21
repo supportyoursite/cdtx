@@ -21,21 +21,25 @@
 // Hoi ae ve` qua trinh chuan bi case
 // confirm DR need price field?
 
-
+/*
 // Create variable
 dr_event_type
 dr_items
 dr_value
 // Create Custom Event
 dynamic_remarketing
+*/
 
 
 
-
-
+<script>
 // HTML Custom
-function _DR_TEMPLATE_WOO() {
+function _DR_TEMPLATE() {
     var _tempStorage = sessionStorage || localStorage;
+    var GOOGLE_BUSINESS_VERTICAL = 'retail';
+    var CURRENCY = 'VND';
+    var IS_DEBUG = true;
+
     var addProductStorage = function(id_product) {
         id_product = id_product.toString();
         var _lstitem = _tempStorage.getItem('dr_itemslst') || false;
@@ -64,6 +68,17 @@ function _DR_TEMPLATE_WOO() {
         }
     
         _tempStorage.setItem("dr_value_st", _value_number);
+    }
+
+
+
+    var _priceconvert = function(price, CURRENCY) {
+        if(CURRENCY === 'VND') {
+            return parseFloat(price.replace(/[^\d]+/g, ''));
+        }
+        if(CURRENCY === 'MYR') {
+            return parseFloat(price.replace(/[^\d.]+/g, ''));
+        }
         
     }
     
@@ -100,67 +115,74 @@ function _DR_TEMPLATE_WOO() {
     // ===============
     
     // by class body
-        var is_product_page = checkMultiClass(["single-product", "single","woocommerce", "woocommerce-page"], document.body);
-        var is_cart_page = checkMultiClass(["woocommerce-cart", "woocommerce-page"], document.body);
-        var is_begincheckout_page = checkMultiClass(["woocommerce-checkout", "woocommerce-page"], document.body);
-        var is_order_thankyou_page = checkMultiClass(["woocommerce-order-received", "woocommerce-checkout", "woocommerce-page"], document.body);
+    var is_product_page = document.querySelector('#pro_detail_info') && 
+            document.querySelector('#pro_detail_info [name="btnAddtoCart"]') && 
+            document.querySelector("#pro_detail_info .price");
+
+    var is_cart_page = location.href.includes("/gio-hang.html") && document.querySelector("#cartContentsDisplay");
+    var is_begincheckout_page = document.querySelector('#s-info-billing') && 
+                                document.querySelector('#s-payment-method') && 
+                                document.querySelector('#s-review');
+    var is_order_thankyou_page = location.href.includes("/hoan-tat-dat-hang.html");
     
-    // by url or element special
-        // var is_cart_page = location.href.includes("/gio-hang/");
-        // var is_begincheckout_page = location.href.includes("/thanh-toan/");
-        // var is_order_thankyou_page = location.href.includes("/thanh-toan/order-received/");
     
-    // console.log(
-    //     is_product_page,
-    //     is_cart_page,
-    //     is_begincheckout_page,
-    //     is_order_thankyou_page
-    // );
     
     
     // DR
     var _dr_items = [];
     var _item = {};
-    var google_business_vertical = 'retail';
-    var _isdebug = false;
     
+    if(IS_DEBUG) {
+        console.log(
+            "dr",
+            is_product_page,
+            is_cart_page,
+            is_begincheckout_page,
+            is_order_thankyou_page
+        );
+    }
+
+
+    // *********
     // Product detail page
+    // *********
     if(is_product_page) {
-        var _splitarr = document.querySelector('[href*="/wp-json/wp/v2/product"]').href.split('/');
-        var id_product = _splitarr[_splitarr.length - 1];
+        var id_product = document.querySelector('[name="btnAddtoCart"]').getAttribute('id');
     
-        _item = {"id": id_product, "google_business_vertical": google_business_vertical };
+        _item = {"id": id_product, "google_business_vertical": GOOGLE_BUSINESS_VERTICAL };
         _dr_items.push(_item);
         
     
     
         // LUU Y CLASS
-        var _price_elm = document.querySelector('.product.type-product .woocommerce-Price-amount');
+        var _price_elm = document.querySelector('#pro_detail_info .price');
         var _value = 0;
         if(_price_elm) {
-            _value = parseFloat(_price_elm.innerText.replace(/[^\d]+/g, ''));
+            _value = parseFloat(_priceconvert(_price_elm.innerText, CURRENCY));
+            _value = _price_this || 0;
         } else {
-            if(_isdebug) {
-                console.log("debug", "price elm - product detail not fount");
+            if(IS_DEBUG) {
+                console.log("dr", "price elm - product detail not fount", dataLayer);
             }
         }
-    
-    
+        
         dataLayer.push({
             'dr_event_type': 'view_item',
             'dr_items': _dr_items,
             'dr_value': _value,
             'event': 'dynamic_remarketing'
         });
+
+        if(IS_DEBUG) { console.log("dr", "view_item"); }
+        
     
         
         // add to cart click at product detail page
-    
             // LUU Y CLASS
-            jQuery(document).on("click", '[name="add-to-cart"]', function(){
+            jQuery(document).on("click", '[name="btnAddtoCart"]', function(){
                 _dr_items = []; 
     
-                _item = {"id": id_product, "google_business_vertical": google_business_vertical };
+                _item = {"id": id_product, "google_business_vertical": GOOGLE_BUSINESS_VERTICAL };
                 _dr_items.push(_item);
                 
                 dataLayer.push({
@@ -173,13 +195,17 @@ function _DR_TEMPLATE_WOO() {
                 addProductStorage(id_product);
                 addValueProductStorage(_value, 1);
     
-                if(_isdebug) {
-                    console.log("add_to_cart", dataLayer);
+                if(IS_DEBUG) {
+                    console.log("dr", "add_to_cart click", dataLayer);
                 }
             });
     }
     
+
+
+    // *********
     // Cart page
+    // *********
     if(is_cart_page) {
         
         var id_product = '';
@@ -188,17 +214,23 @@ function _DR_TEMPLATE_WOO() {
         _dr_items = [];
         
         var _is_update_cart = function() {
-            jQuery(".cart_item").each(function(index){
-                id_product = jQuery(this).find('[data-product_id]').attr('data-product_id');
-                _value += parseFloat(jQuery(this).find('.product-subtotal').text());
-                
+            jQuery("#cartContentsDisplay tr.sc_pContent").each(function(index){
+                id_product = jQuery(this).find('[name="adjust"]').attr('id').split('_')[0];
+                id_product = _priceconvert(id_product, CURRENCY);
+                                
                 // For DR
-                _item = {"id": id_product, "google_business_vertical": google_business_vertical };
+                _item = {"id": id_product, "google_business_vertical": GOOGLE_BUSINESS_VERTICAL };
                 _dr_items.push(_item);
+                
         
+                addProductStorage(id_product);
+
                 // For Storage Purchase
                 _lst_prod.push(id_product);
             });
+
+            _value = parseFloat(_priceconvert(document.querySelector('#totalPrice').innerText, CURRENCY));
+            _value = _value || 0;
         
             if(_dr_items.length > 0) {
                 dataLayer.push({
@@ -210,8 +242,8 @@ function _DR_TEMPLATE_WOO() {
         
                 addValueProductStorage(_value, 2);
         
-                if(_isdebug) {
-                    console.log("add_to_cart cart page", dataLayer);
+                if(IS_DEBUG) {
+                    console.log("dr", "add_to_cart cart page", dataLayer);
                 }
             }
         }
@@ -220,17 +252,62 @@ function _DR_TEMPLATE_WOO() {
         // Update before unload
         jQuery(window).on('beforeunload', function () {
             _is_update_cart();
+
+            if(_lst_prod.length > 0) {
+                renewListProductStorageByArrList(_lst_prod);
+            }
         });
     
     
-        if(_lst_prod.length > 0) {
-            renewListProductStorageByArrList(_lst_prod);
-        }
     }
     
-    
-    
+    // *********
+    // begin checkout
+    // *********
+    if(is_begincheckout_page) {
+        var _priceelm = document.querySelector('#ottotal #total');
+        if(_priceelm) {
+            var _price_this = parseFloat(_priceconvert(_priceelm.innerText, CURRENCY));
+            _price_this = _price_this || 0;
+            addValueProductStorage(_price_this, 2);
+        }
+    }
+
+
+    // *********
+    // Button add to cart list page
+    // *********
+    // Add to cart button ajax
+    // .add_to_cart_button.ajax_add_to_cart
+    // LUU Y CLASS
+    jQuery(document).on("click", '.block .border [name="btnAddtoCart"]', function(){
+        _dr_items = []; 
+        var _id_product_this = jQuery(this).attr('id');
+        var _price_this = jQuery(this).closest('.block').find('.price span:not(.list-price)');
+        _price_this = parseFloat(_priceconvert(_price_this.text(), CURRENCY));
+        _price_this = _price_this || 0;
+        _item = {"id": _id_product_this, "google_business_vertical": GOOGLE_BUSINESS_VERTICAL };
+
+        _dr_items.push(_item);
+        
+        dataLayer.push({
+            'dr_event_type': 'add_to_cart',
+            'dr_items': _dr_items,
+            'dr_value': _price_this,
+            'event': 'dynamic_remarketing'
+        });
+        
+        addProductStorage(_id_product_this);
+        addValueProductStorage(_price_this, 1);
+
+        if(IS_DEBUG) {
+            console.log("add_to_cart", dataLayer);
+        }
+    });
+
+    // *********
     // order - thank you page
+    // *********
     if(is_order_thankyou_page) {
         var dr_itemslst = _tempStorage.getItem('dr_itemslst');
         var dr_value_st = parseFloat(_tempStorage.getItem('dr_value_st') || 0);
@@ -242,7 +319,7 @@ function _DR_TEMPLATE_WOO() {
             
             if(_lstarr.length > 0) {  
                 _lstarr.forEach(function(id_product) {
-                    _item = {"id": id_product, "google_business_vertical": google_business_vertical };
+                    _item = {"id": id_product, "google_business_vertical": GOOGLE_BUSINESS_VERTICAL };
                     _dr_items.push(_item);
                 });
     
@@ -258,7 +335,7 @@ function _DR_TEMPLATE_WOO() {
                 _tempStorage.removeItem('dr_value_st');
     
                 // Debug
-                if(_isdebug) {
+                if(IS_DEBUG) {
                     console.log("purchase", dataLayer);
                     console.log("purchase", "dr_itemslst remove");
                 }
@@ -271,4 +348,5 @@ function _DR_TEMPLATE_WOO() {
 }
 
 // Start;
-_DR_TEMPLATE_WOO();
+_DR_TEMPLATE();
+</script>
