@@ -24,6 +24,15 @@ function _xHrComplete(_callback) {
 
 
             var fullUrl = location;
+            
+            try {
+                if(typeof object === 'string') {
+                    object = JSON.parse(object);
+                }
+            } catch (error) {
+                
+            }
+
             var _data_response = {
                 "location": window.location,
                 "urlrequest": this.url,
