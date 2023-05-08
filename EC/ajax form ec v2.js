@@ -12,7 +12,6 @@ function _xHrComplete(_callback) {
             // this.url    :the url of the requested script (including query string, if any) (urlencoded) 
             // this.data   :the data sent, if any ex: foo=bar&a=b (urlencoded)
             
-
             var object = {};
             if(typeof this.data == 'object') {
                 this.data.forEach(function (value, key) {
@@ -22,23 +21,60 @@ function _xHrComplete(_callback) {
                 object = this.data;
             }
 
-
-            var fullUrl = location;
-            
-            try {
-                if(typeof object === 'string') {
-                    object = JSON.parse(object);
-                }
-            } catch (error) {
-                
-            }
-
             var _data_response = {
                 "location": window.location,
                 "urlrequest": this.url,
                 "method": this.method,
                 "formDataInput": object,
             }
+            
+            // For JSON            
+            try {
+                if(typeof object === 'string') {
+                    if(object.includes('{') && object.includes('}')) {
+                        object = JSON.parse(object);
+                        _data_response.formDataInput = object;
+                    }
+                }
+            } catch (error) {
+                
+            }
+
+            // For paramater
+            try {
+                if(typeof object === 'string') {
+                    if(object.includes('=')) {
+                        var params = new URLSearchParams(object);
+                        var entries = params.entries();
+                        var listdata = Object.fromEntries(entries);
+                        
+                        // List
+                        Object.keys(listdata).forEach(function(_key) {
+                            _value = listdata[_key];
+
+                            // params
+                            if(_value.includes('=')) {
+                                var params = new URLSearchParams(_value);
+                                var entries = params.entries();
+                                var conversion = Object.fromEntries(entries);
+                                listdata[_key] = conversion;
+                            }
+
+                            // JSON
+                            if(_value.includes('{') && _value.includes('}')) {
+                                var conversion = JSON.parse(_value);
+                                listdata[_key] = conversion;
+                            }
+                        });
+                    
+                        _data_response.formDataInput = listdata;
+                        
+                    }
+                }
+            } catch (error) {
+                
+            }
+            
 
             _callback(_data_response);
         }

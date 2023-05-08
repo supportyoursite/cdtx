@@ -62,7 +62,7 @@ dynamic_remarketing
         
                 
                 // add to cart, button #buy-now
-                jQuery(document).on("click", "#buy-now, #add-to-cart, button.add-to-cart", function() {
+                jQuery(document).on("click", "#buy-now, #add-to-cart, button.add-to-cart, button.add_to_cart", function() {
                     _dr_items = [];
 
                     _item = {"id": id_product, "google_business_vertical": google_business_vertical};
