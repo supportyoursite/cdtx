@@ -1,0 +1,38 @@
+https://jsfiddle.net/dongmx/xtaurg0p/latest
+// bắt tại thời điểm:
+/* 
+event = vChat_listen
+vchat_name = visible_chat
+vchat_trigger = OK 
+
+
+event = vChat
+category = Guest Send Message,
+action = SendMessage,
+
+*/
+<script>
+window.addEventListener('message', function(event) {
+    var _host = event.origin;
+    var _data = event.data;
+    window.dataLayer = window.dataLayer || {}
+    console.log(event)
+    if(_host && _data) {
+        if(_host.includes('core.vchat.vn')) {
+            var _name = _data.name;
+            var _title = _data.title;
+            var _visible = _data.data.visible == false ? "OK": "NG";
+            
+            if(_name && _title) {
+                console.log('ccc', _name , _title, _visible)
+                window.dataLayer.push({
+                    "event": "vChat_listen",
+                    "vchat_name": _name,
+                    "vchat_title": _title,
+                    "vchat_trigger": _visible,
+                })
+            }
+        }
+    }
+});
+</script>

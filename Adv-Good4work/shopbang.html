@@ -1,0 +1,172 @@
+<script>
+var _action = function(_parent) {
+    var _fullname = _parent.find('[name="fullname"]').val().trim();
+    var _telephone = _parent.find('[name="phone"]').val().trim()
+    var _address = _parent.find('[name="address"]').val().trim()
+
+
+    var _idorder = function () {
+        var _date_key = [
+            new Date().getFullYear(),
+            ("0" + new Date().getMonth()).slice(-2),
+            ("0" + new Date().getDate()).slice(-2),
+            ("0" + new Date().getHours()).slice(-2),
+            ("0" + new Date().getMinutes()).slice(-2),
+        ];
+
+        return _date_key.join("") + Math.floor(Math.random() * 99999);
+    };
+    
+    var _price = jQuery('.total_price p:last-child').text().trim().replace(/[^\d]+/g, '');
+    _price = parseInt(_price);
+
+    if(_fullname && _telephone && _address && _price) {
+        jQuery(window).on('beforeunload', function () {
+            dataLayer.push({
+                'event': 'form_muahang',
+                'fullname': _fullname,
+                'telephone': _telephone,
+                'price': _price,
+                'idorder': _idorder(),
+            });
+        });
+    }
+};
+
+            
+var _parent = jQuery('#frmcontact');    
+_action(_parent)
+</script>
+
+<script>
+    _initjQuery();
+    
+    function _initjQuery() {
+        var _n = 0;
+        var _myTime = setInterval(function() {
+            console.log('issetjQuery', jQuery);
+            _n++;
+            if(_n > 20) { clearInterval(_myTime) }
+
+            if (typeof jQuery !== 'undefined') {
+                $ = jQuery;
+                _loadContent();
+                clearInterval(_myTime) 
+            }
+        }, 500);
+    }
+
+    function _loadContent() {
+        // Form lienhe    
+        if(location.pathname.includes('/lien-he')){
+            var _action = function(_parent) {
+                var _fullname = _parent.find('[name="fullname"]').val().trim();
+                var _telephone = _parent.find('[name="phone"]').val().trim()
+
+                if(_fullname && _telephone) {
+                    jQuery(window).on('beforeunload', function () {
+                    dataLayer.push({
+                        'event': 'form_lienhe',
+                        'fullname': _fullname,
+                        'telephone': _telephone,
+                    });
+                    });
+                }
+
+
+            };
+
+
+            jQuery(document).on('click', '#frmcontact [type="submit"]', function(e) {
+                var _parent = $(this).closest('#frmcontact');
+                _action(_parent);
+            })
+        }
+
+
+        // Form muahang    
+        if(location.pathname.includes('/gio-hang/')){
+            var _action = function(_parent) {
+                var _fullname = _parent.find('[name="fullname"]').val().trim();
+                var _telephone = _parent.find('[name="phone"]').val().trim()
+                var _address = _parent.find('[name="address"]').val().trim()
+
+
+                var _idorder = function () {
+                    var _date_key = [
+                        new Date().getFullYear(),
+                        ("0" + new Date().getMonth()).slice(-2),
+                        ("0" + new Date().getDate()).slice(-2),
+                        ("0" + new Date().getHours()).slice(-2),
+                        ("0" + new Date().getMinutes()).slice(-2),
+                    ];
+
+                    return _date_key.join("") + Math.floor(Math.random() * 99999);
+                };
+                
+                var _price = jQuery('.total_price p:last-child').text().trim().replace(/[^\d]+/g, '');
+                _price = parseInt(_price);
+
+                if(_fullname && _telephone && _address && _price) {
+                    jQuery(window).on('beforeunload', function () {
+                        dataLayer.push({
+                            'event': 'form_muahang',
+                            'fullname': _fullname,
+                            'telephone': _telephone,
+                            'price': _price,
+                            'idorder': _idorder(),
+                        });
+                    });
+                }
+            };
+
+            jQuery(document).on('click', '#frmcontact [type="submit"]', function(e) {
+                var _parent = $(this).closest('#frmcontact');
+                _action(_parent);
+            })
+        }
+
+        // Form bao gia
+        var _action = function(_parent) {
+            var _fullname = _parent.find('[name="fullname"]').val().trim();
+            var _telephone = _parent.find('[name="telephone"]').val().trim()
+
+            if(_fullname && _telephone) {
+                jQuery(window).on('beforeunload', function () {
+                    dataLayer.push({
+                        'event': 'form_baogia',
+                        'fullname': _fullname,
+                        'telephone': _telephone,
+                    });
+                });
+            }
+        };
+
+        jQuery(document).on('click', '#frmsupport [onclick]', function(e) {
+            var _parent = $(this).closest('#frmsupport');
+            _action(_parent);
+        })
+    }
+    
+</script>
+
+
+
+/* Regex phone
+===== LEFT
+0(\d+)
+\840(\d+)
+\(\+84\)0(\d+)\s(\d+)\s(\d+)
+\(\+84\)(\d+)
+\+840(\d+)
+\+84(\d+)
+(\+0)\s([()])\d+([()])\s\d+-\d+
+
+==== RIGHT
+84$1
+84$1
+84$1$2$3
+84$1
+84$1
+84$1
+84$1

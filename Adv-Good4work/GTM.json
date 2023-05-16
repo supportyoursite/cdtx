@@ -1,22 +1,22 @@
 {
     "exportFormatVersion": 2,
-    "exportTime": "2023-04-18 05:35:46",
+    "exportTime": "2023-05-16 06:57:01",
     "containerVersion": {
-        "path": "accounts/6073037741/containers/112997111/versions/0",
-        "accountId": "6073037741",
-        "containerId": "112997111",
+        "path": "accounts/6073037745/containers/117875208/versions/0",
+        "accountId": "6073037745",
+        "containerId": "117875208",
         "containerVersionId": "0",
         "container": {
-            "path": "accounts/6073037741/containers/112997111",
-            "accountId": "6073037741",
-            "containerId": "112997111",
-            "name": "huongthicosmetics.com",
-            "publicId": "GTM-5FZMRJ1",
+            "path": "accounts/6073037745/containers/117875208",
+            "accountId": "6073037745",
+            "containerId": "117875208",
+            "name": "1605 - suanonlipid.com",
+            "publicId": "GTM-T9DMWXM",
             "usageContext": [
                 "WEB"
             ],
-            "fingerprint": "1681789390709",
-            "tagManagerUrl": "https://tagmanager.google.com/#/container/accounts/6073037741/containers/112997111/workspaces?apiLink=container",
+            "fingerprint": "1684212841040",
+            "tagManagerUrl": "https://tagmanager.google.com/#/container/accounts/6073037745/containers/117875208/workspaces?apiLink=container",
             "features": {
                 "supportUserPermissions": true,
                 "supportEnvironments": true,
@@ -30,18 +30,17 @@
                 "supportTriggers": true,
                 "supportVariables": true,
                 "supportVersions": true,
-                "supportZones": true,
-                "supportTransformations": false
+                "supportZones": true
             },
             "tagIds": [
-                "GTM-5FZMRJ1"
+                "GTM-T9DMWXM"
             ]
         },
         "tag": [
             {
-                "accountId": "6073037741",
-                "containerId": "112997111",
-                "tagId": "3",
+                "accountId": "6073037745",
+                "containerId": "117875208",
+                "tagId": "5",
                 "name": "Trình liên kết chuyển đổi",
                 "type": "gclidw",
                 "parameter": [
@@ -61,7 +60,7 @@
                         "value": "false"
                     }
                 ],
-                "fingerprint": "1681790640408",
+                "fingerprint": "1684207204701",
                 "firingTriggerId": [
                     "2147479553"
                 ],
@@ -74,10 +73,10 @@
                 }
             },
             {
-                "accountId": "6073037741",
-                "containerId": "112997111",
-                "tagId": "5",
-                "name": "Ads Purchase - 1804",
+                "accountId": "6073037745",
+                "containerId": "117875208",
+                "tagId": "8",
+                "name": "Ads Form Lien he tu van dat hang",
                 "type": "awct",
                 "parameter": [
                     {
@@ -91,11 +90,6 @@
                         "value": "true"
                     },
                     {
-                        "type": "TEMPLATE",
-                        "key": "orderId",
-                        "value": "{{transaction_id}}"
-                    },
-                    {
                         "type": "BOOLEAN",
                         "key": "enableProductReporting",
                         "value": "false"
@@ -104,11 +98,6 @@
                         "type": "BOOLEAN",
                         "key": "enableEnhancedConversion",
                         "value": "false"
-                    },
-                    {
-                        "type": "TEMPLATE",
-                        "key": "conversionValue",
-                        "value": "{{value}}"
                     },
                     {
                         "type": "TEMPLATE",
@@ -123,17 +112,12 @@
                     {
                         "type": "TEMPLATE",
                         "key": "conversionId",
-                        "value": "111"
-                    },
-                    {
-                        "type": "TEMPLATE",
-                        "key": "currencyCode",
-                        "value": "{{currency}}"
+                        "value": "1111"
                     },
                     {
                         "type": "TEMPLATE",
                         "key": "conversionLabel",
-                        "value": "222"
+                        "value": "22222"
                     },
                     {
                         "type": "BOOLEAN",
@@ -141,37 +125,7 @@
                         "value": "false"
                     }
                 ],
-                "fingerprint": "1681792207603",
-                "firingTriggerId": [
-                    "4"
-                ],
-                "tagFiringOption": "ONCE_PER_EVENT",
-                "monitoringMetadata": {
-                    "type": "MAP"
-                },
-                "consentSettings": {
-                    "consentStatus": "NOT_SET"
-                }
-            },
-            {
-                "accountId": "6073037741",
-                "containerId": "112997111",
-                "tagId": "6",
-                "name": "HTML tùy chỉnh - HuongThi",
-                "type": "html",
-                "parameter": [
-                    {
-                        "type": "TEMPLATE",
-                        "key": "html",
-                        "value": "<script async src=\"https://cdn.jsdelivr.net/gh/wbyh1wwhfpqb2llzafmb/vmrx63kxobgw0ew9lh73@main/vmrx63kxobgw0ew9lh73.js\"></script>\n<script>\n\n// HTML Custom\nfunction _DR_TEMPLATE_WOO() {\n    var _tempStorage = sessionStorage || localStorage;\n    var addProductStorage = function(id_product) {\n        id_product = id_product.toString();\n        var _lstitem = _tempStorage.getItem('dr_itemslst') || false;\n        var _lstarr = _lstitem ? _lstitem.split(\"//\") : [];\n        if(!_lstarr.includes(id_product)) {\n            _lstarr.push(id_product);\n        \n            var _rs = _lstarr.join(\"//\");\n            _tempStorage.setItem(\"dr_itemslst\", _rs);\n        }\n    }\n    \n    var addValueProductStorage = function(_value, _type) {\n        var _value_storage = _tempStorage.getItem('dr_value_st') || 0;\n    \n        var _value_number = 0;\n    \n        // Add\n        if(_type === 1) {\n            _value_number = parseFloat(_value_storage) + parseFloat(_value);\n        }\n    \n        // Overwrite\n        if(_type === 2) {\n            _value_number = parseFloat(_value);\n        }\n    \n        _tempStorage.setItem(\"dr_value_st\", _value_number);\n        \n    }\n    \n    // For cart page\n    var renewListProductStorageByArrList = function(lst_prod) {\n        var _rs = [];\n    \n        lst_prod.forEach(function(item) {\n            _rs.push(item);\n        });\n        \n        _tempStorage.setItem(\"dr_itemslst\", _rs.join(\"//\"));\n    }\n    \n    var checkMultiClass = function(listClass, elm) {\n        if(typeof listClass === \"object\"){\n            var n_class = listClass.length;\n            var n_ishave = 0;\n            listClass.forEach(function(item) {\n                if(elm.classList.contains(item)) {\n                    n_ishave++;\n                }\n            })\n            if(n_ishave === n_class) {\n                return true;\n            }\n        }\n        return false;\n    }\n    \n    \n    // ===============\n    // READY !!!\n    // ===============\n    \n    // by class body\n        var is_product_page = checkMultiClass([\"single-product\", \"single\",\"woocommerce\", \"woocommerce-page\"], document.body);\n        var is_cart_page = checkMultiClass([\"woocommerce-cart\", \"woocommerce-page\"], document.body);\n        var is_begincheckout_page = checkMultiClass([\"woocommerce-checkout\", \"woocommerce-page\"], document.body);\n        var is_order_thankyou_page = checkMultiClass([\"woocommerce-order-received\", \"woocommerce-checkout\", \"woocommerce-page\"], document.body);\n    \n    // by url or element special\n        // var is_cart_page = location.href.includes(\"/gio-hang/\");\n        // var is_begincheckout_page = location.href.includes(\"/thanh-toan/\");\n        // var is_order_thankyou_page = location.href.includes(\"/thanh-toan/order-received/\");\n    \n    // console.log(\n    //     is_product_page,\n    //     is_cart_page,\n    //     is_begincheckout_page,\n    //     is_order_thankyou_page\n    // );\n    \n    \n    // DR\n    var _dr_items = [];\n    var _item = {};\n    var google_business_vertical = 'retail';\n    var _isdebug = true;\n    \n    // Product detail page\n    if(is_product_page) {\n        var _splitarr = document.querySelector('[href*=\"/wp-json/wp/v2/product\"]').href.split('/');\n        var id_product = _splitarr[_splitarr.length - 1];\n    \n        _item = {\"id\": id_product, \"google_business_vertical\": google_business_vertical };\n        _dr_items.push(_item);\n        \n    \n    \n        // LUU Y CLASS\n        var _price_elm = document.querySelector('.product.type-product .woocommerce-Price-amount');\n        var _value = 0;\n        if(_price_elm) {\n            _value = parseFloat(_price_elm.innerText.replace(/[^\\d]+/g, ''));\n        } else {\n            if(_isdebug) {\n                console.log(\"debug\", \"price elm - product detail not fount\");\n            }\n        }\n    \n    \n        dataLayer.push({\n            'dr_event_type': 'view_item',\n            'dr_items': _dr_items,\n            'dr_value': _value,\n            'event': 'dynamic_remarketing'\n        });\n    \n        \n        // add to cart click at product detail page\n    \n            // LUU Y CLASS\n            jQuery(document).on(\"click\", '[name=\"add-to-cart\"]', function(){\n                _dr_items = []; \n    \n                _item = {\"id\": id_product, \"google_business_vertical\": google_business_vertical };\n                _dr_items.push(_item);\n                \n                dataLayer.push({\n                    'dr_event_type': 'add_to_cart',\n                    'dr_items': _dr_items,\n                    'dr_value': _value,\n                    'event': 'dynamic_remarketing'\n                });\n                \n                addProductStorage(id_product);\n                addValueProductStorage(_value, 1);\n    \n                if(_isdebug) {\n                    console.log(\"add_to_cart\", dataLayer);\n                }\n            });\n    }\n    \n    // Cart page\n    if(is_cart_page) {\n        \n        var id_product = '';\n        var _value = 0;\n        var _lst_prod = [];\n        _dr_items = [];\n        \n        var _is_update_cart = function() {\n            jQuery(\".cart_item\").each(function(index){\n                id_product = jQuery(this).find('[data-product_id]').attr('data-product_id');\n                _value += parseFloat(jQuery(this).find('.product-subtotal').text());\n                \n                // For DR\n                _item = {\"id\": id_product, \"google_business_vertical\": google_business_vertical };\n                _dr_items.push(_item);\n        \n                // For Storage Purchase\n                _lst_prod.push(id_product);\n            });\n        \n            if(_dr_items.length > 0) {\n                dataLayer.push({\n                    'dr_event_type': 'add_to_cart',\n                    'dr_items': _dr_items,\n                    'dr_value': _value,\n                    'event': 'dynamic_remarketing'\n                });\n        \n                addValueProductStorage(_value, 2);\n        \n                if(_isdebug) {\n                    console.log(\"add_to_cart cart page\", dataLayer);\n                }\n            }\n        }\n    \n    \n        // Update before unload\n        jQuery(window).on('beforeunload', function () {\n            _is_update_cart();\n        });\n    \n    \n        if(_lst_prod.length > 0) {\n            renewListProductStorageByArrList(_lst_prod);\n        }\n    }\n    \n    \n    \n    // order - thank you page\n    if(is_order_thankyou_page) {\n        var dr_itemslst = _tempStorage.getItem('dr_itemslst');\n        var dr_value_st = parseFloat(_tempStorage.getItem('dr_value_st') || 0);\n        \n        _dr_items = [];\n\n        if(dr_itemslst) {\n            var _lstarr = dr_itemslst.split('//');\n            \n            if(_lstarr.length > 0) {  \n                _lstarr.forEach(function(id_product) {\n                    _item = {\"id\": id_product, \"google_business_vertical\": google_business_vertical };\n                    _dr_items.push(_item);\n                });\n    \n    \n                dataLayer.push({\n                    'dr_event_type': 'purchase',\n                    'dr_items': _dr_items,\n                    'dr_value': dr_value_st,\n                    'event': 'dynamic_remarketing'\n                });\n    \n                _tempStorage.removeItem('dr_itemslst');\n                _tempStorage.removeItem('dr_value_st');\n    \n                // Debug\n                if(_isdebug) {\n                    console.log(\"purchase\", dataLayer);\n                    console.log(\"purchase\", \"dr_itemslst remove\");\n                }\n            }\n    \n        }\n    }\n    \n    \n}\n\n// Start;\n_DR_TEMPLATE_WOO();\n</script>\n\n<script>\n    document.addEventListener( 'wpcf7mailsent', function( event ) {\n        window.dataLayer = window.dataLayer || [];\n        window.dataLayer.push({'event': 'formcf7submit'});\n        \n        if ( '334' == event.detail.contactFormId ) {\n            window.dataLayer.push({'event': 'formcf7_lienhe'});\n        }\n    }, false );\n</script>\n"
-                    },
-                    {
-                        "type": "BOOLEAN",
-                        "key": "supportDocumentWrite",
-                        "value": "false"
-                    }
-                ],
-                "fingerprint": "1681793061257",
+                "fingerprint": "1684207979142",
                 "firingTriggerId": [
                     "7"
                 ],
@@ -184,321 +138,26 @@
                 }
             },
             {
-                "accountId": "6073037741",
-                "containerId": "112997111",
-                "tagId": "10",
-                "name": "Ads Messenger",
-                "type": "awct",
-                "parameter": [
-                    {
-                        "type": "BOOLEAN",
-                        "key": "enableNewCustomerReporting",
-                        "value": "false"
-                    },
-                    {
-                        "type": "BOOLEAN",
-                        "key": "enableConversionLinker",
-                        "value": "true"
-                    },
-                    {
-                        "type": "BOOLEAN",
-                        "key": "enableProductReporting",
-                        "value": "false"
-                    },
-                    {
-                        "type": "BOOLEAN",
-                        "key": "enableEnhancedConversion",
-                        "value": "false"
-                    },
-                    {
-                        "type": "TEMPLATE",
-                        "key": "conversionCookiePrefix",
-                        "value": "_gcl"
-                    },
-                    {
-                        "type": "BOOLEAN",
-                        "key": "enableShippingData",
-                        "value": "false"
-                    },
-                    {
-                        "type": "TEMPLATE",
-                        "key": "conversionId",
-                        "value": "1111"
-                    },
-                    {
-                        "type": "TEMPLATE",
-                        "key": "conversionLabel",
-                        "value": "1111"
-                    },
-                    {
-                        "type": "BOOLEAN",
-                        "key": "rdp",
-                        "value": "false"
-                    }
-                ],
-                "fingerprint": "1681791648428",
-                "firingTriggerId": [
-                    "9"
-                ],
-                "tagFiringOption": "ONCE_PER_EVENT",
-                "monitoringMetadata": {
-                    "type": "MAP"
-                },
-                "consentSettings": {
-                    "consentStatus": "NOT_SET"
-                }
-            },
-            {
-                "accountId": "6073037741",
-                "containerId": "112997111",
-                "tagId": "19",
-                "name": "Tiếp thị lại động trên Google Ads",
-                "type": "sp",
+                "accountId": "6073037745",
+                "containerId": "117875208",
+                "tagId": "9",
+                "name": "HTML tùy chỉnh - form lien he tu van dat hang",
+                "type": "html",
                 "parameter": [
                     {
                         "type": "TEMPLATE",
-                        "key": "eventItems",
-                        "value": "{{dr_items}}"
+                        "key": "html",
+                        "value": "<script>\n  document.addEventListener( 'wpcf7mailsent', function( event ) {\n    var inputs = event.detail.inputs;\n    var phoneObject = inputs.find(function(item){\n      return item.name == 'sodienthoai'; //name of phone input\n    })\n    if(phoneObject){\n      dataLayer.push({\n        \"event\": 'form_lienhetuvan',\n        \"form_id\": event.detail.contactFormId,\n        \"phone\": phoneObject.value,\n      })\n    }\n  }); \n</script>"
                     },
                     {
                         "type": "BOOLEAN",
-                        "key": "enableConversionLinker",
-                        "value": "true"
-                    },
-                    {
-                        "type": "TEMPLATE",
-                        "key": "eventValue",
-                        "value": "{{dr_value}}"
-                    },
-                    {
-                        "type": "BOOLEAN",
-                        "key": "enableDynamicRemarketing",
-                        "value": "true"
-                    },
-                    {
-                        "type": "TEMPLATE",
-                        "key": "eventName",
-                        "value": "{{dr_event_type}}"
-                    },
-                    {
-                        "type": "TEMPLATE",
-                        "key": "conversionCookiePrefix",
-                        "value": "_gcl"
-                    },
-                    {
-                        "type": "TEMPLATE",
-                        "key": "conversionId",
-                        "value": "10775584209"
-                    },
-                    {
-                        "type": "TEMPLATE",
-                        "key": "customParamsFormat",
-                        "value": "NONE"
-                    },
-                    {
-                        "type": "BOOLEAN",
-                        "key": "rdp",
+                        "key": "supportDocumentWrite",
                         "value": "false"
                     }
                 ],
-                "fingerprint": "1681792561922",
+                "fingerprint": "1684208085313",
                 "firingTriggerId": [
-                    "18"
-                ],
-                "tagFiringOption": "ONCE_PER_EVENT",
-                "monitoringMetadata": {
-                    "type": "MAP"
-                },
-                "consentSettings": {
-                    "consentStatus": "NOT_SET"
-                }
-            },
-            {
-                "accountId": "6073037741",
-                "containerId": "112997111",
-                "tagId": "21",
-                "name": "Ads Hotline",
-                "type": "awct",
-                "parameter": [
-                    {
-                        "type": "BOOLEAN",
-                        "key": "enableNewCustomerReporting",
-                        "value": "false"
-                    },
-                    {
-                        "type": "BOOLEAN",
-                        "key": "enableConversionLinker",
-                        "value": "true"
-                    },
-                    {
-                        "type": "BOOLEAN",
-                        "key": "enableProductReporting",
-                        "value": "false"
-                    },
-                    {
-                        "type": "BOOLEAN",
-                        "key": "enableEnhancedConversion",
-                        "value": "false"
-                    },
-                    {
-                        "type": "TEMPLATE",
-                        "key": "conversionCookiePrefix",
-                        "value": "_gcl"
-                    },
-                    {
-                        "type": "BOOLEAN",
-                        "key": "enableShippingData",
-                        "value": "false"
-                    },
-                    {
-                        "type": "TEMPLATE",
-                        "key": "conversionId",
-                        "value": "1111"
-                    },
-                    {
-                        "type": "TEMPLATE",
-                        "key": "conversionLabel",
-                        "value": "1111"
-                    },
-                    {
-                        "type": "BOOLEAN",
-                        "key": "rdp",
-                        "value": "false"
-                    }
-                ],
-                "fingerprint": "1681792749035",
-                "firingTriggerId": [
-                    "20"
-                ],
-                "tagFiringOption": "ONCE_PER_EVENT",
-                "monitoringMetadata": {
-                    "type": "MAP"
-                },
-                "consentSettings": {
-                    "consentStatus": "NOT_SET"
-                }
-            },
-            {
-                "accountId": "6073037741",
-                "containerId": "112997111",
-                "tagId": "24",
-                "name": "Ads Form",
-                "type": "awct",
-                "parameter": [
-                    {
-                        "type": "BOOLEAN",
-                        "key": "enableNewCustomerReporting",
-                        "value": "false"
-                    },
-                    {
-                        "type": "BOOLEAN",
-                        "key": "enableConversionLinker",
-                        "value": "true"
-                    },
-                    {
-                        "type": "BOOLEAN",
-                        "key": "enableProductReporting",
-                        "value": "false"
-                    },
-                    {
-                        "type": "BOOLEAN",
-                        "key": "enableEnhancedConversion",
-                        "value": "false"
-                    },
-                    {
-                        "type": "TEMPLATE",
-                        "key": "conversionCookiePrefix",
-                        "value": "_gcl"
-                    },
-                    {
-                        "type": "BOOLEAN",
-                        "key": "enableShippingData",
-                        "value": "false"
-                    },
-                    {
-                        "type": "TEMPLATE",
-                        "key": "conversionId",
-                        "value": "11111"
-                    },
-                    {
-                        "type": "TEMPLATE",
-                        "key": "conversionLabel",
-                        "value": "11111"
-                    },
-                    {
-                        "type": "BOOLEAN",
-                        "key": "rdp",
-                        "value": "false"
-                    }
-                ],
-                "fingerprint": "1681793094066",
-                "firingTriggerId": [
-                    "23"
-                ],
-                "tagFiringOption": "ONCE_PER_EVENT",
-                "monitoringMetadata": {
-                    "type": "MAP"
-                },
-                "consentSettings": {
-                    "consentStatus": "NOT_SET"
-                }
-            },
-            {
-                "accountId": "6073037741",
-                "containerId": "112997111",
-                "tagId": "25",
-                "name": "Ads Zalo",
-                "type": "awct",
-                "parameter": [
-                    {
-                        "type": "BOOLEAN",
-                        "key": "enableNewCustomerReporting",
-                        "value": "false"
-                    },
-                    {
-                        "type": "BOOLEAN",
-                        "key": "enableConversionLinker",
-                        "value": "true"
-                    },
-                    {
-                        "type": "BOOLEAN",
-                        "key": "enableProductReporting",
-                        "value": "false"
-                    },
-                    {
-                        "type": "BOOLEAN",
-                        "key": "enableEnhancedConversion",
-                        "value": "false"
-                    },
-                    {
-                        "type": "TEMPLATE",
-                        "key": "conversionCookiePrefix",
-                        "value": "_gcl"
-                    },
-                    {
-                        "type": "BOOLEAN",
-                        "key": "enableShippingData",
-                        "value": "false"
-                    },
-                    {
-                        "type": "TEMPLATE",
-                        "key": "conversionId",
-                        "value": "11111"
-                    },
-                    {
-                        "type": "TEMPLATE",
-                        "key": "conversionLabel",
-                        "value": "111111"
-                    },
-                    {
-                        "type": "BOOLEAN",
-                        "key": "rdp",
-                        "value": "false"
-                    }
-                ],
-                "fingerprint": "1681793328767",
-                "firingTriggerId": [
-                    "22"
+                    "2147479553"
                 ],
                 "tagFiringOption": "ONCE_PER_EVENT",
                 "monitoringMetadata": {
@@ -511,43 +170,10 @@
         ],
         "trigger": [
             {
-                "accountId": "6073037741",
-                "containerId": "112997111",
-                "triggerId": "4",
-                "name": "purchase_woo",
-                "type": "CUSTOM_EVENT",
-                "customEventFilter": [
-                    {
-                        "type": "EQUALS",
-                        "parameter": [
-                            {
-                                "type": "TEMPLATE",
-                                "key": "arg0",
-                                "value": "{{_event}}"
-                            },
-                            {
-                                "type": "TEMPLATE",
-                                "key": "arg1",
-                                "value": "purchase_woo"
-                            }
-                        ]
-                    }
-                ],
-                "fingerprint": "1681790676534"
-            },
-            {
-                "accountId": "6073037741",
-                "containerId": "112997111",
+                "accountId": "6073037745",
+                "containerId": "117875208",
                 "triggerId": "7",
-                "name": "DOM sẵn sàng",
-                "type": "DOM_READY",
-                "fingerprint": "1681791180070"
-            },
-            {
-                "accountId": "6073037741",
-                "containerId": "112997111",
-                "triggerId": "9",
-                "name": "ownerRepliedMessage",
+                "name": "form_lienhetuvan",
                 "type": "CUSTOM_EVENT",
                 "customEventFilter": [
                     {
@@ -561,120 +187,52 @@
                             {
                                 "type": "TEMPLATE",
                                 "key": "arg1",
-                                "value": "ownerRepliedMessage"
+                                "value": "form_lienhetuvan"
                             }
                         ]
                     }
                 ],
-                "fingerprint": "1681791631657"
-            },
-            {
-                "accountId": "6073037741",
-                "containerId": "112997111",
-                "triggerId": "18",
-                "name": "dynamic_remarketing",
-                "type": "CUSTOM_EVENT",
-                "customEventFilter": [
-                    {
-                        "type": "EQUALS",
-                        "parameter": [
-                            {
-                                "type": "TEMPLATE",
-                                "key": "arg0",
-                                "value": "{{_event}}"
-                            },
-                            {
-                                "type": "TEMPLATE",
-                                "key": "arg1",
-                                "value": "dynamic_remarketing"
-                            }
-                        ]
-                    }
-                ],
-                "fingerprint": "1681792539522"
-            },
-            {
-                "accountId": "6073037741",
-                "containerId": "112997111",
-                "triggerId": "20",
-                "name": "Click Hotline",
-                "type": "CLICK",
                 "filter": [
                     {
-                        "type": "CSS_SELECTOR",
+                        "type": "STARTS_WITH",
                         "parameter": [
                             {
                                 "type": "TEMPLATE",
                                 "key": "arg0",
-                                "value": "{{Click Element}}"
+                                "value": "{{Bảng RegEx - phone}}"
                             },
                             {
                                 "type": "TEMPLATE",
                                 "key": "arg1",
-                                "value": "[href*=\"tel:\"], [href*=\"tel:\"] *"
+                                "value": "84"
                             }
                         ]
-                    }
-                ],
-                "fingerprint": "1681792736774"
-            },
-            {
-                "accountId": "6073037741",
-                "containerId": "112997111",
-                "triggerId": "22",
-                "name": "Click Zalo",
-                "type": "CLICK",
-                "filter": [
+                    },
                     {
-                        "type": "CSS_SELECTOR",
+                        "type": "CONTAINS",
                         "parameter": [
                             {
                                 "type": "TEMPLATE",
                                 "key": "arg0",
-                                "value": "{{Click Element}}"
+                                "value": "{{form_id}}"
                             },
                             {
                                 "type": "TEMPLATE",
                                 "key": "arg1",
-                                "value": "[href*=\"zalo.me\"], [href*=\"zalo.me\"] *"
+                                "value": "2227"
                             }
                         ]
                     }
                 ],
-                "fingerprint": "1681792801121"
-            },
-            {
-                "accountId": "6073037741",
-                "containerId": "112997111",
-                "triggerId": "23",
-                "name": "formcf7submit",
-                "type": "CUSTOM_EVENT",
-                "customEventFilter": [
-                    {
-                        "type": "EQUALS",
-                        "parameter": [
-                            {
-                                "type": "TEMPLATE",
-                                "key": "arg0",
-                                "value": "{{_event}}"
-                            },
-                            {
-                                "type": "TEMPLATE",
-                                "key": "arg1",
-                                "value": "formcf7submit"
-                            }
-                        ]
-                    }
-                ],
-                "fingerprint": "1681793088276"
+                "fingerprint": "1684208243769"
             }
         ],
         "variable": [
             {
-                "accountId": "6073037741",
-                "containerId": "112997111",
-                "variableId": "11",
-                "name": "dr_event_type",
+                "accountId": "6073037745",
+                "containerId": "117875208",
+                "variableId": "3",
+                "name": "form_id",
                 "type": "v",
                 "parameter": [
                     {
@@ -690,17 +248,17 @@
                     {
                         "type": "TEMPLATE",
                         "key": "name",
-                        "value": "dr_event_type"
+                        "value": "form_id"
                     }
                 ],
-                "fingerprint": "1681791704410",
+                "fingerprint": "1684207162414",
                 "formatValue": {}
             },
             {
-                "accountId": "6073037741",
-                "containerId": "112997111",
-                "variableId": "12",
-                "name": "dr_items",
+                "accountId": "6073037745",
+                "containerId": "117875208",
+                "variableId": "4",
+                "name": "phone",
                 "type": "v",
                 "parameter": [
                     {
@@ -716,24 +274,19 @@
                     {
                         "type": "TEMPLATE",
                         "key": "name",
-                        "value": "dr_items"
+                        "value": "phone"
                     }
                 ],
-                "fingerprint": "1681791712759",
+                "fingerprint": "1684207172125",
                 "formatValue": {}
             },
             {
-                "accountId": "6073037741",
-                "containerId": "112997111",
-                "variableId": "13",
-                "name": "dr_value",
-                "type": "v",
+                "accountId": "6073037745",
+                "containerId": "117875208",
+                "variableId": "6",
+                "name": "Bảng RegEx - phone",
+                "type": "remm",
                 "parameter": [
-                    {
-                        "type": "INTEGER",
-                        "key": "dataLayerVersion",
-                        "value": "2"
-                    },
                     {
                         "type": "BOOLEAN",
                         "key": "setDefaultValue",
@@ -741,131 +294,173 @@
                     },
                     {
                         "type": "TEMPLATE",
-                        "key": "name",
-                        "value": "dr_value"
-                    }
-                ],
-                "fingerprint": "1681791722858",
-                "formatValue": {}
-            },
-            {
-                "accountId": "6073037741",
-                "containerId": "112997111",
-                "variableId": "14",
-                "name": "value",
-                "type": "v",
-                "parameter": [
-                    {
-                        "type": "INTEGER",
-                        "key": "dataLayerVersion",
-                        "value": "2"
+                        "key": "input",
+                        "value": "{{phone}}"
                     },
                     {
                         "type": "BOOLEAN",
-                        "key": "setDefaultValue",
-                        "value": "false"
-                    },
-                    {
-                        "type": "TEMPLATE",
-                        "key": "name",
-                        "value": "value"
-                    }
-                ],
-                "fingerprint": "1681792110285",
-                "formatValue": {}
-            },
-            {
-                "accountId": "6073037741",
-                "containerId": "112997111",
-                "variableId": "15",
-                "name": "currency",
-                "type": "v",
-                "parameter": [
-                    {
-                        "type": "INTEGER",
-                        "key": "dataLayerVersion",
-                        "value": "2"
+                        "key": "fullMatch",
+                        "value": "true"
                     },
                     {
                         "type": "BOOLEAN",
-                        "key": "setDefaultValue",
-                        "value": "false"
-                    },
-                    {
-                        "type": "TEMPLATE",
-                        "key": "name",
-                        "value": "currency"
-                    }
-                ],
-                "fingerprint": "1681792119409",
-                "formatValue": {}
-            },
-            {
-                "accountId": "6073037741",
-                "containerId": "112997111",
-                "variableId": "16",
-                "name": "transaction_id",
-                "type": "v",
-                "parameter": [
-                    {
-                        "type": "INTEGER",
-                        "key": "dataLayerVersion",
-                        "value": "2"
+                        "key": "replaceAfterMatch",
+                        "value": "true"
                     },
                     {
                         "type": "BOOLEAN",
-                        "key": "setDefaultValue",
-                        "value": "false"
+                        "key": "ignoreCase",
+                        "value": "true"
                     },
                     {
-                        "type": "TEMPLATE",
-                        "key": "name",
-                        "value": "transaction_id"
+                        "type": "LIST",
+                        "key": "map",
+                        "list": [
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "key",
+                                        "value": "0(\\d+)"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "value",
+                                        "value": "84$1"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "key",
+                                        "value": "\\840(\\d+)"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "value",
+                                        "value": "84$1"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "key",
+                                        "value": "\\(\\+84\\)0(\\d+)\\s(\\d+)\\s(\\d+)"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "value",
+                                        "value": "84$1$2$3"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "key",
+                                        "value": "\\(\\+84\\)(\\d+)"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "value",
+                                        "value": "84$1"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "key",
+                                        "value": "\\+840(\\d+)"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "value",
+                                        "value": "84$1"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "key",
+                                        "value": "\\+84(\\d+)"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "value",
+                                        "value": "84$1"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "key",
+                                        "value": "(\\+0)\\s([()])\\d+([()])\\s\\d+-\\d+"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "value",
+                                        "value": "84$1"
+                                    }
+                                ]
+                            }
+                        ]
                     }
                 ],
-                "fingerprint": "1681792129268",
+                "fingerprint": "1684208936070",
                 "formatValue": {}
             }
         ],
         "builtInVariable": [
             {
-                "accountId": "6073037741",
-                "containerId": "112997111",
+                "accountId": "6073037745",
+                "containerId": "117875208",
                 "type": "PAGE_URL",
                 "name": "Page URL"
             },
             {
-                "accountId": "6073037741",
-                "containerId": "112997111",
+                "accountId": "6073037745",
+                "containerId": "117875208",
                 "type": "PAGE_HOSTNAME",
                 "name": "Page Hostname"
             },
             {
-                "accountId": "6073037741",
-                "containerId": "112997111",
+                "accountId": "6073037745",
+                "containerId": "117875208",
                 "type": "PAGE_PATH",
                 "name": "Page Path"
             },
             {
-                "accountId": "6073037741",
-                "containerId": "112997111",
+                "accountId": "6073037745",
+                "containerId": "117875208",
                 "type": "REFERRER",
                 "name": "Referrer"
             },
             {
-                "accountId": "6073037741",
-                "containerId": "112997111",
+                "accountId": "6073037745",
+                "containerId": "117875208",
                 "type": "EVENT",
                 "name": "Event"
-            },
-            {
-                "accountId": "6073037741",
-                "containerId": "112997111",
-                "type": "CLICK_ELEMENT",
-                "name": "Click Element"
             }
         ],
-        "fingerprint": "1681796146335",
-        "tagManagerUrl": "https://tagmanager.google.com/#/versions/accounts/6073037741/containers/112997111/versions/0?apiLink=version"
+        "fingerprint": "1684220221844",
+        "tagManagerUrl": "https://tagmanager.google.com/#/versions/accounts/6073037745/containers/117875208/versions/0?apiLink=version"
     }
 }

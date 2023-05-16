@@ -1,0 +1,30 @@
+<script>
+// Zendesk
+</script>
+
+ Instegration via GTM GA4 ....
+// Cach 1
+<script>
+    https://trackingchef.com/google-analytics/integrating-the-zendesk-widget-with-ga4/
+</script>
+
+
+// Cach 2
+<script>
+  $zopim(function() {
+      $zopim.livechat.setOnChatStart(function() {
+        // trigger when chat starts
+        window.dataLayer.push({
+          "event": "zopimChat",
+          "zopimChatAction": "zopimChatStarted"
+        });
+    });
+    $zopim.livechat.setOnChatEnd(function() {
+        // trigger when chat closes
+        window.dataLayer.push({
+          "event": "zopimChat",
+          "zopimChatAction": "zopimChatClosed"
+        });
+    });
+  });
+</script>

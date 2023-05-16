@@ -11,20 +11,11 @@ if(_forms.length) {
 
 
             var formDataObj = {};
-            data_form.forEach((value, key) => (formDataObj[key] = value));
+            data_form.forEach(function(value, key) { (formDataObj[key] = value)});
 
             inpushObj.formdata = formDataObj;
-            
 
-            var phoneObject = inputs.find(function(item){
-                return item.name == 'phone'; //name of phone input
-            });
-
-            if(phoneObject) {
-                inpushObj.phone = phoneObject.value;
-            }
-
-
+            localStorage.setItem("_ntel", formDataObj.billing_phone);
 
             dataLayer.push(inpushObj)
         });

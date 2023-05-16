@@ -38,7 +38,7 @@ function _DR_TEMPLATE() {
     var _tempStorage = sessionStorage || localStorage;
     var GOOGLE_BUSINESS_VERTICAL = 'retail';
     var CURRENCY = 'VND';
-    var IS_DEBUG = true;
+    var IS_DEBUG = document.querySelector('.__TAG_ASSISTANT_BADGE') || false;
 
     var addProductStorage = function(id_product) {
         id_product = id_product.toString();

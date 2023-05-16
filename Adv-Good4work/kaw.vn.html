@@ -13,32 +13,28 @@
         + checkout page
 */
 
-// https://inankhanh.com/gio-hang/
-// https://inankhanh.com/thanh-toan/order-received/7648/?key=wc_order_EQ8ZITbyTuxNy
-// Thông tin chuyển khoản chưa rõ ràng, adv cần bổ sung
 
 
 // Hoi ae ve` qua trinh chuan bi case
 // confirm DR need price field?
 
-
+/*
 // Create variable
 dr_event_type
 dr_items
 dr_value
 // Create Custom Event
 dynamic_remarketing
-
+*/
 
 <script>
     // HTML Custom
-    function _DR_TEMPLATE_WOO() {
+    function _DR_TEMPLATE() {
         var _tempStorage = sessionStorage || localStorage;
-
         var GOOGLE_BUSINESS_VERTICAL = 'retail';
         var CURRENCY = 'VND';
-        var IS_DEBUG = false;
-
+        var IS_DEBUG = document.querySelector('.__TAG_ASSISTANT_BADGE') || false;
+    
         var addProductStorage = function(id_product) {
             id_product = id_product.toString();
             var _lstitem = _tempStorage.getItem('dr_itemslst') || false;
@@ -67,6 +63,17 @@ dynamic_remarketing
             }
         
             _tempStorage.setItem("dr_value_st", _value_number);
+        }
+    
+    
+    
+        var _priceconvert = function(price, CURRENCY) {
+            if(CURRENCY === 'VND') {
+                return parseFloat(price.replace(/[^\d]+/g, ''));
+            }
+            if(CURRENCY === 'MYR') {
+                return parseFloat(price.replace(/[^\d.]+/g, ''));
+            }
             
         }
         
@@ -96,16 +103,6 @@ dynamic_remarketing
             }
             return false;
         }
-
-        var _priceconvert = function(price, CURRENCY) {
-            if(CURRENCY === 'VND') {
-                return parseFloat(price.replace(/[^\d]+/g, ''));
-            }
-            if(CURRENCY === 'MYR') {
-                return parseFloat(price.replace(/[^\d.]+/g, ''));
-            }
-            
-        }
         
         
         // ===============
@@ -113,35 +110,38 @@ dynamic_remarketing
         // ===============
         
         // by class body
-            var is_product_page = checkMultiClass(["single-product", "single","woocommerce", "woocommerce-page"], document.body);
-            var is_cart_page = checkMultiClass(["woocommerce-cart", "woocommerce-page"], document.body);
-            var is_begincheckout_page = checkMultiClass(["woocommerce-checkout", "woocommerce-page"], document.body);
-            var is_order_thankyou_page = checkMultiClass(["woocommerce-order-received", "woocommerce-checkout", "woocommerce-page"], document.body);
+        var is_product_page = document.querySelector('meta[itemprop="sku"]') && 
+                document.querySelector('form[name="buy_simple_form"]') && 
+                document.querySelector('.price_current#price');
+                
+        // site dont have cart page
+        var is_cart_page = location.href.includes("/gio-hang.html") && document.querySelector("#eshopcart_info");
+        var is_begincheckout_page = location.href.includes("/gio-hang.html") && document.querySelector("#eshopcart_info");
+        var is_order_thankyou_page = location.pathname.startsWith('/ket-thuc-don-hang');
         
-        // by url or element special
-            // var is_cart_page = location.href.includes("/gio-hang/");
-            // var is_begincheckout_page = location.href.includes("/thanh-toan/");
-            // var is_order_thankyou_page = location.href.includes("/thanh-toan/order-received/");
         
-        // console.log(
-        //     is_product_page,
-        //     is_cart_page,
-        //     is_begincheckout_page,
-        //     is_order_thankyou_page
-        // );
         
         
         // DR
         var _dr_items = [];
         var _item = {};
         
-
+        if(IS_DEBUG) {
+            console.log(
+                "dr",
+                is_product_page,
+                is_cart_page,
+                is_begincheckout_page,
+                is_order_thankyou_page
+            );
+        }
+    
+    
         // *********
         // Product detail page
         // *********
         if(is_product_page) {
-            var _splitarr = document.querySelector('[href*="/wp-json/wp/v2/product"]').href.split('/');
-            var id_product = _splitarr[_splitarr.length - 1];
+            var id_product = parseFloat(document.querySelector('[name="product_id"]').value);
         
             _item = {"id": id_product, "google_business_vertical": GOOGLE_BUSINESS_VERTICAL };
             _dr_items.push(_item);
@@ -149,29 +149,31 @@ dynamic_remarketing
         
         
             // LUU Y CLASS
-            var _price_elm = document.querySelector('.product.type-product .woocommerce-Price-amount');
+            var _price_elm = document.querySelector('.price_current#price');
             var _value = 0;
             if(_price_elm) {
-                _value = parseFloat(_priceconvert(_price_elm.innerText, CURRENCY));
+                _value = parseFloat(_priceconvert(_price_elm.getAttribute('content'), CURRENCY));
+                _value = _value || 0;
             } else {
                 if(IS_DEBUG) {
-                    console.log("debug", "price elm - product detail not fount");
+                    console.log("dr", "price elm - product detail not fount", dataLayer);
                 }
             }
-        
-        
+            
             dataLayer.push({
                 'dr_event_type': 'view_item',
                 'dr_items': _dr_items,
                 'dr_value': _value,
                 'event': 'dynamic_remarketing'
             });
+    
+            if(IS_DEBUG) { console.log("dr", "view_item"); }
+            
         
             
             // add to cart click at product detail page
-        
                 // LUU Y CLASS
-                jQuery(document).on("click", '[name="add-to-cart"]', function(){
+                jQuery(document).on("click", '[type="submit"]', function(){
                     _dr_items = []; 
         
                     _item = {"id": id_product, "google_business_vertical": GOOGLE_BUSINESS_VERTICAL };
@@ -188,45 +190,46 @@ dynamic_remarketing
                     addValueProductStorage(_value, 1);
         
                     if(IS_DEBUG) {
-                        console.log("add_to_cart", dataLayer);
+                        console.log("dr", "add_to_cart click", dataLayer);
                     }
                 });
         }
         
-
+    
+    
         // *********
         // Cart page
         // *********
         if(is_cart_page) {
-            
             var id_product = '';
             var _value = 0;
+            var _price_total = function() {
+                return parseFloat(_priceconvert(document.querySelector('#price_total').value, CURRENCY))
+            };
             var _lst_prod = [];
             _dr_items = [];
             
             var _is_update_cart = function() {
-                jQuery(".cart_item").each(function(index){
-                    id_product = jQuery(this).find('[data-product_id]').attr('data-product_id');
-                    var _price = jQuery(this).find('.product-subtotal').text();
-                    _price = _priceconvert(_price, CURRENCY);
-                    _value += parseFloat(_price);
-                    
+
+                jQuery('[name="shopcart"] .row-table').each(function(index){
+                    var _arr = jQuery(this).find('.name-item').attr('href').split('-');
+                    id_product = _arr[_arr.length - 1];
+                    id_product = _priceconvert(id_product, CURRENCY);
+                                    
                     // For DR
                     _item = {"id": id_product, "google_business_vertical": GOOGLE_BUSINESS_VERTICAL };
                     _dr_items.push(_item);
+                    
             
+                    addProductStorage(id_product);
+    
                     // For Storage Purchase
                     _lst_prod.push(id_product);
                 });
-
-
-                // Overwrite price
-                var _priceelm = document.querySelector('.order-total .woocommerce-Price-amount.amount');
-                if(_priceelm) {
-                    _value = parseFloat(_priceconvert(_priceelm.innerText, CURRENCY));
-                    addValueProductStorage(_value, 2);
-                }
-
+    
+                _value = _price_total();
+                _value = _value || 0;
+            
                 if(_dr_items.length > 0) {
                     dataLayer.push({
                         'dr_event_type': 'add_to_cart',
@@ -238,16 +241,30 @@ dynamic_remarketing
                     addValueProductStorage(_value, 2);
             
                     if(IS_DEBUG) {
-                        console.log("add_to_cart cart page", dataLayer);
+                        console.log("dr", "add_to_cart cart page", dataLayer);
                     }
                 }
             }
         
         
-
             // Update before unload
-            jQuery(window).on('beforeunload', function () {
+            _is_update_cart();
+
+            if(_lst_prod.length > 0) {
+                renewListProductStorageByArrList(_lst_prod);
+            }
+
+
+            // Update by click
+            window._pricetotal = window._pricetotal || _price_total();
+            jQuery(document).on("click", '.all-button-cart .button-submit', function(){
+                if(window._pricetotal === _price_total()) return false;
+                window._pricetotal = _price_total();
+                
+                _lst_prod = [];
+                _dr_items = [];
                 _is_update_cart();
+
                 if(_lst_prod.length > 0) {
                     renewListProductStorageByArrList(_lst_prod);
                 }
@@ -255,53 +272,29 @@ dynamic_remarketing
         
         
         }
-
-
+        
         // *********
-        // begin checkout page
+        // begin checkout
         // *********
-        // Overwrite storage
-        // woocommerce-Price-amount amount
         if(is_begincheckout_page) {
-            var _priceelm = document.querySelector('.order-total .woocommerce-Price-amount.amount');
-            if(_priceelm) {
-                var _pricethis = parseFloat(_priceconvert(_priceelm.innerText, CURRENCY));
-                addValueProductStorage(_pricethis, 2);
+            var _updateprice = function() {
+                var _priceelm = document.querySelector('#price_total');
+                if(_priceelm) {
+                    var _price_string = _priceelm.value;
+                    var _price_this = parseFloat(_priceconvert(_price_string, CURRENCY));
+                    _price_this = _price_this || 0;
+                    addValueProductStorage(_price_this, 2);
+                }
             }
-        }
+            _updateprice();
 
-
-        // *********
-        // Button add to cart list page
-        // *********
-        // Add to cart button ajax
-        // .add_to_cart_button.ajax_add_to_cart
-        // LUU Y CLASS
-        jQuery(document).on("click", '.add_to_cart_button.ajax_add_to_cart', function(){
-            _dr_items = []; 
-            var _id_product_this = jQuery(this).attr('data-product_id');
-            var _price_this = jQuery(this).closest('.sc-grid-product-content').find('ins .woocommerce-Price-amount');
-            _price_this = parseFloat(_priceconvert(_price_this.text(), CURRENCY));
-            _item = {"id": _id_product_this, "google_business_vertical": GOOGLE_BUSINESS_VERTICAL };
-            _dr_items.push(_item);
-            
-            dataLayer.push({
-                'dr_event_type': 'add_to_cart',
-                'dr_items': _dr_items,
-                'dr_value': _price_this,
-                'event': 'dynamic_remarketing'
+            jQuery(document).on("click", '.all-button-cart .button-submit', function(){
+                _updateprice();
             });
             
-            addProductStorage(_id_product_this);
-            addValueProductStorage(_price_this, 1);
-
-            if(IS_DEBUG) {
-                console.log("add_to_cart", dataLayer);
-            }
-        });
-
-
-
+        }
+    
+    
         // *********
         // order - thank you page
         // *********
@@ -310,7 +303,7 @@ dynamic_remarketing
             var dr_value_st = parseFloat(_tempStorage.getItem('dr_value_st') || 0);
             
             _dr_items = [];
-
+    
             if(dr_itemslst) {
                 var _lstarr = dr_itemslst.split('//');
                 
@@ -343,7 +336,7 @@ dynamic_remarketing
         
         
     }
-
+    
     // Start;
-    _DR_TEMPLATE_WOO();
+    _DR_TEMPLATE();
 </script>
