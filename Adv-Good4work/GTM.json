@@ -2,21 +2,21 @@
     "exportFormatVersion": 2,
     "exportTime": "2023-05-17 03:36:34",
     "containerVersion": {
-        "path": "accounts/6073037745/containers/117988765/versions/0",
-        "accountId": "6073037745",
-        "containerId": "117988765",
+        "path": "accounts/6073037741/containers/117988761/versions/0",
+        "accountId": "6073037741",
+        "containerId": "117988761",
         "containerVersionId": "0",
         "container": {
-            "path": "accounts/6073037745/containers/117988765",
-            "accountId": "6073037745",
-            "containerId": "117988765",
+            "path": "accounts/6073037741/containers/117988761",
+            "accountId": "6073037741",
+            "containerId": "117988761",
             "name": "1705 - cityford-thuduc.com",
             "publicId": "GTM-WSZ8964",
             "usageContext": [
                 "WEB"
             ],
             "fingerprint": "1684292090471",
-            "tagManagerUrl": "https://tagmanager.google.com/#/container/accounts/6073037745/containers/117988765/workspaces?apiLink=container",
+            "tagManagerUrl": "https://tagmanager.google.com/#/container/accounts/6073037741/containers/117988761/workspaces?apiLink=container",
             "features": {
                 "supportUserPermissions": true,
                 "supportEnvironments": true,
@@ -38,8 +38,8 @@
         },
         "tag": [
             {
-                "accountId": "6073037745",
-                "containerId": "117988765",
+                "accountId": "6073037741",
+                "containerId": "117988761",
                 "tagId": "3",
                 "name": "Trình liên kết chuyển đổi",
                 "type": "gclidw",
@@ -73,8 +73,8 @@
                 }
             },
             {
-                "accountId": "6073037745",
-                "containerId": "117988765",
+                "accountId": "6073037741",
+                "containerId": "117988761",
                 "tagId": "4",
                 "name": "HTML tùy chỉnh",
                 "type": "html",
@@ -103,8 +103,8 @@
                 }
             },
             {
-                "accountId": "6073037745",
-                "containerId": "117988765",
+                "accountId": "6073037741",
+                "containerId": "117988761",
                 "tagId": "7",
                 "name": "Ads Hotline",
                 "type": "awct",
@@ -168,8 +168,8 @@
                 }
             },
             {
-                "accountId": "6073037745",
-                "containerId": "117988765",
+                "accountId": "6073037741",
+                "containerId": "117988761",
                 "tagId": "8",
                 "name": "Ads Zalo",
                 "type": "awct",
@@ -233,8 +233,8 @@
                 }
             },
             {
-                "accountId": "6073037745",
-                "containerId": "117988765",
+                "accountId": "6073037741",
+                "containerId": "117988761",
                 "tagId": "10",
                 "name": "Ads Form",
                 "type": "awct",
@@ -300,8 +300,8 @@
         ],
         "trigger": [
             {
-                "accountId": "6073037745",
-                "containerId": "117988765",
+                "accountId": "6073037741",
+                "containerId": "117988761",
                 "triggerId": "5",
                 "name": "Click Hotline",
                 "type": "CLICK",
@@ -325,8 +325,8 @@
                 "fingerprint": "1684292454385"
             },
             {
-                "accountId": "6073037745",
-                "containerId": "117988765",
+                "accountId": "6073037741",
+                "containerId": "117988761",
                 "triggerId": "6",
                 "name": "Click Zalo",
                 "type": "CLICK",
@@ -350,8 +350,8 @@
                 "fingerprint": "1684292479322"
             },
             {
-                "accountId": "6073037745",
-                "containerId": "117988765",
+                "accountId": "6073037741",
+                "containerId": "117988761",
                 "triggerId": "9",
                 "name": "ajaxComplete",
                 "type": "CUSTOM_EVENT",
@@ -394,8 +394,8 @@
         ],
         "variable": [
             {
-                "accountId": "6073037745",
-                "containerId": "117988765",
+                "accountId": "6073037741",
+                "containerId": "117988761",
                 "variableId": "13",
                 "name": "attributes.response.success",
                 "type": "v",
@@ -422,43 +422,43 @@
         ],
         "builtInVariable": [
             {
-                "accountId": "6073037745",
-                "containerId": "117988765",
+                "accountId": "6073037741",
+                "containerId": "117988761",
                 "type": "PAGE_URL",
                 "name": "Page URL"
             },
             {
-                "accountId": "6073037745",
-                "containerId": "117988765",
+                "accountId": "6073037741",
+                "containerId": "117988761",
                 "type": "PAGE_HOSTNAME",
                 "name": "Page Hostname"
             },
             {
-                "accountId": "6073037745",
-                "containerId": "117988765",
+                "accountId": "6073037741",
+                "containerId": "117988761",
                 "type": "PAGE_PATH",
                 "name": "Page Path"
             },
             {
-                "accountId": "6073037745",
-                "containerId": "117988765",
+                "accountId": "6073037741",
+                "containerId": "117988761",
                 "type": "REFERRER",
                 "name": "Referrer"
             },
             {
-                "accountId": "6073037745",
-                "containerId": "117988765",
+                "accountId": "6073037741",
+                "containerId": "117988761",
                 "type": "EVENT",
                 "name": "Event"
             },
             {
-                "accountId": "6073037745",
-                "containerId": "117988765",
+                "accountId": "6073037741",
+                "containerId": "117988761",
                 "type": "CLICK_ELEMENT",
                 "name": "Click Element"
             }
         ],
         "fingerprint": "1684294593980",
-        "tagManagerUrl": "https://tagmanager.google.com/#/versions/accounts/6073037745/containers/117988765/versions/0?apiLink=version"
+        "tagManagerUrl": "https://tagmanager.google.com/#/versions/accounts/6073037741/containers/117988761/versions/0?apiLink=version"
     }
 }
