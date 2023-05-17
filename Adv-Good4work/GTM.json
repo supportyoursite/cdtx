@@ -1,22 +1,22 @@
 {
     "exportFormatVersion": 2,
-    "exportTime": "2023-05-16 06:57:01",
+    "exportTime": "2023-05-17 03:36:34",
     "containerVersion": {
-        "path": "accounts/6073037745/containers/117875208/versions/0",
+        "path": "accounts/6073037745/containers/117988765/versions/0",
         "accountId": "6073037745",
-        "containerId": "117875208",
+        "containerId": "117988765",
         "containerVersionId": "0",
         "container": {
-            "path": "accounts/6073037745/containers/117875208",
+            "path": "accounts/6073037745/containers/117988765",
             "accountId": "6073037745",
-            "containerId": "117875208",
-            "name": "1605 - suanonlipid.com",
-            "publicId": "GTM-T9DMWXM",
+            "containerId": "117988765",
+            "name": "1705 - cityford-thuduc.com",
+            "publicId": "GTM-WSZ8964",
             "usageContext": [
                 "WEB"
             ],
-            "fingerprint": "1684212841040",
-            "tagManagerUrl": "https://tagmanager.google.com/#/container/accounts/6073037745/containers/117875208/workspaces?apiLink=container",
+            "fingerprint": "1684292090471",
+            "tagManagerUrl": "https://tagmanager.google.com/#/container/accounts/6073037745/containers/117988765/workspaces?apiLink=container",
             "features": {
                 "supportUserPermissions": true,
                 "supportEnvironments": true,
@@ -33,14 +33,14 @@
                 "supportZones": true
             },
             "tagIds": [
-                "GTM-T9DMWXM"
+                "GTM-WSZ8964"
             ]
         },
         "tag": [
             {
                 "accountId": "6073037745",
-                "containerId": "117875208",
-                "tagId": "5",
+                "containerId": "117988765",
+                "tagId": "3",
                 "name": "Trình liên kết chuyển đổi",
                 "type": "gclidw",
                 "parameter": [
@@ -60,7 +60,7 @@
                         "value": "false"
                     }
                 ],
-                "fingerprint": "1684207204701",
+                "fingerprint": "1684292116120",
                 "firingTriggerId": [
                     "2147479553"
                 ],
@@ -74,9 +74,104 @@
             },
             {
                 "accountId": "6073037745",
-                "containerId": "117875208",
+                "containerId": "117988765",
+                "tagId": "4",
+                "name": "HTML tùy chỉnh",
+                "type": "html",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "html",
+                        "value": "<script>\n  (function () {\n    'use strict';\n    var $;\n    var n = 0;\n    init();\n\n    function init(n) {\n\n        // Ensure jQuery is available before anything\n        if (typeof jQuery !== 'undefined') {\n\n            // Define our $ shortcut locally\n            $ = jQuery;\n            bindToAjax();\n\n            // Check for up to 10 seconds\n        } else if (n < 20) {\n\n            n++;\n            setTimeout(init, 500);\n\n        }\n\n    }\n\n    function bindToAjax() {\n\n        // GET EMAIL / PHONE\n        var _email = '';\n        var _phone = '';\n\n        $(document).on('click', 'form [type=\"submit\"]', function () {\n            var _form = $(this).closest('form');\n            if(_form.find('[data-name=\"input_text\"]')) {\n                _phone = _form.find('[data-name=\"input_text\"]').val()\n            }\n        });\n\n\n\n        $(document).bind('ajaxComplete', function (evt, jqXhr, opts) {\n\n            // Create a fake a element for magically simple URL parsing\n            var fullUrl = document.createElement('a');\n            fullUrl.href = opts.url;\n\n            // IE9+ strips the leading slash from a.pathname because who wants to get home on time Friday anyways\n            var pathname = fullUrl.pathname[0] === '/' ? fullUrl.pathname : '/' + fullUrl.pathname;\n            // Manually remove the leading question mark, if there is one\n            var queryString = fullUrl.search[0] === '?' ? fullUrl.search.slice(1) : fullUrl.search;\n            // Turn our params and headers into objects for easier reference\n            var queryParameters = objMap(queryString, '&', '=', true);\n            var headers = objMap(jqXhr.getAllResponseHeaders(), '\\n', ':');\n\n\n            // GTM\n            dataLayer.push({\n                'event': 'ajaxComplete',\n                'email': _email,\n                'phone': _phone,\n                'attributes': {\n                    // Return empty strings to prevent accidental inheritance of old data\n                    'type': opts.type || '',\n                    'url': fullUrl.href || '',\n                    'queryParameters': queryParameters,\n                    'pathname': pathname || '',\n                    'hostname': fullUrl.hostname || '',\n                    'protocol': fullUrl.protocol || '',\n                    'fragment': fullUrl.hash || '',\n                    'statusCode': jqXhr.status || '',\n                    'statusText': jqXhr.statusText || '',\n                    'headers': headers,\n                    'timestamp': evt.timeStamp || '',\n                    'contentType': opts.contentType || '',\n                    // Defer to jQuery's handling of the response\n                    'response': (jqXhr.responseJSON || jqXhr.responseXML || jqXhr.responseText || '')\n                }\n            });\n\n\n        });\n\n    }\n\n    function objMap(data, delim, spl, decode) {\n\n        var obj = {};\n\n        // If one of our parameters is missing, return an empty object\n        if (!data || !delim || !spl) {\n\n            return {};\n\n        }\n\n        var arr = data.split(delim);\n        var i;\n\n        if (arr) {\n\n            for (i = 0; i < arr.length; i++) {\n\n                // If the decode flag is present, URL decode the set\n                var item = decode ? decodeURIComponent(arr[i]) : arr[i];\n                var pair = item.split(spl);\n\n                var key = trim_(pair[0]);\n                var value = trim_(pair[1]);\n\n                if (key && value) {\n\n                    obj[key] = value;\n\n                }\n\n            }\n\n        }\n\n        return obj;\n\n    }\n\n    // Basic .trim() polyfill\n    function trim_(str) {\n\n        if (str) {\n\n            return str.replace(/^[\\s\\uFEFF\\xA0]+|[\\s\\uFEFF\\xA0]+$/g, '');\n\n        }\n\n    }\n\n\n})();\n</script>"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "supportDocumentWrite",
+                        "value": "false"
+                    }
+                ],
+                "fingerprint": "1684293092188",
+                "firingTriggerId": [
+                    "2147479553"
+                ],
+                "tagFiringOption": "ONCE_PER_EVENT",
+                "monitoringMetadata": {
+                    "type": "MAP"
+                },
+                "consentSettings": {
+                    "consentStatus": "NOT_SET"
+                }
+            },
+            {
+                "accountId": "6073037745",
+                "containerId": "117988765",
+                "tagId": "7",
+                "name": "Ads Hotline",
+                "type": "awct",
+                "parameter": [
+                    {
+                        "type": "BOOLEAN",
+                        "key": "enableNewCustomerReporting",
+                        "value": "false"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "enableConversionLinker",
+                        "value": "true"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "enableProductReporting",
+                        "value": "false"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "enableEnhancedConversion",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "conversionCookiePrefix",
+                        "value": "_gcl"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "enableShippingData",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "conversionId",
+                        "value": "1111"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "conversionLabel",
+                        "value": "2222"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "rdp",
+                        "value": "false"
+                    }
+                ],
+                "fingerprint": "1684292523593",
+                "firingTriggerId": [
+                    "5"
+                ],
+                "tagFiringOption": "ONCE_PER_EVENT",
+                "monitoringMetadata": {
+                    "type": "MAP"
+                },
+                "consentSettings": {
+                    "consentStatus": "NOT_SET"
+                }
+            },
+            {
+                "accountId": "6073037745",
+                "containerId": "117988765",
                 "tagId": "8",
-                "name": "Ads Form Lien he tu van dat hang",
+                "name": "Ads Zalo",
                 "type": "awct",
                 "parameter": [
                     {
@@ -125,9 +220,9 @@
                         "value": "false"
                     }
                 ],
-                "fingerprint": "1684207979142",
+                "fingerprint": "1684292509312",
                 "firingTriggerId": [
-                    "7"
+                    "6"
                 ],
                 "tagFiringOption": "ONCE_PER_EVENT",
                 "monitoringMetadata": {
@@ -139,25 +234,60 @@
             },
             {
                 "accountId": "6073037745",
-                "containerId": "117875208",
-                "tagId": "9",
-                "name": "HTML tùy chỉnh - form lien he tu van dat hang",
-                "type": "html",
+                "containerId": "117988765",
+                "tagId": "10",
+                "name": "Ads Form",
+                "type": "awct",
                 "parameter": [
                     {
-                        "type": "TEMPLATE",
-                        "key": "html",
-                        "value": "<script>\n  document.addEventListener( 'wpcf7mailsent', function( event ) {\n    var inputs = event.detail.inputs;\n    var phoneObject = inputs.find(function(item){\n      return item.name == 'sodienthoai'; //name of phone input\n    })\n    if(phoneObject){\n      dataLayer.push({\n        \"event\": 'form_lienhetuvan',\n        \"form_id\": event.detail.contactFormId,\n        \"phone\": phoneObject.value,\n      })\n    }\n  }); \n</script>"
+                        "type": "BOOLEAN",
+                        "key": "enableNewCustomerReporting",
+                        "value": "false"
                     },
                     {
                         "type": "BOOLEAN",
-                        "key": "supportDocumentWrite",
+                        "key": "enableConversionLinker",
+                        "value": "true"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "enableProductReporting",
+                        "value": "false"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "enableEnhancedConversion",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "conversionCookiePrefix",
+                        "value": "_gcl"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "enableShippingData",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "conversionId",
+                        "value": "11111"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "conversionLabel",
+                        "value": "2222"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "rdp",
                         "value": "false"
                     }
                 ],
-                "fingerprint": "1684208085313",
+                "fingerprint": "1684292560500",
                 "firingTriggerId": [
-                    "2147479553"
+                    "9"
                 ],
                 "tagFiringOption": "ONCE_PER_EVENT",
                 "monitoringMetadata": {
@@ -171,9 +301,59 @@
         "trigger": [
             {
                 "accountId": "6073037745",
-                "containerId": "117875208",
-                "triggerId": "7",
-                "name": "form_lienhetuvan",
+                "containerId": "117988765",
+                "triggerId": "5",
+                "name": "Click Hotline",
+                "type": "CLICK",
+                "filter": [
+                    {
+                        "type": "CSS_SELECTOR",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{Click Element}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": "[href*=\"tel:\"], [href*=\"tel:\"] *"
+                            }
+                        ]
+                    }
+                ],
+                "fingerprint": "1684292454385"
+            },
+            {
+                "accountId": "6073037745",
+                "containerId": "117988765",
+                "triggerId": "6",
+                "name": "Click Zalo",
+                "type": "CLICK",
+                "filter": [
+                    {
+                        "type": "CSS_SELECTOR",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{Click Element}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": "[href*=\"zalo.me\"], [href*=\"zalo.me\"] *"
+                            }
+                        ]
+                    }
+                ],
+                "fingerprint": "1684292479322"
+            },
+            {
+                "accountId": "6073037745",
+                "containerId": "117988765",
+                "triggerId": "9",
+                "name": "ajaxComplete",
                 "type": "CUSTOM_EVENT",
                 "customEventFilter": [
                     {
@@ -187,52 +367,37 @@
                             {
                                 "type": "TEMPLATE",
                                 "key": "arg1",
-                                "value": "form_lienhetuvan"
+                                "value": "ajaxComplete"
                             }
                         ]
                     }
                 ],
                 "filter": [
                     {
-                        "type": "STARTS_WITH",
+                        "type": "EQUALS",
                         "parameter": [
                             {
                                 "type": "TEMPLATE",
                                 "key": "arg0",
-                                "value": "{{Bảng RegEx - phone}}"
+                                "value": "{{attributes.response.success}}"
                             },
                             {
                                 "type": "TEMPLATE",
                                 "key": "arg1",
-                                "value": "84"
-                            }
-                        ]
-                    },
-                    {
-                        "type": "CONTAINS",
-                        "parameter": [
-                            {
-                                "type": "TEMPLATE",
-                                "key": "arg0",
-                                "value": "{{form_id}}"
-                            },
-                            {
-                                "type": "TEMPLATE",
-                                "key": "arg1",
-                                "value": "2227"
+                                "value": "true"
                             }
                         ]
                     }
                 ],
-                "fingerprint": "1684208243769"
+                "fingerprint": "1684292742568"
             }
         ],
         "variable": [
             {
                 "accountId": "6073037745",
-                "containerId": "117875208",
-                "variableId": "3",
-                "name": "form_id",
+                "containerId": "117988765",
+                "variableId": "13",
+                "name": "attributes.response.success",
                 "type": "v",
                 "parameter": [
                     {
@@ -248,219 +413,52 @@
                     {
                         "type": "TEMPLATE",
                         "key": "name",
-                        "value": "form_id"
+                        "value": "attributes.response.success"
                     }
                 ],
-                "fingerprint": "1684207162414",
-                "formatValue": {}
-            },
-            {
-                "accountId": "6073037745",
-                "containerId": "117875208",
-                "variableId": "4",
-                "name": "phone",
-                "type": "v",
-                "parameter": [
-                    {
-                        "type": "INTEGER",
-                        "key": "dataLayerVersion",
-                        "value": "2"
-                    },
-                    {
-                        "type": "BOOLEAN",
-                        "key": "setDefaultValue",
-                        "value": "false"
-                    },
-                    {
-                        "type": "TEMPLATE",
-                        "key": "name",
-                        "value": "phone"
-                    }
-                ],
-                "fingerprint": "1684207172125",
-                "formatValue": {}
-            },
-            {
-                "accountId": "6073037745",
-                "containerId": "117875208",
-                "variableId": "6",
-                "name": "Bảng RegEx - phone",
-                "type": "remm",
-                "parameter": [
-                    {
-                        "type": "BOOLEAN",
-                        "key": "setDefaultValue",
-                        "value": "false"
-                    },
-                    {
-                        "type": "TEMPLATE",
-                        "key": "input",
-                        "value": "{{phone}}"
-                    },
-                    {
-                        "type": "BOOLEAN",
-                        "key": "fullMatch",
-                        "value": "true"
-                    },
-                    {
-                        "type": "BOOLEAN",
-                        "key": "replaceAfterMatch",
-                        "value": "true"
-                    },
-                    {
-                        "type": "BOOLEAN",
-                        "key": "ignoreCase",
-                        "value": "true"
-                    },
-                    {
-                        "type": "LIST",
-                        "key": "map",
-                        "list": [
-                            {
-                                "type": "MAP",
-                                "map": [
-                                    {
-                                        "type": "TEMPLATE",
-                                        "key": "key",
-                                        "value": "0(\\d+)"
-                                    },
-                                    {
-                                        "type": "TEMPLATE",
-                                        "key": "value",
-                                        "value": "84$1"
-                                    }
-                                ]
-                            },
-                            {
-                                "type": "MAP",
-                                "map": [
-                                    {
-                                        "type": "TEMPLATE",
-                                        "key": "key",
-                                        "value": "\\840(\\d+)"
-                                    },
-                                    {
-                                        "type": "TEMPLATE",
-                                        "key": "value",
-                                        "value": "84$1"
-                                    }
-                                ]
-                            },
-                            {
-                                "type": "MAP",
-                                "map": [
-                                    {
-                                        "type": "TEMPLATE",
-                                        "key": "key",
-                                        "value": "\\(\\+84\\)0(\\d+)\\s(\\d+)\\s(\\d+)"
-                                    },
-                                    {
-                                        "type": "TEMPLATE",
-                                        "key": "value",
-                                        "value": "84$1$2$3"
-                                    }
-                                ]
-                            },
-                            {
-                                "type": "MAP",
-                                "map": [
-                                    {
-                                        "type": "TEMPLATE",
-                                        "key": "key",
-                                        "value": "\\(\\+84\\)(\\d+)"
-                                    },
-                                    {
-                                        "type": "TEMPLATE",
-                                        "key": "value",
-                                        "value": "84$1"
-                                    }
-                                ]
-                            },
-                            {
-                                "type": "MAP",
-                                "map": [
-                                    {
-                                        "type": "TEMPLATE",
-                                        "key": "key",
-                                        "value": "\\+840(\\d+)"
-                                    },
-                                    {
-                                        "type": "TEMPLATE",
-                                        "key": "value",
-                                        "value": "84$1"
-                                    }
-                                ]
-                            },
-                            {
-                                "type": "MAP",
-                                "map": [
-                                    {
-                                        "type": "TEMPLATE",
-                                        "key": "key",
-                                        "value": "\\+84(\\d+)"
-                                    },
-                                    {
-                                        "type": "TEMPLATE",
-                                        "key": "value",
-                                        "value": "84$1"
-                                    }
-                                ]
-                            },
-                            {
-                                "type": "MAP",
-                                "map": [
-                                    {
-                                        "type": "TEMPLATE",
-                                        "key": "key",
-                                        "value": "(\\+0)\\s([()])\\d+([()])\\s\\d+-\\d+"
-                                    },
-                                    {
-                                        "type": "TEMPLATE",
-                                        "key": "value",
-                                        "value": "84$1"
-                                    }
-                                ]
-                            }
-                        ]
-                    }
-                ],
-                "fingerprint": "1684208936070",
+                "fingerprint": "1684293345560",
                 "formatValue": {}
             }
         ],
         "builtInVariable": [
             {
                 "accountId": "6073037745",
-                "containerId": "117875208",
+                "containerId": "117988765",
                 "type": "PAGE_URL",
                 "name": "Page URL"
             },
             {
                 "accountId": "6073037745",
-                "containerId": "117875208",
+                "containerId": "117988765",
                 "type": "PAGE_HOSTNAME",
                 "name": "Page Hostname"
             },
             {
                 "accountId": "6073037745",
-                "containerId": "117875208",
+                "containerId": "117988765",
                 "type": "PAGE_PATH",
                 "name": "Page Path"
             },
             {
                 "accountId": "6073037745",
-                "containerId": "117875208",
+                "containerId": "117988765",
                 "type": "REFERRER",
                 "name": "Referrer"
             },
             {
                 "accountId": "6073037745",
-                "containerId": "117875208",
+                "containerId": "117988765",
                 "type": "EVENT",
                 "name": "Event"
+            },
+            {
+                "accountId": "6073037745",
+                "containerId": "117988765",
+                "type": "CLICK_ELEMENT",
+                "name": "Click Element"
             }
         ],
-        "fingerprint": "1684220221844",
-        "tagManagerUrl": "https://tagmanager.google.com/#/versions/accounts/6073037745/containers/117875208/versions/0?apiLink=version"
+        "fingerprint": "1684294593980",
+        "tagManagerUrl": "https://tagmanager.google.com/#/versions/accounts/6073037745/containers/117988765/versions/0?apiLink=version"
     }
 }
