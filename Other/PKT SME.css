@@ -1,0 +1,59 @@
+Q11 You notice that the top 5 audiences in UA are based on custom dimensions but not dynamic remarketing. How do you approach?
+ => 50:50
+
+Q3 Will the enhanced event measurement events be enabled by default for a manually migrated property? If yes, How many measurement parameters?
+    chọn NO
+
+Q4 When we use GA4 setup assistant from UA, newly created GA4 property will be automatically connected to UA.
+    chọn YES
+
+Q7 Assuming the event in UA is capturing dynamic values in event_label, how would you help them manual migrate this to GA4? [Select all that apply]
+
+Q9 If the client is already sending Measurement Protocol hits to UA property, what is our approach during GA4M?
+ => OK, mình 
+
+Q20 When using Jumpstart insights tool, What audience option do we use
+Tech Sol 50:50
+
+Q12 How do we identify gtag UA ecomm schema?
+SME: 
+Q30 How do we identify gtag GA4 ecomm schema?
+SME - chua ro cau tra loi - khac cau truc trien khai voi' adv
+Q28 How do we identify GTM GA4 ecomm schema?
+SME - chua ro cau tra loi - khac cau truc trien khai voi' adv
+    GTM code snippet + GTM - GA4 tag + dataLayer.push(item_id) ????
+
+Q22 Is it mandatory to import migrated conversion events from GA4 to Google Ads?
+    SME
+
+Q25 Thresholding will be applied to the reporting data and the original data cannot be retrieved once applied.
+50:50
+
+Q21 Post eCommerce migration, advertiser complains of seeing payment gateways as source/medium attribution. What could be the issue?
+Chon ... 50:50
+
+
+
+Q14 For Event Category: download, Event Action: pdf, Event Label: catalog.pdf in UA goal, Post importing to GA4 the event parameters for the event name 'pdf' will be captured automatically
+50:50
+
+Q27 Default conversion counting method in UA is
+Q26 Default conversion counting method in GA4 is
+    https://support.google.com/analytics/answer/13366706?hl=en
+
+
+Q16 When manually migrating events from UA to GA4, under what circumstances does the migrated events would work.
+50:50
+
+
+Q17 If UA had dynamic remarketing, post migration what is the course of action for dynamic remarketing migration.
+
+Q18 If advertiser does not want auto migration and has already manually migrated, what is the suggested course of actions.
+có 1 option có nên chọn??? Disable "Automatically set up a basic Google Analytics 4 property" in UA account
+
+
+Q19 If the client is already sending User ID to UA property, what is our approach during GA4M?
+Easy, chọn none , have DOC
+
+Q10 Select all that applies for eCommerce migration scenario
+Không chắc

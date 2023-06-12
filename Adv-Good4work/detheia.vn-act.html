@@ -1,0 +1,200 @@
+<script>
+// HTML Custom
+function _ACT_TEMPLATE() {
+    var _tempStorage = sessionStorage || localStorage;
+    var CURRENCY = 'VND';
+    if(location.host === 'detheia.com') {
+        CURRENCY = 'USD';
+    }
+    var IS_DEBUG = document.querySelector('.__TAG_ASSISTANT_BADGE') || false;
+
+    var addProductStorage = function(id_product) {
+        id_product = id_product.toString();
+        var _lstitem = _tempStorage.getItem('dr_itemslst') || false;
+        var _lstarr = _lstitem ? _lstitem.split("//") : [];
+        if(!_lstarr.includes(id_product)) {
+            _lstarr.push(id_product);
+        
+            var _rs = _lstarr.join("//");
+            _tempStorage.setItem("dr_itemslst", _rs);
+        }
+    }
+    
+    var addValueProductStorage = function(_value, _type) {
+        var _value_storage = _tempStorage.getItem('dr_value_st') || 0;
+    
+        var _value_number = 0;
+    
+        // Add
+        if(_type === 1) {
+            _value_number = parseFloat(_value_storage) + parseFloat(_value);
+        }
+    
+        // Overwrite
+        if(_type === 2) {
+            _value_number = parseFloat(_value);
+        }
+    
+        _tempStorage.setItem("dr_value_st", _value_number);
+    }
+
+
+
+    var _priceconvert = function(price, CURRENCY) {
+        if(CURRENCY === 'VND') {
+            return parseFloat(price.replace(/[^\d]+/g, ''));
+        }
+        if(CURRENCY === 'MYR') {
+            return parseFloat(price.replace(/[^\d.]+/g, ''));
+        }
+
+
+        // USD ... 
+        return parseFloat(price.replace(/[^\d.]+/g, ''));
+        
+    }
+    
+    // For cart page
+    var renewListProductStorageByArrList = function(lst_prod) {
+        var _rs = [];
+    
+        lst_prod.forEach(function(item) {
+            _rs.push(item);
+        });
+        
+        _tempStorage.setItem("dr_itemslst", _rs.join("//"));
+    }
+    
+    var checkMultiClass = function(listClass, elm) {
+        if(typeof listClass === "object"){
+            var n_class = listClass.length;
+            var n_ishave = 0;
+            listClass.forEach(function(item) {
+                if(elm.classList.contains(item)) {
+                    n_ishave++;
+                }
+            })
+            if(n_ishave === n_class) {
+                return true;
+            }
+        }
+        return false;
+    }
+    
+    
+    // ===============
+    // READY !!!
+    // ===============
+    
+
+    // is Page
+    var is_begincheckout_page = location.pathname.includes("/Home/Payment") && document.querySelector("#fPayment");
+    var is_order_thankyou_page = location.href.includes("/Home/PaymentSubmit");
+    
+    // idorder - rand
+
+    if(!_tempStorage.getItem('dr_idorder')) {   
+        var _idorder = function () {
+            var _date_key = [
+                new Date().getFullYear(),
+                ("0" + new Date().getMonth()).slice(-2),
+                ("0" + new Date().getDate()).slice(-2),
+                ("0" + new Date().getHours()).slice(-2),
+                ("0" + new Date().getMinutes()).slice(-2),
+            ];
+
+            return _date_key.join("") + Math.floor(Math.random() * 99999);
+        };
+
+        _tempStorage.setItem('dr_idorder', _idorder());   
+    }
+    
+    
+    // *********
+    // Button add to cart list page
+    // *********
+    // LUU Y CLASS
+    jQuery(document).on("click", 'a[data-pid]', function(){
+        
+        dataLayer.push({
+            'event': 'act_acttocart'
+        });
+        
+        if(IS_DEBUG) {
+            console.log("add_to_cart", dataLayer);
+        }
+    });
+    
+
+    // *********
+    // begin checkout
+    // *********
+    if(is_begincheckout_page) {
+        
+        var id_product = '';
+        var _value = 0;
+        var _lst_prod = [];
+
+        var _is_update_cart = function() {
+            var _tfoot = document.querySelectorAll('#fPayment .cart-review span');
+            var _price_elm = _tfoot[_tfoot.length - 1];
+
+            _value = parseFloat(_priceconvert(_price_elm.innerText, CURRENCY));
+            _value = _value || 0;
+        
+            dataLayer.push({
+                'value': _value,
+                'currency': CURRENCY,
+                'event': 'act_begincheckout'
+            });
+
+            addValueProductStorage(_value, 2);
+    
+            if(IS_DEBUG) {
+                console.log("dr", "add_to_cart cart page", dataLayer);
+            }
+        }
+        
+        // Update before unload
+        _is_update_cart();
+
+        jQuery(window).on('beforeunload', function () {
+            _is_update_cart();
+        });
+        
+    }
+
+
+
+    // *********
+    // order - thank you page
+    // *********
+    if(is_order_thankyou_page) {
+        var dr_value_st = parseFloat(_tempStorage.getItem('dr_value_st') || 0);
+        var dr_idorder = _tempStorage.getItem('dr_idorder');
+
+        if(dr_value_st) {
+            dataLayer.push({
+                'idorder': dr_idorder,
+                'value': dr_value_st,
+                'currency': CURRENCY,
+                'event': 'act_purchase'
+            });
+
+            _tempStorage.removeItem('dr_idorder');
+            _tempStorage.removeItem('dr_value_st');
+
+            // Debug
+            if(IS_DEBUG) {
+                console.log("purchase", dataLayer);
+                console.log("purchase", "dr_itemslst remove");
+            }
+        }
+    }
+    
+    
+}
+
+// Start;
+_ACT_TEMPLATE();
+</script>

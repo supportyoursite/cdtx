@@ -1,0 +1,220 @@
+
+<script>
+// HTML Custom
+function _DR_TEMPLATE() {
+    var _tempStorage = sessionStorage || localStorage;
+    var GOOGLE_BUSINESS_VERTICAL = 'retail';
+    var CURRENCY = 'VND';
+    var IS_DEBUG = document.querySelector('.__TAG_ASSISTANT_BADGE') || false;
+
+    var addProductStorage = function(id_product) {
+        id_product = id_product.toString();
+        var _lstitem = _tempStorage.getItem('dr_itemslst') || false;
+        var _lstarr = _lstitem ? _lstitem.split("//") : [];
+        if(!_lstarr.includes(id_product)) {
+            _lstarr.push(id_product);
+        
+            var _rs = _lstarr.join("//");
+            _tempStorage.setItem("dr_itemslst", _rs);
+        }
+    }
+    
+
+
+
+    // For cart page
+    var renewListProductStorageByArrList = function(lst_prod) {
+        var _rs = [];
+    
+        lst_prod.forEach(function(item) {
+            _rs.push(item);
+        });
+        
+        _tempStorage.setItem("dr_itemslst", _rs.join("//"));
+    }
+    
+    var checkMultiClass = function(listClass, elm) {
+        if(typeof listClass === "object"){
+            var n_class = listClass.length;
+            var n_ishave = 0;
+            listClass.forEach(function(item) {
+                if(elm.classList.contains(item)) {
+                    n_ishave++;
+                }
+            })
+            if(n_ishave === n_class) {
+                return true;
+            }
+        }
+        return false;
+    }
+    
+    
+    // ===============
+    // READY !!!
+    // ===============
+    
+    // by class body
+    var is_product_page = document.querySelector('.productDetailsPage [psid]');
+    var is_cart_page = location.pathname.startsWith("/cart");
+    var is_begincheckout_page = location.pathname.startsWith("/cart/checkout");
+    var is_order_thankyou_page = location.pathname.startsWith("/order/") && document.querySelector('.list_proOrder');
+    
+    
+    
+    
+    // DR
+    var _dr_items = [];
+    var _item = {};
+    
+    if(IS_DEBUG) {
+        console.log(
+            "page",
+            is_product_page,
+            is_cart_page,
+            is_begincheckout_page,
+            is_order_thankyou_page
+        );
+    }
+
+
+    // *********
+    // Product detail page
+    // *********
+    if(is_product_page) {
+        var id_product = document.querySelector('#addToCart[psid]').getAttribute('psid');
+    
+        _item = {"id": id_product, "google_business_vertical": GOOGLE_BUSINESS_VERTICAL };
+        _dr_items.push(_item);
+    
+        
+        dataLayer.push({
+            'dr_event_type': 'view_item',
+            'dr_items': _dr_items,
+            'event': 'dynamic_remarketing'
+        });
+
+        if(IS_DEBUG) { console.log("dr", "view_item"); }
+        
+        
+        // add to cart click at product detail page
+            // LUU Y CLASS
+            jQuery(document).on("click", '#addToCart[psid]', function(){
+                _dr_items = []; 
+    
+                _item = {"id": id_product, "google_business_vertical": GOOGLE_BUSINESS_VERTICAL };
+                _dr_items.push(_item);
+                
+                dataLayer.push({
+                    'dr_event_type': 'add_to_cart',
+                    'dr_items': _dr_items,
+                    'event': 'dynamic_remarketing'
+                });
+                
+                addProductStorage(id_product);
+    
+                if(IS_DEBUG) {
+                    console.log("dr", "add_to_cart click", dataLayer);
+                }
+            });
+    }
+    
+
+
+    // *********
+    // Cart page
+    // *********
+    if(is_cart_page) {
+        
+        var id_product = '';
+        var _value = 0;
+        var _lst_prod = [];
+        _dr_items = [];
+        
+        var _is_update_cart = function() {
+            jQuery(".updateCart[data-id]").each(function(index){
+                id_product = jQuery(this).attr('data-id');
+                // id_product = id_product.replace(/[^\d]+/g, '');
+                                
+                // For DR
+                _item = {"id": id_product, "google_business_vertical": GOOGLE_BUSINESS_VERTICAL };
+                _dr_items.push(_item);
+                
+        
+                addProductStorage(id_product);
+
+                // For Storage Purchase
+                _lst_prod.push(id_product);
+            });
+
+        
+            if(_dr_items.length > 0) {
+                dataLayer.push({
+                    'dr_event_type': 'add_to_cart',
+                    'dr_items': _dr_items,
+                    'event': 'dynamic_remarketing'
+                });
+        
+                if(IS_DEBUG) {
+                    console.log("dr", "add_to_cart cart page", dataLayer);
+                }
+            }
+        }
+    
+    
+        // Update before unload
+        jQuery(window).on('beforeunload', function () {
+            _is_update_cart();
+
+            if(_lst_prod.length > 0) {
+                renewListProductStorageByArrList(_lst_prod);
+            }
+        });
+    
+    
+    }
+    
+
+
+    // *********
+    // order - thank you page
+    // *********
+    if(is_order_thankyou_page) {
+        var dr_itemslst = _tempStorage.getItem('dr_itemslst');
+        
+        _dr_items = [];
+
+        if(dr_itemslst) {
+            var _lstarr = dr_itemslst.split('//');
+            
+            if(_lstarr.length > 0) {  
+                _lstarr.forEach(function(id_product) {
+                    _item = {"id": id_product, "google_business_vertical": GOOGLE_BUSINESS_VERTICAL };
+                    _dr_items.push(_item);
+                });
+    
+    
+                dataLayer.push({
+                    'dr_event_type': 'purchase',
+                    'dr_items': _dr_items,
+                    'event': 'dynamic_remarketing'
+                });
+    
+                _tempStorage.removeItem('dr_itemslst');
+    
+                // Debug
+                if(IS_DEBUG) {
+                    console.log("purchase", dataLayer);
+                    console.log("purchase", "dr_itemslst remove");
+                }
+            }
+    
+        }
+    }
+    
+    
+}
+
+// Start;
+_DR_TEMPLATE();
+</script>

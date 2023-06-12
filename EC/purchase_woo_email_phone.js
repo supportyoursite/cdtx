@@ -4,6 +4,11 @@ function gtm_send_purchaseinfo($order_id)
 {
   $order = wc_get_order($order_id);
   $order_data = $order->get_data();
+  $currency = 'VND';
+  if(method_exists($order, 'get_currency')) {
+    $currency = $order->get_currency();
+  }
+  
 
   $email = $order_data['billing']['email'];
   $phone = $order_data['billing']['phone'];
@@ -14,18 +19,21 @@ function gtm_send_purchaseinfo($order_id)
       var revenue = parseFloat("' . $order->get_total() . '");
       var email = "'. $email .'";
       var phone = "'. $phone .'";
-
+      var currency = "'. $currency .'";
       // conversion
       window.dataLayer = window.dataLayer || [];
 
-      dataLayer.push({
-        "event": "purchase_woo",
-        "value": revenue,
-        "currency": "VND",
-        "transaction_id": transaction_id,
-        "email": email,
-        "phone": phone,
-      });
+      if(phone) {
+        dataLayer.push({
+          "event": "purchase_woo",
+          "value": revenue,
+          "currency": currency,
+          "transaction_id": transaction_id,
+          "email": email,
+          "phone": phone,
+        });
+      }
+      
   </script>';
 }
 
@@ -48,3 +56,15 @@ function gtm_send_purchaseinfo($order_id)
 84$1
 84$1
 84$1
+
+
+--- DEBUG
+
+      dataLayer.push({
+        "event": "purchase_woo",
+        "value": revenue,
+        "currency": "VND",
+        "transaction_id": '121241',
+        "email": "testgtm@gmail.com",
+        "phone": "0987654321",
+      });

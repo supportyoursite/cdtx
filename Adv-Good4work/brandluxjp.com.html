@@ -1,0 +1,283 @@
+<script>
+    // HTML Custom
+    function _DR_TEMPLATE() {
+        var _tempStorage = sessionStorage || localStorage;
+        var GOOGLE_BUSINESS_VERTICAL = 'retail';
+        var CURRENCY = 'JPY';
+        var IS_DEBUG = document.querySelector('.__TAG_ASSISTANT_BADGE') || false;
+
+    
+        var addProductStorage = function(id_product) {
+            id_product = id_product.toString();
+            var _lstitem = _tempStorage.getItem('dr_itemslst') || false;
+            var _lstarr = _lstitem ? _lstitem.split("//") : [];
+            if(!_lstarr.includes(id_product)) {
+                _lstarr.push(id_product);
+            
+                var _rs = _lstarr.join("//");
+                _tempStorage.setItem("dr_itemslst", _rs);
+            }
+        }
+        
+    
+    
+    
+        // For cart page
+        var renewListProductStorageByArrList = function(lst_prod) {
+            var _rs = [];
+        
+            lst_prod.forEach(function(item) {
+                _rs.push(item);
+            });
+            
+            _tempStorage.setItem("dr_itemslst", _rs.join("//"));
+        }
+        
+        var checkMultiClass = function(listClass, elm) {
+            if(typeof listClass === "object"){
+                var n_class = listClass.length;
+                var n_ishave = 0;
+                listClass.forEach(function(item) {
+                    if(elm.classList.contains(item)) {
+                        n_ishave++;
+                    }
+                })
+                if(n_ishave === n_class) {
+                    return true;
+                }
+            }
+            return false;
+        }
+        
+        
+        // ===============
+        // READY !!!
+        // ===============
+        
+        // by class body
+    
+        var is_product_page = location.pathname.includes('/product') && document.querySelector('[property="og:type"]').content.includes('og:product');
+    
+        // Cart dont have id product
+        var is_cart_page = location.pathname.startsWith("/cart") && document.querySelector("#cart-summary");
+        // var is_cart_page = false;
+    
+        // Not ready -> false
+        var is_begincheckout_page = false;
+        var is_order_thankyou_page = location.pathname.includes("/checkout/order-confirmed");
+        
+        
+        
+        
+        // DR
+        var _dr_items = [];
+        var _item = {};
+        
+        if(IS_DEBUG) {
+            console.log(
+                "page",
+                is_product_page,
+                is_cart_page,
+                is_begincheckout_page,
+                is_order_thankyou_page
+            );
+        }
+    
+    
+        // *********
+        // Product detail page
+        // *********
+        if(is_product_page) {
+            var id_product = document.querySelector('[name="product_id"]').value;
+        
+            _item = {"id": id_product, "google_business_vertical": GOOGLE_BUSINESS_VERTICAL };
+            
+            _dr_items.push(_item);
+        
+            
+            dataLayer.push({
+                'dr_event_type': 'view_item',
+                'dr_items': _dr_items,
+                'event': 'dynamic_remarketing'
+            });
+    
+            if(IS_DEBUG) { console.log("dr", "view_item"); }
+            
+        
+            
+            // add to cart click at product detail page
+            // LUU Y CLASS
+            jQuery(document).on("click", 'button.buy-now, button.add-to-cart', function(){
+                _dr_items = []; 
+    
+                _item = {"id": id_product, "google_business_vertical": GOOGLE_BUSINESS_VERTICAL };
+                _dr_items.push(_item);
+                
+                dataLayer.push({
+                    'dr_event_type': 'add_to_cart',
+                    'dr_items': _dr_items,
+                    'event': 'dynamic_remarketing'
+                });
+                
+                addProductStorage(id_product);
+    
+                if(IS_DEBUG) {
+                    console.log("dr", "add_to_cart click", dataLayer);
+                }
+            });
+        }
+        
+    
+    
+        // *********
+        // Cart page
+        // *********
+        if(is_cart_page) {
+
+            var _act_update = function() {
+
+                // transaction_id
+                var _idorder = function () {
+                    var _date_key = [
+                        new Date().getFullYear(),
+                        ("0" + new Date().getMonth()).slice(-2),
+                        ("0" + new Date().getDate()).slice(-2),
+                        ("0" + new Date().getHours()).slice(-2),
+                        ("0" + new Date().getMinutes()).slice(-2),
+                    ];
+
+                    return _date_key.join("") + Math.floor(Math.random() * 99999);
+                };
+
+                var _all = document.querySelectorAll('#cart-summary > div > div > div > div > div');
+                var _subtotalelm = _all[_all.length - 2];
+                var _subtotalelm_price = _subtotalelm.innerText.trim().replace(/[^\d]+/g, '');
+                    _subtotalelm_price = parseFloat(_subtotalelm_price);
+
+                _tempStorage.setItem('_cart_price', _subtotalelm_price);
+                _tempStorage.setItem('_cart_idorder_ready', _idorder());
+            }
+
+
+            
+            _act_update();
+            
+            // TH 1
+            jQuery(document).on('click', '#cart-summary a[href="https://brandluxjp.com/checkout"]', function(e) {
+                _act_update()
+            });
+
+            // TH 2
+            jQuery(window).on('beforeunload', function () {
+                _act_update()
+            });
+        }
+        
+    
+    
+    
+        // *********
+        // order - thank you page
+        // *********
+        if(is_order_thankyou_page) {
+            var dr_itemslst = _tempStorage.getItem('dr_itemslst');
+            
+            _dr_items = [];
+    
+            if(dr_itemslst) {
+                var _lstarr = dr_itemslst.split('//');
+                
+                if(_lstarr.length > 0) {  
+                    _lstarr.forEach(function(id_product) {
+                        _item = {"id": id_product, "google_business_vertical": GOOGLE_BUSINESS_VERTICAL };
+                        _dr_items.push(_item);
+                    });
+        
+        
+                    dataLayer.push({
+                        'dr_event_type': 'purchase',
+                        'dr_items': _dr_items,
+                        'event': 'dynamic_remarketing'
+                    });
+        
+                    _tempStorage.removeItem('dr_itemslst');
+        
+                    // Debug
+                    if(IS_DEBUG) {
+                        console.log("purchase", dataLayer);
+                        console.log("purchase", "dr_itemslst remove");
+                    }
+                }
+        
+            }
+        }
+        
+        
+    }
+    
+    // Start;
+    _DR_TEMPLATE();
+</script>
+<script>
+    if(location.pathname.includes('/checkout/order-confirmed')) {
+        // Purchase
+        var _tempStorage = sessionStorage || localStorage;
+        _tempStorage.setItem('_cart_price', 121212);
+        _tempStorage.setItem('_cart_idorder_ready', 121212);
+
+
+        var _price = _tempStorage.getItem('_cart_price');
+        var _idorder = _tempStorage.getItem('_cart_idorder_ready');
+        if(_price && _idorder) {
+            dataLayer.push({
+                'event': 'purchase_success',
+                'price': parseFloat(_price),
+                'idorder': _idorder,
+                'currency': 'JPY'
+            });
+            
+            _tempStorage.removeItem('_cart_price');
+            _tempStorage.removeItem('_cart_idorder_ready');
+        }   
+    }
+</script>
+
+
+
+<script>
+// Adv
+
+
+
+
+
+// OK
+javascript:function getProduct() {
+    var _product = {};
+    var is_product_page = location.pathname.includes('/product') && document.querySelector('[property="og:type"]').content.includes('og:product');
+    var _id_product = document.querySelector('[name="product_id"]').value;
+    
+    _product.id = _id_product;
+    _product.name = document.querySelector('meta[property="og:title"]').content.replaceAll(/(?:\r\n|\r|\n)/g, " ");
+    _product.description = document.querySelector('meta[property="og:description"]').content.replaceAll(/(?:\r\n|\r|\n)/g, " ");  
+    _product.link = document.querySelector('meta[property="og:url"]').content;
+    _product.condition = "used";
+    _product.price = document.querySelector('meta[property="og:price:amount"]').content.trim().replace(/[^\d]+/g, '') + " JPY";
+    _product.in_stock = "in_stock";
+    _product.image = document.querySelector('meta[property="og:image"]').content.replaceAll(/(?:\r\n|\r|\n)/g, " ");
+    _product.item_group_id = _id_product;
+    _product.shipping = 'US:::16490 JPY';
+
+    
+    var _lalert = Object.keys(_product).map(function(k){return _product[k]}).join("&#9;");
+    
+    var _textarea = '<textarea onclick="this.focus();this.select()" readonly="readonly" style=" width: 100%; height: 146px; font-family: monospace;">' + _lalert + '</textarea>';
+    document.querySelector('header').insertAdjacentHTML('afterBegin', _textarea);
+    
+}
+
+getProduct();
+
+
+
+</script>

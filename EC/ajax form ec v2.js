@@ -196,6 +196,6 @@ _xHrComplete(function (_response) {
         dataLayer.push(
             _object_dl
         );
-        console.log(_object_dl);
+        
     }
 })

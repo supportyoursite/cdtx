@@ -1,0 +1,75 @@
+<script>
+  
+    function PurchaseTracking(){
+      if(location.pathname.includes('/checkout/')) {
+          var _forms = document.querySelectorAll('form');
+          if(_forms.length) {
+              _forms.forEach(function(elm) {
+                  elm.addEventListener("submit", function(e){
+                      var _idorder = function () {
+                          var _date_key = [
+                              new Date().getFullYear(),
+                              ("0" + new Date().getMonth()).slice(-2),
+                              ("0" + new Date().getDate()).slice(-2),
+                              ("0" + new Date().getHours()).slice(-2),
+                              ("0" + new Date().getMinutes()).slice(-2),
+                          ];
+              
+                          return _date_key.join("") + Math.floor(Math.random() * 99999);
+                      };
+      
+                      var _priceelm = document.querySelector('.order-total span.woocommerce-Price-amount.amount')
+                      var _price = 0;
+                      if(_priceelm) {
+                          _price = parseFloat(_priceelm.innerText.replace(/[^\d]+/g, ''));
+                      }
+      
+                      var data_form = new FormData(e.target);
+                      var inpushObj = {
+                          "event": 'form_submitonsite',
+                      };
+      
+                      
+                      if(_phone = document.querySelector('[name="billing_phone"]')) {
+                          if(_phone.value.trim()) {
+                              localStorage.setItem('_phone', _phone.value);
+                              localStorage.setItem('_idorder', _idorder());
+                              localStorage.setItem('_price', _price);
+                          }   
+                      }
+      
+                      var formDataObj = {};
+                      data_form.forEach(function(value, key) { (formDataObj[key] = value)});
+                      inpushObj.formdata = formDataObj;
+                      dataLayer.push(inpushObj)
+                  });
+              })
+          }
+      
+      }
+      
+      if(location.pathname.includes('/checkout/order-received/')) {
+          var _idorder = localStorage.getItem('_idorder');
+          if(_idorder) {
+              var _phone = localStorage.getItem('_phone');
+              var _price = localStorage.getItem('_price');
+          
+              dataLayer.push({
+                  "event": "purchase_complete",
+                  "phone": _phone,
+                  "idorder": _idorder,
+                  "price": _price,
+              })
+          
+          
+              localStorage.removeItem('_phone');
+              localStorage.removeItem('_idorder');
+              localStorage.removeItem('_price');
+          }
+          
+      }
+  }
+  
+  PurchaseTracking();
+    
+  </script> 

@@ -7,13 +7,24 @@ document.addEventListener( 'wpcf7mailsent', function( event ) {
     "event": 'form_submission',
   };
   
+  var lst_emailname = [
+    'email',
+    'your-email',
+  ];
   var emailObject = inputs.find(function(item){
-    return item.name == 'email'; //name of phone input
+    return lst_emailname.includes(item.name);
   });
 
 
+
+  var lst_phonename = [
+    'tel-phone',
+    'your-tel',
+    'your-phone',
+    'phone-number',
+  ];
   var phoneObject = inputs.find(function(item){
-    return item.name == 'tel-phone'; //name of phone input
+    return lst_phonename.includes(item.name);
   });
 
   if(phoneObject){
